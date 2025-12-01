@@ -1,0 +1,890 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../software_architecture_is_decision_making/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>👤 JS 소개 - SoftwareArchitect JS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#who-is-js" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SoftwareArchitect JS" class="md-header__button md-logo" aria-label="SoftwareArchitect JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SoftwareArchitect JS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              👤 JS 소개
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SoftwareArchitect JS" class="md-nav__button md-logo" aria-label="SoftwareArchitect JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SoftwareArchitect JS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👤 JS 소개
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👤 JS 소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        약력
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        수상 내역
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문 (SCIE 제1저자)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="논문 (SCIE 제1저자)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lidab-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. LIDAB 시스템 연구 (2015)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 시맨틱 데이터 탐색 시스템 (2019)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        경력 사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기술 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-game-modding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub &amp; Game Modding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub &amp; Game Modding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NPM 공개 모듈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steam-workshop-modding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steam Workshop / Modding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_architecture_is_decision_making/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ 소프트웨어 아키텍처에 대한 오해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        약력
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        수상 내역
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문 (SCIE 제1저자)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="논문 (SCIE 제1저자)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lidab-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. LIDAB 시스템 연구 (2015)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 시맨틱 데이터 탐색 시스템 (2019)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        경력 사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기술 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-game-modding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub &amp; Game Modding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub &amp; Game Modding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NPM 공개 모듈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steam-workshop-modding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steam Workshop / Modding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="who-is-js">Who is JS</h1>
+<p>이름: <strong>황준식</strong><br />
+<strong>Software Architect / Software Developer / Software Engineer</strong><br />
+연락처: <strong>js.seth.h@gmail.com</strong></p>
+<hr />
+<h2 id="_1">약력</h2>
+<ul>
+<li>고려대학교 컴퓨터교육학과 졸업 (2008.02)  </li>
+<li>학위사항: (고려대2007(학)002975)-(127)</li>
+<li>고려대학교 컴퓨터교육학 이학석사 (2010.02)  </li>
+<li>학위사항: 이학석사(고려대2009(석)1685)-(29363)</li>
+<li>고려대학교 컴퓨터학(소프트웨어 전공) 공학박사 (2020.02)  </li>
+<li>학위사항: 공학박사(고려대2019(박)0199)-(15020)</li>
+<li>소프트웨어 개발 경력 15년+</li>
+<li>CreateMania 창업 및 재직 (2005 ~ 현재)</li>
+</ul>
+<hr />
+<h2 id="_2">수상 내역</h2>
+<ul>
+<li><strong>2003</strong> IBM 로보코드 코리아컵 우승</li>
+<li><strong>2004</strong> IBM 로보코드 코리아컵 준우승</li>
+</ul>
+<blockquote>
+<p>로보코드: JAVA 기반 전투 로봇 AI 대회</p>
+</blockquote>
+<hr />
+<h2 id="scie-1">논문 (SCIE 제1저자)</h2>
+<h3 id="1-lidab-2015">1. LIDAB 시스템 연구 (2015)</h3>
+<p>Hwang, Junsik, and Seongbin Park.<br />
+“LIDAB: a user-friendly display system for linked multimedia data and its application in education.”<br />
+<em>Multimedia Tools and Applications</em> (2015).<br />
+링크: http://link.springer.com/article/10.1007/s11042-015-2994-6</p>
+<h3 id="2-2019">2. 시맨틱 데이터 탐색 시스템 (2019)</h3>
+<p>Hwang, Junsik, and Seongbin Park.<br />
+“A Linked data exploration system for lay users.”<br />
+<em>2019 Asia Pacific Conference on Medical and Health Science</em>, Volume 125, Issue S1.<br />
+링크: https://onlinelibrary.wiley.com/doi/full/10.1111/bcpt.13266</p>
+<hr />
+<h2 id="_3">경력 사항</h2>
+<blockquote>
+<p>거래처는 회고 내용을 통한 유추 방지를 위해 비공개 처리합니다.</p>
+</blockquote>
+<p><strong>2005</strong></p>
+<ul>
+<li>SW 벤처 창업</li>
+<li>온라인 음악 서비스 연동 VOIP 소프트웨어 개발</li>
+<li>금융·공공기관 시장정보 조회 및 단말기 관리 시스템 구축</li>
+</ul>
+<p><strong>2006</strong></p>
+<ul>
+<li>지방 공공기관 복지회관 웹사이트 제작</li>
+<li>홍수·유량 측정 및 시뮬레이션 시스템 개발</li>
+<li>해외 운송업체 헬기 이착륙 모니터링 소프트웨어 개발</li>
+<li>구인·구직 포털 솔루션 개발</li>
+<li>공공기관 IT 아키텍처 포털 보안 강화</li>
+<li>방송·미디어 기관 DMB 서비스 서버 관리 시스템</li>
+</ul>
+<p><strong>2007</strong></p>
+<ul>
+<li>문화·엔터테인먼트 기업 웹사이트 구축</li>
+<li>건설기업 브랜드 및 인트라넷 시스템 개발</li>
+<li>크로마키 기반 영상 합성 콘텐츠 제작 시스템 개발</li>
+<li>취미·커뮤니티 포털 개발</li>
+<li>스튜디오 CRM 솔루션 구축</li>
+<li>기업 홍보용 인터랙티브 콘텐츠 개발</li>
+<li>글로벌 항공업 출입·보안 관리 솔루션 개발</li>
+</ul>
+<p><strong>2008</strong></p>
+<ul>
+<li>유통·패션 기업 홍보용 인터랙티브 게임 개발</li>
+<li>교육기업 인트라넷(CMS) 및 심리검사 모듈 고도화</li>
+<li>통신사 SMS 관리 솔루션 개발</li>
+<li>교육기관 RFID 기반 출입관리 시스템 구축</li>
+<li>PMS(프로젝트 관리) 솔루션 개발</li>
+<li>공공기관 유량 측정 시스템 유지보수</li>
+</ul>
+<p><strong>2009</strong></p>
+<ul>
+<li>교육 콘텐츠 기업 성취도 분석 시스템 개발</li>
+<li>생활 협동조합 전자상거래 플랫폼 구축</li>
+<li>방송·미디어 CMS 개발</li>
+<li>기업용 출입관리 시스템 구축</li>
+</ul>
+<p><strong>2010</strong></p>
+<ul>
+<li>사진 인화 자동화 시스템 개발</li>
+<li>노무·인사 관리 시스템 구축</li>
+<li>제조기업 GUI 프로젝트 수행</li>
+</ul>
+<p><strong>2011</strong></p>
+<ul>
+<li>P2P 기반 소프트웨어 프레임워크 개발</li>
+<li>온라인 인화 시스템 구축</li>
+<li>국제 행사 출입통제 시스템 구축</li>
+</ul>
+<p><strong>2012</strong></p>
+<ul>
+<li>방재·안전 분야 실시간 분석 시스템(FORGEX) 개발</li>
+</ul>
+<p><strong>2013</strong></p>
+<ul>
+<li>방재·안전 분야 실시간 분석 시스템(FARD, EXREM) 고도화</li>
+<li>출입통제 전문장비 시스템 연동 개발</li>
+</ul>
+<p><strong>2014</strong></p>
+<ul>
+<li>연구기관 출입·보안 통합 연동 시스템 구축</li>
+</ul>
+<p><strong>2015</strong></p>
+<ul>
+<li>서비스업·유통업 조직 인사·식수·출입 연동 시스템 개발</li>
+</ul>
+<p><strong>2016</strong></p>
+<ul>
+<li>해외 플랜트 현장 인사관리 시스템 구축</li>
+<li>대규모 ERP 연동 출입·보안 시스템 개발</li>
+</ul>
+<p><strong>2017</strong></p>
+<ul>
+<li>건설 현장 BLE 기반 출입 관리 시스템 구축</li>
+<li>모바일 지문 기반 출입 관리 서비스 개발</li>
+</ul>
+<p><strong>2018</strong></p>
+<ul>
+<li>대기업 사옥·병원 출입통제 및 QR 방문자 관리 시스템 구축</li>
+<li>기계식 주차장 관리/키오스크 시스템 구축</li>
+<li>철도·플랜트·제조업 출입/식수/POS/전자세금계산서 연동 프로젝트 수행</li>
+</ul>
+<p><strong>2019</strong></p>
+<ul>
+<li>근태 관리 연동 시스템 개발</li>
+</ul>
+<p><strong>2020</strong></p>
+<ul>
+<li>기계식 주차 클라우드 시스템 구축</li>
+<li>모바일 기반 주차장 앱 개발</li>
+<li>병원·업무시설 방문자 QR 시스템 구축</li>
+<li>공동주택 출입통제 및 방문자 QR 시스템 구축</li>
+</ul>
+<p><strong>2021</strong></p>
+<ul>
+<li>BLE 기반 출입증 발급·초대 기능 고도화</li>
+<li>대규모 건설 현장 출입통제 시스템 증설 및 통합 관리 구축</li>
+</ul>
+<p><strong>2022</strong></p>
+<ul>
+<li>전자상거래·물류·교육 통합 시스템 유지보수</li>
+</ul>
+<p><strong>2023</strong></p>
+<ul>
+<li>차세대 쇼핑·물류·교육 시스템 설계 및 구축</li>
+<li>차세대 쇼핑·물류·교육 시스템 ISMS 인증</li>
+</ul>
+<p><strong>2024</strong></p>
+<ul>
+<li>차세대 쇼핑·물류·교육 시스템 전환 및 운영 지원</li>
+<li>차세대 쇼핑·물류·교육 시스템 ISMS 인증</li>
+</ul>
+<p><strong>2025</strong></p>
+<ul>
+<li>차세대 쇼핑·물류·교육 시스템 운영 지원</li>
+<li>차세대 쇼핑·물류·교육 시스템 ISMS 인증</li>
+</ul>
+<hr />
+<h2 id="_4">기술 목록</h2>
+<ul>
+<li><strong>언어:</strong> C/C++, Java, PHP, C#, ActionScript, Python, Lua, Ruby, Node.js, Processing</li>
+<li><strong>프레임워크:</strong> Win32 API, MFC, .NET Framework, Spring Boot</li>
+<li><strong>웹:</strong> HTML5, JavaScript, CoffeeScript, jQuery, Canvas Programming</li>
+<li><strong>도구:</strong> Git, Webpack, Parcel, Vite, NPM</li>
+<li><strong>프론트엔드:</strong> Vue.js, React.js</li>
+<li><strong>모바일:</strong> Android(Java/Kotlin), iOS(Swift)</li>
+<li><strong>기술:</strong> 네트워크 프로그래밍, Thread, 병렬/분산 프로그래밍, 게임 개발, 소셜 웹, 오픈 API</li>
+<li><strong>시맨틱 웹:</strong> RDF/XML, SPARQL, Triple Store, OWL, Ontology</li>
+<li><strong>이론/설계:</strong> 알고리즘, 자료구조, OOP, UML</li>
+<li><strong>DB:</strong> MySQL, MSSQL, SQL, MongoDB(NoSQL)</li>
+<li><strong>기타:</strong> Operating System, 소프트웨어 공학 등</li>
+</ul>
+<hr />
+<h2 id="github-game-modding">GitHub &amp; Game Modding</h2>
+<h3 id="npm">NPM 공개 모듈</h3>
+<ul>
+<li>22개 패키지(coffeescript 기반)  </li>
+<li>https://www.npmjs.com/~js.seth.h</li>
+</ul>
+<h3 id="steam-workshop-modding">Steam Workshop / Modding</h3>
+<ul>
+<li>
+<p>Don’t Starve(굶지마) 모드 3종 (Lua 스크립트)<br />
+  https://steamcommunity.com/id/js_seth_h/myworkshopfiles/</p>
+</li>
+<li>
+<p>X3 게임 모드 패키지<br />
+  http://cafe.naver.com/x3cafe/28079</p>
+</li>
+<li>
+<p>울티마 7 Part2 리소스 추출기 (C# .NET Framework)<br />
+  http://cafe.naver.com/ultimaoffline/426</p>
+</li>
+</ul>
+<h3 id="github">GitHub</h3>
+<ul>
+<li>Node.js 공개 패키지 포함 23개 프로젝트  </li>
+<li>https://github.com/js-seth-h?tab=repositories</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,522 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다. - SoftwareArchitect JS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SoftwareArchitect JS" class="md-header__button md-logo" aria-label="SoftwareArchitect JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SoftwareArchitect JS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SoftwareArchitect JS" class="md-nav__button md-logo" aria-label="SoftwareArchitect JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SoftwareArchitect JS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../who-is-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👤 JS 소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_architecture_is_decision_making/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ 소프트웨어 아키텍처에 대한 오해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        확장성이란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        불변성이란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSA의 비용구조
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msa-roireturn-on-investment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSA의 RoI(Return on Investment) 구조
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        소규모 스타트업이 이 비용을 치룰수 있는가?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다.</h1>
+<blockquote>
+<p>Architecture is decided more by its invariants than by its extensibility.</p>
+</blockquote>
+<h2 id="_2">요약</h2>
+<ul>
+<li>많은 사람들이 어떤 아키텍처를 소개할 때, 확장성에 대해서 강조한다.</li>
+<li>하지만 실제로 아키텍처의 생명주기, 즉 '아키텍처 사망'을 결정짓는 것은, 무엇을 쉽게 바꿀 수 없는지(불변성, invariants)다.</li>
+<li>예를 들어, MSA(Microservices Architecture)는 서비스 단위로 시스템을 쪼개어 필요에 따라 독립적으로 확장할 수 있다는 점이 주로 부각된다.</li>
+<li>MSA는 서비스간 호출에 네트워크 처리가 필수적으로 발생한다.</li>
+<li>또한 서비스는 각자의 데이터를 독점해야한다 원칙이 존재한다.</li>
+<li>이를 지키지 않으면, 비용은 치루나 이점은 얻을 수 없다. </li>
+<li>때문에 아키텍쳐의 선택은 어떤 확장성을 가질 것인가가 아니라, 어떤 비용을 기꺼이 치룰 것인가를 핵심으로 해야한다.</li>
+<li>절대로 치룰수 없는 비용을 댓가로 해서는 안된다.</li>
+<li>MSA는 특성상, 동일한 컴퓨팅에 대해, 더 높은 네트워크 사용률, 더 높은 CPU 사용률을 가질 수 밖에 없다.</li>
+<li>배치의 유연한 만큼 코딩에 제약사항이 있는 등 이미 비용을 치루고 시작한다.</li>
+<li>동적 배치를 관리할 관리 인력이 필연적으로 있어야 이익을 회수 할 수 있다.</li>
+<li>이는 MSA가 소규모 서비스, 가령 AWS EC2 기준 8vCPU / 32GiB 머신 5대 이하 + 로드밸런서의 규모에서는 MSA가 투자대비효용(RoI)을 가지기 어렵다는 것을 의미한다. </li>
+</ul>
+<h2 id="_3">확장성이란?</h2>
+<p>확장성이란 시스템이 증가하는 부하, 데이터, 사용자 수요에 맞춰 성능 저하 없이 유연하게 자원을 늘리거나 구조를 변경할 수 있는 능력을 의미한다. 예를 들어, 사용자가 급증할 때 서버를 추가하거나, 특정 서비스만 독립적으로 확장하는 것이 가능해야 한다. 하지만 확장성은 항상 비용과 복잡성을 동반하며, 실제로는 '얼마나 쉽게, 그리고 저렴하게 확장할 수 있는가'가 핵심이다.</p>
+<h2 id="_4">불변성이란?</h2>
+<p>불변성이란 시스템 구조나 운영에서 쉽게 바꿀 수 없는 제약, 즉 '핵심 구조적 한계'를 의미한다. 예를 들어, 데이터 일관성 요구, 트랜잭션 경계, 조직의 의사결정 구조, 도메인 경계 등은 시스템이 아무리 확장되어도 쉽게 바꿀 수 없는 요소다. 아키텍처의 진화와 한계를 결정짓는 것은 결국 이 불변성이다.</p>
+<h2 id="architecture-lifecycle">Architecture Lifecycle</h2>
+<p>아키텍처의 생명주기는 설계, 도입, 운영, 변경, 그리고 폐기까지의 전 과정을 의미한다.
+코드는 물리적 자산보다는 수정이 비교적 쉽고, 리팩토링 기술 또한 발전하였다.
+그러나 모든 아키텍쳐는 시스템 전체를 지탱하데 있어, 가장 중요한 등뼈가 있기 마련이며, 이 등뼈를 부수긴 어렵다. 
+때문에 아키텍처는 불변적 제약에 부딪히는 순간, 더 이상 획기적인 변화가 어려워지며, 이때가 바로 '아키텍처 사망'에 다가가는 시점이다. 
+넷플릭스는 처음부터 MSA로 개발하지 않았다. 기존 자신들의 구조가 사망에 가까워졌을 떄, MSA로 전환하였다. </p>
+<h2 id="msa">MSA의 비용구조</h2>
+<p>MSA는 매우 높은 고정비를 가진다. 마켓팅적으로 '유연한 배치'라고 말하지만, 솔직히 그것은 '무작위 배치'이다. 우리는 사용자가 어디에 몰려들지 예언 할 수 없다. 때문에 MSA는 시작부터 '무작위 배치'에 대응하기 위한 등뼈를 가지고 출발한다. 
+이는 개발 전 과정에서 단위 서비스간 데이터 공유 불가 - 달리 말해 모든 데이터 조달 비용을 가지며, 트랜잭션(롤백 가능 등)은 본질적으로 서비스 내부에서만 성립하거나, 개별 로직에 대한 Revert 루틴을 모두 작성해야한다. 
+또한 단순 함수 호출(메모리내 주소이동)은 네트워크 송수신으로 변경되며, 그 지연 시간과 비용이 모두 계산되어야 한다. 
+또한 각 서비스 별로 각자의 사용량에 따라 데이터베이스를 확장하기 위해서는, 다수의 소규모 데이터베이스/저장소의 관리도 염두에 두어야한다. 그렇지 않으면, 전체 시스템 가용성은 디비 사양으로 제한된다. 물론 이에 대한 백업/복원의 관리도 비용이다.
+아울러 이만한 댓가를 치룬 효용성을 회수하려면, 당연히 '관리 인력이 상주' 해야한다.
+배포/운영의 자동화는 장점이 아니라, 비용회수를 위한 필수 불가결한 결과일뿐이다.</p>
+<p>만약 시스템 규모가 작다면, 개발비는 3배, 운영비는 5배에 직면할 수 있다.</p>
+<h2 id="msa-roireturn-on-investment">MSA의 RoI(Return on Investment) 구조</h2>
+<p>MSA의 투자 대비 효용(RoI)이 달성되려면, 
+동일 연산에 대해서도 상대적으로 많은 고정비를 감당해야함으로 시스템이 고부가가치를 가져야한다.(즉, 브랜딩을 통해 (잠재) 경쟁사의 최소 원가보다 비싸게 팔아야 한다.) 모든 내부처리에 네트워크 오버헤드가 존재하는 이상 지연시간에 관대해야하다. (즉 증권거래 시스템은 MSA로 만들면 안된다.)
+MSA는 다대륙 IDC 배포도 가능하지만, 그 경우 지연시간에 10배는 더 관대해야한다. 
+파편화된 소규모 데이터베이스가 다수가 되긴 하겠으나, 개별 저장소는 워크로드 구조가 단순하여, 최적화 및 분산을 달성하기 매우 유리함으로 이를 수행할 충분한 숫자의 DBA가 필요하다. 
+MSA내부 서비스 유닛의 증가 클라우드로 자동조절 한다고 해도, 네트워크 인프라를 모니터링하고 대응할 인력이 필요하다. </p>
+<p>특히, 수요가 시간/일 단위로 변동하는 탄력적인 '상황'이 존재해야, 많은 관리 인력이 효용성을 가지게 된다.</p>
+<h2 id="_5">소규모 스타트업이 이 비용을 치룰수 있는가?</h2>
+<blockquote>
+<p>누군가는 할 수 있다고 할지 모르겠으나, 나는 절대 안한다. </p>
+</blockquote>
+<p>MSA의 구조적 비용과 운영 복잡성은 소규모 스타트업에게는 감당하기 어려운 수준이다. 스타트업은 한정된 인력과 자원, 빠른 시장 진입이 중요한 환경에서 운영된다. 이 상황에서 MSA의 네트워크 오버헤드, 데이터 일관성 관리, 모니터링 요구, 다수의 데이터베이스 관리 등은 오히려 개발 속도를 늦추고, 운영 부담만 가중시킨다.</p>
+<p>MSA의 진정한 효용은 대규모 트래픽, 빈번한 서비스 확장, 다수의 독립적 개발팀이 존재할 때 비로소 발휘된다. 즉 거대기업이 내부 요소를 전문화된 소규모 벤처처럼 잘게 나누어, 부분 최적화를 달성하도록 함으로써 전체 최적화를 달성하는 방식이다. 그러나 알고리즘을 공부해본 사람이라면, Greedy 전략이 항상 잘 작동하는건 아니라는 것을 알 것이다. </p>
+<hr />
+<p>어떤 선택을 하던, <strong>'절대로 장점을 보고 아키텍쳐를 골라선 안된다'.</strong></p>
+<p>일반적으로 IT 시스템의 수명은 5~10년으로 7년이라고 생각하면된다.<br />
+아키텍쳐는 시스템의 등뼈이고, 최소한 5년은 변경하기 어렵다. 
+모듈을 격리 단위만 재개발하여 바꿔 까울 수 있으나, 아키텍쳐를 바꾸는 것은 모듈간 소통방식을 변경한다는 의미이고, 거의 모든 모듈을 수정한다는 의미이다. 또한 각 상황에 대한 성능 특성도 달라지게 된다. </p>
+<p>각각의 아키텍쳐가 요구하는 댓가를 확인해라. 우리에게 적어도 5년간 변치않을 사실을 확인해라.<br />
+거의 유사한 장점을 가졌으나, 댓가가 전혀 다른 선택지는 얼마든지 있다.<br />
+<strong>기꺼이 치룰수 있는 댓가를 가진 옵션만 테이블에 올려놔라.</strong></p>
+<h2 id="author">Author</h2>
+<p><strong>JS, Ph.D. / Software Architect</strong><br />
+Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

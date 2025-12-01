@@ -1,0 +1,2328 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.kr/%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/">
+      
+      
+        <link rel="prev" href="../TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/">
+      
+      
+        <link rel="next" href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>구현자에게 기술 선정을 맡기면 생기는 일 - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6XBWXJW856"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6XBWXJW856",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6XBWXJW856",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              구현자에게 기술 선정을 맡기면 생기는 일
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.en/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT 분야에서 기술 자산이란 무엇인가?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Restful%20%EC%A2%80%20%EC%93%B0%EC%A7%80%20%EB%A7%88%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface: 현실
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        원인
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실패의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        불확실성의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        낙오의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        공포는 무시할 수 없다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        균형
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.en/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Architecture%20Is%20a%20Structural%20Solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Don%27t%20Use%20Restful%20So%20Blindly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Don't Use Restful So Blindly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Please%2C%20Reduce%20catch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/What%20Happens%20When%20Implementers%20Are%20Responsible%20for%20Technology%20Selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Technical Asset in the IT Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface: 현실
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        원인
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실패의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        불확실성의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        낙오의 공포
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        공포는 무시할 수 없다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        균형
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">구현자에게 기술 선정을 맡기면 생기는 일<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com)
+초안: 2025년 11월 / 개정: 2026년 1월
+</pre>
+
+<p><strong>[Author’s Intent]</strong> 이 글은 기술 선정의 책임을 구현자에게만 맡길 때 발생할 수 있는 문제점과 그로 인한 조직적 리스크를 드러내기 위해 작성되었습니다.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>다수의 회사는 소프트웨어 아키텍트 직무가 없다.</li>
+<li>그러면 자연스럽게 리드(Lead) 개발자가 개발 방향과 아키텍처를 결정한다. </li>
+<li>이때 생기는 문제는 크게 3가지이다.<ul>
+<li>황금 망치 증후군: 잘 알고 있거나 선호하는 특정 기술(황금 망치)로 모든 문제를 해결하려고 한다.</li>
+<li>과잉 엔지니어링: 현재의 문제를 해결하는 데 필요한 것보다 훨씬 더 복잡한 기술이나 설계를 도입한다.</li>
+<li>이력서 주도 개발: 프로젝트의 성공보다는 자신의 이력서에 한 줄 추가하기 좋은 기술을 선택한다.</li>
+</ul>
+</li>
+<li>왜 이런 문제가 반복될까? 가장 원초적인 이유는 <strong>공포(Fear)</strong> 때문이다.</li>
+<li>IT 분야는 인류 역사상 유례가 없을 정도로 빠르게 변화한다.<ul>
+<li>모든 개발자는 실패의 공포를 경험한다.</li>
+<li>실패하지 않기 위해 가장 확실한 수단을 선택하게 된다.</li>
+<li>모든 개발자는 불확실성에 대한 공포를 느낀다.</li>
+<li>요구사항 변화와 그에 따른 뒷감당을 반복적으로 겪으며, 과잉 스펙을 추구하게 된다.</li>
+<li>모든 개발자는 낙오의 공포를 안고 있다.</li>
+<li>변화의 트렌드에서 뒤처지지 않고, 5년 뒤에도 일할 수 있도록 이력서를 우선시한다.</li>
+</ul>
+</li>
+<li>소프트웨어 개발은 본질적으로 어렵다.<ul>
+<li>인간의 임기응변을 결정론적 시스템으로 변환해야 하기 때문이다.</li>
+<li>게다가 산업의 변화가 너무 빠르다.</li>
+</ul>
+</li>
+<li>인간의 공포를 무시할 수는 없다. 그러나 <strong>균형</strong>이 필요하다.</li>
+<li>회사는 이익을 위해 존재한다.</li>
+<li>개발 방향을 정하는 데 가장 중요한 균형점은 <strong>비즈니스 및 운영</strong>의 관점이다.</li>
+<li>하지만 컴퓨터를 완벽히 통제하는 것도 어려운데, 비즈니스와 운영까지 모두 이해하기는 쉽지 않다.</li>
+<li>두 영역을 동시에 높은 수준으로 수행하는 인력은 드물다.</li>
+<li>조직이 그 희소성을 전제로 계획해야 한다.</li>
+<li>내부 인력으로 어렵다면, <strong>외부 전문가</strong>의 단기 계약도 좋은 방법이다.</li>
+</ul>
+<h2 id="preface">Preface: 현실<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>다수의 소프트웨어 조직에는 명시적인 소프트웨어 아키텍트(Software Architect) 직무가 존재하지 않는다. 이는 해당 역할이 불필요해서라기보다는, 많은 조직이 아키텍처를 하나의 독립된 전문 영역이 아니라 개발 과정의 일부로 암묵적으로 취급해 왔기 때문이다. 특히 규모가 크지 않거나, 빠른 성과를 요구받는 조직일수록 아키텍처는 별도의 책임 주체 없이 자연스럽게 개발 조직 내부로 흡수된다.</p>
+<p>여기에 더해, 현실적으로 아키텍트라는 직군은 체계적으로 ‘양성’되기 어려운 구조를 갖고 있다. 소프트웨어 아키텍트는 단순히 특정 기술 스택에 능숙한 개발자가 아니라, 장기간에 걸쳐 다양한 시스템 규모, 실패 사례, 운영 경험, 조직적 의사결정 과정을 모두 경험한 이후에야 형성되는 역할이다. 즉, 교육이나 단기 훈련을 통해 대량으로 배출할 수 있는 직군이 아니며, 인력 시장에서도 안정적인 공급이 이루어지지 않는다.</p>
+<p>그 결과, 많은 조직은 아키텍트를 두고 싶어도 둘 수 없는 상황에 놓인다. 채용 시장에 적합한 인력이 존재하지 않거나, 설령 존재하더라도 조직에 상당한 비용을 초래한다. 아키텍처는 본질적으로 비즈니스 방향, 운영 비용, 조직의 기술 성숙도까지 함께 고려해야 하는 문제이다. 두 가지 영역을 동시에 높은 수준으로 이해해야만 하기에 발생하는 현상이다.</p>
+<p>이러한 환경에서는 개발 방향과 아키텍처에 대한 의사결정이 면밀한 기술적 검토와 장기적 관점에서 이루어지기보다는, 관성적으로 리드(Lead) 개발자에게 위임된다. 리드 개발자는 코드 품질, 일정 관리, 팀 내 기술 조율 등 다양한 책임을 동시에 떠안고 있으며, 그 연장선상에서 기술 스택 선정과 구조 설계까지 담당하게 된다. 그 결과, 아키텍처 결정은 기술과 경영 양면을 고려한 전략적 판단이라기보다는, 개인의 경험과 선호 등에 크게 좌우된다.</p>
+<p>그리고 경험과 선호에 좌우된다는 점에서 이후에 설명하는 문제들이 발생하게 된다. 이 문제들은 특정 회사나 개인의 문제가 아니라, 많은 소프트웨어 조직에서 반복적으로 관찰되는 보편적인 구조적 현상이다. 전통 산업과는 다른 IT 환경으로 인해, 기술자가 겪는 경험이 이 문제의 사회 구조적 원인이기 때문이다.</p>
+<h2 id="_2">문제<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>기술 선정 과정에서 반복적으로 나타나는 문제들이 있다. 크게 아래 세 가지로 정리할 수 있다.</p>
+<p>첫째, <strong>황금 망치 증후군(Golden Hammer Syndrome)</strong>이다. 이는 구현자가 과거에 익숙하거나 개인적으로 선호하는 특정 기술 스택을 모든 문제에 일률적으로 적용하려는 경향을 의미한다. 기술은 본래 문제 해결을 위한 수단임에도 불구하고, 수단이 목적을 압도하게 되면 문제의 성격·규모·제약 조건에 대한 검토는 뒷전으로 밀린다. 그 결과, 단순한 요구사항임에도 불필요하게 복잡한 아키텍처가 도입되거나, 조직의 기술 성숙도와 맞지 않는 도구가 선택된다. 이는 단기적으로는 구현자의 생산성을 높일 수 있으나, 장기적으로는 유지보수 비용 증가, 신규 인력 온보딩 지연, 기술 부채 누적이라는 형태로 조직 전체에 부담을 전가한다.</p>
+<p>둘째, <strong>과잉 엔지니어링(Over-Engineering)</strong> 문제이다. 구현자는 미래의 모든 가능성을 대비한다는 명분 아래, 현재 요구사항을 훨씬 초과하는 설계와 기술을 도입하는 경우가 많다. 확장성, 유연성, 범용성을 미리 확보하려는 의도 자체는 합리적으로 보일 수 있으나, 실제 비즈니스 맥락과 운영 여건을 고려하지 않으면 이는 쉽게 과잉 설계로 변질된다. 아직 발생하지 않은 문제를 가정하여 복잡한 추상화 계층과 분산 구조를 도입하면, 개발 속도는 느려지고 장애 원인은 오히려 증가한다. 특히 요구사항 변경이 잦은 초기 단계에서는 이러한 과잉 구조가 오히려 대응력을 떨어뜨리는 결과를 낳는다.</p>
+<p>셋째, <strong>이력서 주도 개발(Resume-Driven Development)</strong>이다. 이는 프로젝트의 성공이나 조직의 장기적 이익보다는, 개인 경력 관리에 유리한 기술 선택을 우선하는 현상을 의미한다. 최신 프레임워크, 유행하는 아키텍처, 시장에서 주목받는 키워드가 실제 문제 적합성보다 앞서 고려된다. 이러한 선택은 개인에게는 단기적인 학습 효과와 경력상의 이점을 제공할 수 있으나, 조직 입장에서는 불필요한 기술 리스크를 떠안게 만든다.</p>
+<h2 id="_3">원인<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>그렇다면 왜 이러한 현상이 반복적으로 발생하는가. 기술적 역량의 부족이나 개인의 윤리 문제로만 설명하기에는 이 현상은 지나치게 보편적이다. 개인이 이러한 행동을 하게 만드는 가장 원초적인 반응은 <strong>개발자 개인이 느끼는 ‘공포(Fear)’</strong>이며, 이는 개인의 성향이 아니라 환경이 만들어낸 합리적인 방어 반응이다.</p>
+<p>IT 산업은 인류 역사상 유례를 찾기 어려울 정도로 빠른 속도로 변화해 왔다. 과거의 성공 경험이 현재의 안전을 보장하지 않으며, 지금의 표준이 내일의 유물이 되는 환경에서 일하는 사람에게 심리적 압박이 누적되는 것은 자연스러운 일이다. 또한 많은 조직에서는 IT 기술을 이해하지 못해, 기술 의사결정의 책임과 실패 비용이 구조적으로 개인에게 수렴하기 쉽고, 이로 인해 공포는 더욱 강화된다.</p>
+<p>이러한 환경에서 개발자는 정도의 차이는 있을지라도 대체로 다음의 세 가지 공포를 경험한다.</p>
+<ul>
+<li><strong>실패의 공포</strong>: 장애·성능·보안·일정 지연과 같은 결과가 개인의 책임으로 환원되기 쉬운 구조에서는, 실패하지 않는 선택이 우선순위가 된다. </li>
+<li><strong>불확실성의 공포</strong>: 요구사항과 비즈니스 방향이 흔들리는 환경에서 변화로 발생하는 비용을 개인이 감당하는 경험이 반복되면, 미래를 선제적으로 봉합하려는 과잉 대응이 유리하게 느껴진다.</li>
+<li><strong>낙오의 공포</strong>: 기술과 채용 시장의 급격한 변화와 흥망성쇠를 지켜보면서 개인은 장기적 생존 가능성을 계산하게 되고, 그 결과 기술 선택이 조직의 최적해보다 개인의 시장성으로 기울기 쉽다.</li>
+</ul>
+<p>세 가지 공포는 서로 독립적으로 작동하지 않고, 실제 의사결정에서는 동시에 겹쳐 작동한다.
+다만 상황과 조직 환경에 따라 그중 하나가 더 강하게 부각되며, 그 공포가 기술 선택의 기준을 사실상 지배하게 된다.
+그 결과 황금 망치, 과잉 엔지니어링, 이력서 주도 개발 중 특정 패턴이 반복적으로 강화된다.</p>
+<h2 id="_4">실패의 공포<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>실패에 대한 공포는 개발자가 기술적 판단을 내릴 때 가장 직접적이고 강력하게 작용하는 요인이다. 소프트웨어 개발에서의 실패는 단순한 시행착오로 소비되지 않는다. 장애, 성능 저하, 보안 사고, 일정 지연과 같은 결과는 곧바로 서비스 품질 저하와 비즈니스 손실로 이어진다. 이 때, 회사가 IT 기술에 대한 이해가 부족하다면, 그 책임을 구조나 결정 과정이 아니라 특정 개인에게 귀속시키는 경우가 많다. 따라서 실패를 피하기 위해, 이미 검증되었고 설명 가능한 선택 — 즉 자신이 익숙한 기술을 반복 적용하는 경향(즉, 황금 망치)으로 기울기 쉽다.</p>
+<p>이러한 환경에서 개발자는 자연스럽게 <strong>“실패하지 않는 선택”</strong>을 최우선 기준으로 삼게 된다. 문제에 가장 적합한 해법보다, 과거에 이미 사용해 보았고 결과가 예측 가능한 기술을 선택하는 것이 심리적으로 안전하다. 설령 해당 기술이 현재 문제에 최적이 아니어서 문제가 복잡해지거나 비용이 상승하더라도, 잘 아는 기술을 선택해야 진척이 있어 보이며, 실패 확률이 낮아 보이기 때문이다. </p>
+<p>하지만, 실패의 공포는 기술 선택을 점점 보수적으로 만들고, 변화 자체를 위험 요소로 인식하게 만든다. 새로운 접근 방식이나 단순한 구조는 더 나은 결과를 가져올 수 있음에도 불구하고, 그에 대한 경험이 없다는 이유만으로 배제된다. 대신 이미 아는 방법이 비용에 대한 검토 없이 선택된다. 이 과정에서 기술은 문제를 해결하기 위한 도구라기보다, 실패를 방어하기 위한 방패로 기능하게 된다.</p>
+<p>문제는 이러한 선택이 단기적으로는 안정적으로 보일 수 있으나, 장기적으로는 조직 전체의 기술적 유연성을 갉아먹는다는 점이다. 실패를 두려워한 선택이 누적될수록 시스템은 더 빠르게 구식이 되고, 인력 수급이 어려워지며, 새로운 시도를 더욱 어렵게 만든다. 그 결과, 다음 의사결정에서는 실패의 공포가 더욱 커지고, 다시 보수적인 선택을 강화하는 악순환이 형성된다.</p>
+<p>중요한 점은, 이와 같은 행동이 개발자의 소극성이나 역량 부족에서 비롯된 것이 아니라는 사실이다. 실패의 책임이 개인에게 집중되고, 실패를 감내하거나 학습의 기회로 인정해 주는 구조가 부재한 환경에서는 누구라도 동일한 판단을 내리게 된다. 즉, 실패의 공포는 개인의 문제라기보다, 조직의 방침이 만들어 낸 합리적인 개인 방어 반응에 가깝다.</p>
+<h2 id="_5">불확실성의 공포<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>불확실성의 공포는 소프트웨어 개발에서 가장 만성적이며, 동시에 가장 은밀하게 작동하는 감정이다. 실패의 공포가 명확한 비난을 두려워하는 감정이라면, 불확실성의 공포는 앞으로 무언가 바뀔 거라는 확실히 도래하는 미래와, 그에 반해 여유 일정과 예산 등 위험 관리(Risk Management)를 위한 준비가 턱없이 부족하다는 점에서 기인한다.</p>
+<p>소프트웨어 개발은 본질적으로 불완전한 정보 위에서 이루어진다. 가령, 피보팅(Pivoting)은 IT/스타트업의 생존 전략으로 취급될 정도이다. 그러나 피보팅은 전략의 일환으로 생각하면서, 그에 수반되는 일정 및 인력 소요에 대해서는 적극적 대응을 하지 않는다. 결과적으로 개발자는 계획의 불확실성이 원인이 되어 성과 없이 흘러가버린 시간으로 인해, 상당히 불합리한 압박을 받게 된다.
+문제의 본질은 구조적인 불확실성과 위험 관리의 부족이다.
+그러나 요구사항이 바뀌지만, 그에 필요한 자원이 주어지지 않을 때마다 개발자는 “처음부터 더 넓게 설계했어야 했다”는 후회를 하게 된다. 불확실성의 공포는 특히 그 변경의 후폭풍을 개발자가 홀로 뒷감당하는 경험이 반복될수록 더욱 강력해진다. 요구사항이 바뀌었음에도 추가적인 일정 등 필요한 자원이 투입되지 않고, 야근 등의 수단으로 해결하는 것이 반복되면 과잉 엔지니어링(Over-Engineering) 경향을 갖게 된다.</p>
+<p>이러한 경험이 누적되면, 개발자는 현재의 요구사항을 정확히 해석하고 최소한으로 구현하는 것보다, 미래의 모든 가능성을 선제적으로 흡수하는 방향을 선택하게 된다. 지금 당장 필요하지 않은 기능, 실제로 발생할지 불분명한 확장 시나리오, 명확한 근거가 없는 대규모 트래픽 가정 등이 설계에 포함된다. 이는 기술적 완성도를 높이기 위한 시도라기보다는, 불확실성에 기인한 불합리한 압박을 사전에 제거하려는 심리적 반응에 가깝다.</p>
+<p>개발자는 처음부터 가능한 한 많은 경우의 수를 미리 고려한 계획을 지향한다. 그 결과, 설계 문서와 코드에는 실제 필요성과 무관한 추상화와 확장 포인트가 늘어나고, 시스템은 점점 복잡해진다. 복잡성은 다시 이해 비용과 변경 비용을 증가시키고, 이는 곧 불확실성을 더 크게 만드는 역설적인 결과로 이어진다.
+그럼에도 불구하고 불확실성의 공포가 지배적인 환경에서는, 단순함보다 “많이 고려된 것처럼 보이는 설계”가 더 안전한 선택으로 받아들여진다.</p>
+<p>중요한 점은, 이러한 선택이 개발자의 판단 오류나 과도한 야망에서 비롯된 것이 아니라는 사실이다. 요구사항 변경이 일상화되어 있고, 그 뒷감당이 개인에게 귀속되며, 불확실성을 감내할 수 있는 조직적 완충 장치가 존재하지 않는 환경에서는, 누구라도 동일한 선택을 하게 된다. 불확실성의 공포는 기술적 미숙함의 문제가 아니라, 불확실성을 관리하지 못하는 조직 구조의 문제이다.</p>
+<h2 id="_6">낙오의 공포<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>낙오의 공포는 단순히 “새 기술을 좋아한다”는 취향의 문제가 아니라, 빠르게 변하는 산업에서 개인이 자신의 생존 가능성을 계산할 때 발생하는 구조적 불안이다. 소프트웨어 산업에서는 기술 스택, 개발 방식, 채용 시장의 선호가 짧은 주기로 바뀌며, 어제의 표준이 오늘의 레거시가 되는 일이 반복된다. 이 환경에서 개발자는 자신의 현재 선택이 몇 년 뒤에도 유효할지 끊임없이 의심하게 되고, 그 의심이 누적되면 “지금의 프로젝트 성공”보다 “미래의 고용 가능성”을 더 강하게 고려하게 된다. 결과적으로 이력서용 기술 선택하게 되면서 이력서 주도 개발로 자연스럽게 연결된다.</p>
+<p>이 공포가 강해지는 순간, 기술 선택의 기준은 문제 적합성에서 점차 이탈한다. 조직의 요구사항과 운영 조건에 가장 알맞은 기술이 무엇인지를 묻기보다, 시장에서 더 잘 팔리는 기술이 무엇인지, 채용 공고에 더 자주 등장하는 키워드가 무엇인지가 의사결정에 개입한다. 특히 기술 트렌드(Trend)가 급변하는 상황일수록, 개발자는 “내가 이 기술로 5년 뒤에도 일할 수 있는가”라는 질문을 우선하게 된다. 그 결과, 현재 문제에 대한 최적해보다 이력서에 유리한 선택이 ‘합리적’으로 보이기 시작한다.</p>
+<p>이력서 주도 개발은 흔히 윤리적 문제로 비난되지만, 실제로는 조직이 개인에게 장기적 안전망을 제공하지 못할 때 강화되는 행동 양식이다. 기술 역량의 성장 경로가 조직 내부에서 보장되지 않는 환경에서는, 개인이 외부 시장의 기준을 참고해 자신을 방어하는 것은 자연스럽다. 즉, 낙오의 공포는 개인의 욕심이라기보다, 불안정한 노동 시장과 빠른 기술 변화가 만든 구조적 반응이다.</p>
+<p>문제는 이러한 선택이 조직에 누적되면, 기술 로드맵이 내부 필요가 아니라 외부 유행에 의해 흔들리기 시작한다는 점이다. 충분히 검증되지 않은 도구의 도입, 비즈니스 퍼널(Business Funnel) 혹은 팀 역량과 맞지 않는 아키텍처 채택이 반복되고, 그 과정에서 운영 비용과 장애 리스크가 증가한다. </p>
+<p>따라서 낙오의 공포를 단순히 개인의 이기심으로 규정하는 것은 문제를 해결하지 못한다. 기술 선택이 개인의 생존 전략으로 흐르지 않도록 하려면, 우선 조직의 관점에서 검토하는 장치를 갖추어야 한다. 그후 개발자 개인의 장기적 성장에 대한 로드맵을 제시해야 한다. 그렇지 않다면 “변화의 트렌드에서 낙오하지 않기 위해 개인의 이력서를 우선시한다”는 행동은 반복될 수밖에 없다.</p>
+<h2 id="_7">공포는 무시할 수 없다<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>앞서 살펴본 실패의 공포, 불확실성의 공포, 낙오의 공포는 개발자 개인의 성향이나 태도에서 비롯된 문제가 아니다. 이는 구현자에게 기술 선택과 아키텍처 결정을 전적으로 맡기는 구조에서, 개인이 주변 환경에 합리적으로 반응한 결과에 가깝다. </p>
+<p>소프트웨어 개발은 본질적으로 어려운 작업이다. 이유는 단순히 기술이 복잡해서가 아니라, 인간이 상황에 따라 임기응변으로 처리하던 판단과 행동을, 컴퓨터가 반복 실행할 수 있는 결정론적 규칙으로 변환해야 하기 때문이다. 
+인간은 모호한 정보를 받아도 문맥을 추정하고, 예외를 즉흥적으로 처리하며, 필요하면 규칙을 그 자리에서 수정한다. 
+반면 소프트웨어는 동일한 입력에 대해 동일한 결과를 내야 하고, “대충 이해하고 넘어가기”가 허용되지 않는다. 결국 개발자는 인간의 암묵지와 현장의 관성을, 명시적인 규칙과 데이터 구조, 상태 전이로 해체해 넣어야 한다.</p>
+<p>이 과정에서 불가피하게 발생하는 것이 불완전한 정보와 불확실성이다. 
+요구사항은 처음부터 완결된 형태로 주어지지 않으며, 기획은 가설로 시작해 검증 과정에서 수정된다. 운영 환경은 늘 변화하고, 외부 시스템과의 연동은 예측하기 어려운 변수를 만들어낸다. 실제 장애는 늘 예상 밖의 형태로 나타난다. 그럼에도 소프트웨어는 “작동해야” 하며, 그것도 제한된 일정과 인력, 비용 안에서 작동해야 한다.</p>
+<p>어려움이 큰 만큼 새로운 방법은 계속 제안되며, 물리적 제약이나 기성 사회제도의 제한을 받지 않고, 완전히 무에서 새로운 구조를 창조할 수 있다는 점으로 인해, 엄청난 속도로 발전하게 된다.</p>
+<p>불확실한 세계를 결정론적 시스템으로 환원하는 작업을 급격하게 변화하는 환경에서 수행하는 사람에게, 세 가지 공포는 일탈적인 감정이 아니라 정상적인 경고 신호이다.
+실패의 공포는 장애와 손실을 피하라는 신호이고, 불확실성의 공포는 가정과 경계 조건을 점검하라는 신호이며, 낙오의 공포는 기술 변화 속에서 자신과 조직의 지속 가능성을 고민하라는 신호다. 즉, 공포는 개발자의 판단을 마비시키는 감정이기도 하지만, 동시에 위험을 감지하고 회피하게 만드는 생존 메커니즘이기도 하다.</p>
+<p>따라서 공포를 “없애야 할 것”으로 취급하는 접근은 현실적이지 않다. 더 나아가 공포를 억압하면, 그 공포는 다른 형태로 표출된다. 의사결정이 지연되고, 안전한 선택만 반복되며, 책임을 피하기 위한 과잉 설계가 늘어나고, 유행 기술을 통해 개인의 안전을 확보하려는 행동이 강화된다. 즉, 공포를 무시하거나 도덕적 문제로만 규정하면, 오히려 공포가 기술 선택을 더 왜곡시키는 방향으로 작동한다.</p>
+<p>그러나 공포가 합리적 신호라고 해서, 그 신호에 무조건 복종하는 것 역시 위험하다. 공포가 의사결정의 중심에 자리 잡는 순간, 기술은 문제 해결의 도구가 아니라 방어 수단으로 변질된다. “실패하지 않기 위해” 과도하게 보수적인 선택을 하고, “나중에 문제 될까 봐” 불필요한 복잡성을 쌓고, “시장에 남기 위해” 프로젝트와 무관한 기술을 우선하게 된다. 이때 공포는 위험을 줄이는 것이 아니라, 장기적으로는 비용과 리스크를 누적시키는 방향으로 작동한다.</p>
+<p>결국 필요한 것은 공포의 제거가 아니라 균형이다. 공포를 위험 감지 신호로 인정하되, 그것이 기술 선택을 지배하지 못하도록 의사결정 구조와 과정을 구성해야 한다. 실패의 비용을 개인의 직감이나 선호에 의존하지 않고, 논리적 분석과 비용 추정에 근거해 계획해야 한다. 공포를 무시하지 않되, 공포가 조직의 기술 방향을 결정하게 두지도 않는 것, 이 균형이 확보될 때에만 기술 선택은 극단을 향하지 않는다. </p>
+<h2 id="_8">균형<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>결국 문제를 해결하기 위해 필요한 것은 공포가 기술 선택을 왜곡하지 않도록하는 균형점을 어디에 둘 것인가에 대한 고민이다.</p>
+<p>회사는 본질적으로 이익을 위해 존재한다. 이는 기술보다 비즈니스가 우위에 있다는 의미가 아니라, 이익이 있어야만 회사가 존속 가능하며, 기술 선택 역시 결국 비즈니스 성과와 운영 지속 가능성이라는 기준 위에서 평가되어야 함을 뜻한다. 
+기술적으로 정교한 설계라 하더라도, 운영 비용을 감당할 수 없거나, 조직의 역량을 초과하거나, 비즈니스 도메인의 변화에 대응하지 못한다면 그 선택은 실패로 귀결된다. 반대로 단기적으로 투박해 보이더라도, 운영이 가능하고 리스크가 통제되는 구조라면 그것은 충분히 합리적인 선택일 수 있다.</p>
+<p>이 지점에서 개발 방향을 정하는 데 가장 중요한 관점은 자연스럽게 비즈니스 및 운영의 관점이 된다. 아키텍처는 단지 코드상의 이점을 결정하는 것만이 아니라, 비용이 발생하는 방식과 리스크가 전파되는 경로도 결정한다. 장애가 발생했을 때 어떤 범위가 영향을 받는지, 변경이 필요할 때 어느 정도의 비용과 시간이 드는지, 인력이 교체되었을 때 시스템이 유지될 수 있는지와 같은 문제들은 모두 운영의 영역이며, 동시에 비즈니스의 지속성과 직결된다.</p>
+<p>그러나 현실적으로 구현자가 이 모든 관점을 충분히 이해하고 판단하기를 기대하는 것은 무리다. 컴퓨터 시스템을 완전히 통제하는 것조차 어려운데, 여기에 비즈니스 전략, 운영 비용 구조, 조직의 인력 수급과 같은 요소까지 동시에 고려하는 것은 대부분의 개인에게 과도한 부담이 된다. 
+그렇다고 각 분야의 전문가 모임으로 구성한 위원회가 항상 대안이 되는 것은 아니다. 상호 간 판단 기준이 다르고 공통의 계산 단위가 없으면, 논의는 결론보다 피로가 먼저 쌓이기 쉽다. 이런 판단을 안정적으로 수행하려면 기술을 비즈니스로, 비즈니스를 기술로 환산해 비교 가능하게 만드는 역할이 필요하다.
+회사는 두 가지 능력을 개인이 동시에 갖는 것이 현실적으로 어렵지만, 그럼에도 필요하다는 것을 인정해야 한다. 그럼에도 기술 선택과 아키텍처 결정이 개인의 공포나 직관에 의존하지 않도록, 비즈니스·운영 관점에서의 제약과 목표가 명시적으로 제시되고, 그 안에서 기술적 선택지가 비교·검토되는 과정을 진행해야 한다.</p>
+<h2 id="_9">결론<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>앞의 논의를 종합하면, “구현자에게 기술 선정을 맡기면 왜 문제가 반복되는가”는 개인의 성향이나 역량으로 설명될 수 있는 주제가 아니다. 다수의 조직에는 아키텍트 직무가 없고, 설령 두고 싶어도 시장에 공급이 부족하여 쉽게 확보할 수 없다. 
+그 결과 기술 선택과 아키텍처 결정은 관성적으로 리드 개발자에게 위임되며, 이 결정은 비즈니스·운영 관점의 제약과 목표가 충분히 검토되지 않은 상태에서 내려지는 경우가 많다. 이 구조에서는 누구라도 개인의 경험, 선호, 그리고 당장 눈앞의 제약 조건에 의존할 수밖에 없다.</p>
+<p>여기에 실패·불확실·낙오의 공포가 결합되면, 기술 선택은 문제 해결을 위한 합리적 비교라기보다 개인의 생존 전략에 가까운 방향으로 기울기 쉽다. 
+이 과정은 개인 입장에서는 자연스럽고 합리적인 방어 반응이지만, 조직 입장에서는 비용과 리스크를 누적시키는 경로가 된다. 결국 같은 문제가 다른 형태로 반복되고, 기술 부채와 운영 부담이 증가하며, 시스템의 변경 비용은 커지고, 조직의 지속 가능성은 약화된다.</p>
+<p>따라서 필요한 것은 “더 뛰어난 리드 개발자”가 아니라, 이 의사결정이 개인의 공포와 직관에 의해 왜곡되지 않도록 균형을 책임지는 역할이다. 
+기술 선택은 코드의 문제가 아니라 서비스 목적·비용·리스크·운영 가능성·인력 수급·장애 대응까지 함께 결정하는 문제이며, 이는 자연스럽게 비즈니스와 운영의 관점과 결합될 수밖에 없다. 이를 위해서는 기술과 비즈니스·운영 사이에서 판단의 기준을 정렬하고, 선택지의 비용과 리스크를 비교하며, 결정의 맥락과 인과 관계를 파악할 수 있는 전문가가 필요하다. </p>
+<p>이 전문가는 단지 특정 기술을 “잘 아는 사람”이 아니라,
+<strong>조직의 현실 제약 안에서 최선의 기술을 탐색하여 비즈니스 목표와 인력 구조가 서비스의 비전을 향해 정렬되도록 만드는 사람</strong>이어야 한다.
+두 가지 영역을 동시에 높은 수준으로 이해하는 사람을 내부적으로 양성하기는 어렵고, 최소한 10년 이상의 시간이 필요하기 때문에 프랙셔널 아키텍트(Fractional Architect)나 외부 컨설턴트가 현실적인 대안이 된다. </p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/">소프트웨어 아키텍처는 의사결정이지, 모방이 아니다</a> - 아키텍처 결정의 본질과 책임에 대해 논의</li>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/">소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다</a> - 기술 선정 시 불변 조건의 중요성 강조</li>
+<li><a href="../IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/">IT 분야에서 기술 자산이란 무엇인가</a> - 조직의 우선순위는  기술이 아니라 비즈니스 퍼널(Business Funnel)이다 </li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong><br />
+(js.seth.h@gmail.com)<br />
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a>  </p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

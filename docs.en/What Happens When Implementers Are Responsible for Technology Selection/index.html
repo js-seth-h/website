@@ -1,0 +1,2337 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.en/What%20Happens%20When%20Implementers%20Are%20Responsible%20for%20Technology%20Selection/">
+      
+      
+        <link rel="prev" href="../TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/">
+      
+      
+        <link rel="next" href="../What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>What Happens When Implementers Are Responsible for Technology Selection - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6XBWXJW856"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6XBWXJW856",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6XBWXJW856",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-happens-when-implementers-are-responsible-for-technology-selection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              What Happens When Implementers Are Responsible for Technology Selection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.kr/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.kr/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT 분야에서 기술 자산이란 무엇인가?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/Restful%20%EC%A2%80%20%EC%93%B0%EC%A7%80%20%EB%A7%88%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture%20Is%20a%20Structural%20Solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Don%27t%20Use%20Restful%20So%20Blindly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Don't Use Restful So Blindly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Please%2C%20Reduce%20catch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface: Reality
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#causes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causes
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Failure
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-being-left-behind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Being Left Behind
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-cannot-be-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear Cannot Be Ignored
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balance
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Technical Asset in the IT Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface: Reality
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#causes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causes
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Failure
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-of-being-left-behind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear of Being Left Behind
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#fear-cannot-be-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fear Cannot Be Ignored
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balance
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition warning">
+<p class="admonition-title">AI Translated Document</p>
+<ul>
+<li>This document was translated using an AI translation tool.</li>
+<li>Due to the nature of AI translation, some sentences or terms may be interpreted differently from the original intent.</li>
+<li>There may be mistranslations or inaccuracies, so please refer to the original text or consider additional review if accuracy is critical.</li>
+<li>Your suggestion for a better translation would be highly appreciated.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Original Document in Korean</p>
+<p><a href="../../docs.kr/%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/">View Original Document (Korean)</a></p>
+</div>
+<h1 id="what-happens-when-implementers-are-responsible-for-technology-selection">What Happens When Implementers Are Responsible for Technology Selection<a class="headerlink" href="#what-happens-when-implementers-are-responsible-for-technology-selection" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com)
+Draft: November 2025 / Revision: January 2026
+</pre>
+
+<p><strong>[Author’s Intent]</strong> This article is written to highlight the problems and organizational risks that can arise when the responsibility for technology selection is left solely to implementers.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Many companies do not have a dedicated software architect role.</li>
+<li>Naturally, the lead developer decides the development direction and architecture.</li>
+<li>Three major problems arise in this situation:<ul>
+<li>Golden Hammer Syndrome: Trying to solve every problem with a particular technology (the golden hammer) that one knows well or prefers.</li>
+<li>Over-Engineering: Introducing technologies or designs far more complex than necessary to solve the current problem.</li>
+<li>Resume-Driven Development: Choosing technologies that look good on a resume rather than those that ensure project success.</li>
+</ul>
+</li>
+<li>Why do these problems keep recurring? The most fundamental reason is <strong>fear</strong>.</li>
+<li>The IT field changes faster than any other in human history.<ul>
+<li>Every developer experiences the fear of failure.</li>
+<li>To avoid failure, the most reliable means are chosen.</li>
+<li>Every developer feels the fear of uncertainty.</li>
+<li>Repeatedly dealing with changing requirements leads to a pursuit of over-specification.</li>
+<li>Every developer carries the fear of being left behind.</li>
+<li>To avoid falling behind trends and to remain employable in five years, resume priorities take precedence.</li>
+</ul>
+</li>
+<li>Software development is inherently difficult.<ul>
+<li>Because it requires converting human improvisation into deterministic systems.</li>
+<li>Moreover, the industry changes too rapidly.</li>
+</ul>
+</li>
+<li>Human fear cannot be ignored. However, <strong>balance</strong> is needed.</li>
+<li>Companies exist for profit.</li>
+<li>The most important balance point in determining development direction is the perspective of <strong>business and operations</strong>.</li>
+<li>But it is difficult to fully understand both computers and business/operations.</li>
+<li>Few people can perform at a high level in both areas simultaneously.</li>
+<li>Organizations must plan based on this scarcity.</li>
+<li>If internal resources are insufficient, short-term contracts with <strong>external experts</strong> are a good solution.</li>
+</ul>
+<h2 id="preface-reality">Preface: Reality<a class="headerlink" href="#preface-reality" title="Permanent link">&para;</a></h2>
+<p>Most software organizations do not have an explicit software architect role. This is not because the role is unnecessary, but because many organizations have treated architecture as an implicit part of the development process rather than as a separate professional domain. Especially in smaller organizations or those under pressure for quick results, architecture is absorbed into the development team without a distinct responsibility owner.</p>
+<p>Furthermore, the architect role is structurally difficult to cultivate systematically. A software architect is not just a developer skilled in a particular technology stack, but a role formed only after experiencing various system scales, failures, operational experiences, and organizational decision-making processes over a long period. In other words, it is not a position that can be mass-produced through education or short-term training, and the labor market does not provide a stable supply.</p>
+<p>As a result, many organizations find themselves unable to have an architect even if they want one. Suitable talent may not exist in the hiring market, or if it does, it comes at a significant cost. Architecture inherently requires consideration of business direction, operational costs, and organizational technical maturity. This phenomenon arises because a high level of understanding is needed in both areas simultaneously.</p>
+<p>In such environments, decisions about development direction and architecture are made by inertia, delegated to the lead developer rather than through careful technical review and long-term perspective. The lead developer shoulders various responsibilities such as code quality, schedule management, and technical coordination within the team, and as an extension, also handles technology stack selection and structural design. As a result, architectural decisions are heavily influenced by personal experience and preference rather than strategic judgment considering both technical and managerial aspects.</p>
+<p>It is at this point that the problems described below arise. These issues are not unique to a particular company or individual but are common structural phenomena observed repeatedly in many software organizations. The social structural causes of these problems stem from the experiences of technologists in the unique IT environment.</p>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
+<p>There are recurring problems in the technology selection process. They can be summarized into three main categories:</p>
+<p>First, <strong>Golden Hammer Syndrome</strong>. This refers to the tendency of implementers to apply a particular technology stack they are familiar with or personally prefer to every problem. Although technology is meant to be a means to solve problems, when the means overwhelm the purpose, consideration of the nature, scale, and constraints of the problem is pushed aside. As a result, unnecessarily complex architectures are introduced for simple requirements, or tools that do not match the organization’s technical maturity are chosen. In the short term, this may increase the implementer’s productivity, but in the long term, it burdens the organization with increased maintenance costs, onboarding delays for new personnel, and accumulated technical debt.</p>
+<p>Second, <strong>Over-Engineering</strong>. Implementers often introduce designs and technologies far exceeding current requirements under the pretext of preparing for all future possibilities. While the intention to secure scalability, flexibility, and generality may seem reasonable, if actual business context and operational conditions are not considered, it easily turns into over-design. Introducing complex abstraction layers and distributed structures for hypothetical problems slows development and increases the causes of failures. Especially in the early stages when requirements change frequently, such over-engineering can reduce responsiveness.</p>
+<p>Third, <strong>Resume-Driven Development</strong>. This refers to prioritizing technology choices that benefit personal career management over project success or long-term organizational interests. Latest frameworks, trendy architectures, and market-popular keywords are considered before actual problem suitability. While this may provide short-term learning and career advantages for individuals, it exposes the organization to unnecessary technical risks.</p>
+<h2 id="causes">Causes<a class="headerlink" href="#causes" title="Permanent link">&para;</a></h2>
+<p>Why do these phenomena keep recurring? It is too universal to be explained solely by lack of technical ability or personal ethics. The most fundamental reaction that drives such behavior is <strong>the fear felt by individual developers</strong>, which is a rational defensive response created by the environment, not personal disposition.</p>
+<p>The IT industry has changed at an unprecedented speed in human history. Past successes do not guarantee present safety, and today’s standards become tomorrow’s relics. The psychological pressure on those working in such an environment naturally accumulates. Moreover, in many organizations, a lack of understanding of IT technology means that the responsibility and cost of failure structurally converge on individuals, further intensifying fear.</p>
+<p>In such environments, developers generally experience three types of fear to varying degrees:</p>
+<ul>
+<li><strong>Fear of Failure</strong>: In structures where the consequences of failure—such as outages, performance issues, security incidents, and schedule delays—are easily attributed to individuals, choices that avoid failure become the priority.</li>
+<li><strong>Fear of Uncertainty</strong>: In environments where requirements and business directions are unstable, repeated experiences of bearing the costs of change make over-preparation for the future seem advantageous.</li>
+<li><strong>Fear of Being Left Behind</strong>: Observing rapid changes and the rise and fall of technologies and job markets, individuals calculate their long-term survival prospects, leading technology choices to favor personal marketability over organizational optimization.</li>
+</ul>
+<p>These three fears do not operate independently; in actual decision-making, they overlap and interact. Depending on the situation and organizational environment, one may become more prominent and dominate technology selection criteria. As a result, particular patterns among golden hammer, over-engineering, and resume-driven development are repeatedly reinforced.</p>
+<h2 id="fear-of-failure">Fear of Failure<a class="headerlink" href="#fear-of-failure" title="Permanent link">&para;</a></h2>
+<p>Fear of failure is the most direct and powerful factor influencing developers’ technical judgments. In software development, failure is not simply consumed as trial and error. Outages, performance degradation, security incidents, and schedule delays immediately lead to service quality deterioration and business loss. If the company lacks understanding of IT technology, responsibility is often assigned to individuals rather than to structure or decision processes. Thus, to avoid failure, developers tend to repeat choices that are already proven and explainable—i.e., technologies they are familiar with (the golden hammer).</p>
+<p>In such environments, developers naturally prioritize <strong>“choices that do not fail”</strong>. Rather than the most suitable solution, choosing technologies that have been used before and whose outcomes are predictable feels psychologically safer. Even if the technology is not optimal for the current problem and increases complexity or cost, choosing what is well-known seems to ensure progress and lower the risk of failure.</p>
+<p>However, fear of failure makes technology choices increasingly conservative and turns change itself into a risk factor. New approaches or simpler structures may yield better results, but are excluded simply due to lack of experience. Instead, familiar methods are chosen without cost review. In this process, technology becomes a shield to defend against failure rather than a tool to solve problems.</p>
+<p>The problem is that such choices may seem stable in the short term but erode the organization’s technical flexibility in the long term. As choices driven by fear of failure accumulate, systems become obsolete faster, talent acquisition becomes harder, and new attempts become more difficult. As a result, fear of failure grows in subsequent decisions, reinforcing conservative choices in a vicious cycle.</p>
+<p>Importantly, this behavior does not stem from developer passivity or lack of ability. In environments where responsibility for failure is concentrated on individuals and there is no structure to accept failure as a learning opportunity, anyone would make the same judgment. In other words, fear of failure is not a personal problem but a rational defensive response created by organizational policy.</p>
+<h2 id="fear-of-uncertainty">Fear of Uncertainty<a class="headerlink" href="#fear-of-uncertainty" title="Permanent link">&para;</a></h2>
+<p>Fear of uncertainty is the most chronic and subtle emotion in software development. While fear of failure is the fear of clear blame, fear of uncertainty arises from the certainty that something will change in the future and the lack of sufficient resources for risk management such as schedule and budget.</p>
+<p>Software development is inherently based on incomplete information. For example, pivoting is considered a survival strategy in IT/startups. However, while pivoting is treated as a strategy, there is little active response to the accompanying schedule and personnel requirements. As a result, developers are pressured by time lost without results due to structural uncertainty.
+The essence of the problem is structural uncertainty and lack of risk management.
+However, when requirements change but necessary resources are not provided, developers repeatedly regret not having designed more broadly from the start. Fear of uncertainty becomes stronger as developers repeatedly bear the aftermath of changes alone. When requirements change but no additional schedule or resources are provided, and overtime becomes the solution, over-engineering tendencies develop.</p>
+<p>As these experiences accumulate, developers choose to absorb as many future possibilities as possible rather than accurately interpreting and minimally implementing current requirements. Features not needed now, large-scale traffic assumptions without clear basis, and expansion scenarios of uncertain occurrence are included in the design. This is less an attempt to increase technical completeness than a psychological response to preemptively remove unreasonable pressure caused by uncertainty.</p>
+<p>Developers aim for plans that consider as many cases as possible from the start. As a result, design documents and code contain abstractions and extension points unrelated to actual needs, and systems become increasingly complex. Complexity increases the cost of understanding and changing, which paradoxically increases uncertainty.
+Nevertheless, in environments dominated by fear of uncertainty, “designs that seem to consider many cases” are accepted as safer choices than simplicity.</p>
+<p>Importantly, these choices do not stem from developer judgment errors or excessive ambition. In environments where requirement changes are routine, the aftermath is assigned to individuals, and there is no organizational buffer to absorb uncertainty, anyone would make the same choice. Fear of uncertainty is not a matter of technical immaturity but a problem of organizational structure that cannot manage uncertainty.</p>
+<h2 id="fear-of-being-left-behind">Fear of Being Left Behind<a class="headerlink" href="#fear-of-being-left-behind" title="Permanent link">&para;</a></h2>
+<p>Fear of being left behind is not simply a matter of “liking new technology,” but a structural anxiety that arises when individuals calculate their survival prospects in a rapidly changing industry. In the software industry, technology stacks, development methods, and job market preferences change in short cycles, and yesterday’s standard becomes today’s legacy. In this environment, developers constantly doubt whether their current choices will remain valid in a few years, and as this doubt accumulates, “future employability” becomes a stronger consideration than “current project success.” As a result, resume-driven development naturally follows.</p>
+<p>When this fear intensifies, the criteria for technology selection drift away from problem suitability. Instead of asking what technology best fits organizational requirements and operational conditions, marketability and popular keywords in job postings intervene in decision-making. Especially when technology trends change rapidly, developers prioritize the question, “Will I be able to work with this technology in five years?” As a result, choices that favor resumes over optimal solutions for current problems begin to seem ‘rational.’</p>
+<p>Resume-driven development is often criticized as an ethical issue, but in reality, it is a behavioral pattern strengthened when organizations fail to provide individuals with long-term safety nets. In environments where the path for technical growth is not guaranteed internally, it is natural for individuals to refer to external market standards to protect themselves. In other words, fear of being left behind is not a matter of personal greed but a structural response created by an unstable labor market and rapid technological change.</p>
+<p>The problem is that when such choices accumulate in an organization, the technology roadmap is swayed by external trends rather than internal needs. Repeated adoption of insufficiently verified tools, architectures mismatched with business funnels or team capabilities, and increased operational costs and risk of failures follow.</p>
+<p>Therefore, simply defining fear of being left behind as personal selfishness does not solve the problem. To prevent technology selection from becoming a personal survival strategy, organizations must first establish mechanisms for review from their own perspective. Then, they must present a roadmap for the long-term growth of individual developers. Otherwise, the behavior of “prioritizing one’s resume to avoid being left behind by trends” will inevitably repeat.</p>
+<h2 id="fear-cannot-be-ignored">Fear Cannot Be Ignored<a class="headerlink" href="#fear-cannot-be-ignored" title="Permanent link">&para;</a></h2>
+<p>The fears of failure, uncertainty, and being left behind described above do not stem from individual developers’ disposition or attitude. They are rational responses to the environment when implementers are left solely responsible for technology selection and architectural decisions.</p>
+<p>Software development is inherently difficult. Not simply because technology is complex, but because it requires converting human improvisational judgment and actions into deterministic rules that computers can repeatedly execute.
+Humans can infer context from ambiguous information, handle exceptions on the spot, and modify rules as needed.
+In contrast, software must produce the same result for the same input, and “roughly understanding and moving on” is not allowed. Developers must decompose human tacit knowledge and field inertia into explicit rules, data structures, and state transitions.</p>
+<p>Inevitably, this process produces incomplete information and uncertainty.
+Requirements are rarely given in complete form from the start, planning begins with hypotheses and is revised during validation, operational environments constantly change, and integration with external systems introduces unpredictable variables. Actual failures always occur in unexpected forms. Nevertheless, software must “work,” and it must do so within limited time, personnel, and budget.</p>
+<p>Because the difficulty is so great, new methods are constantly proposed, and the lack of physical constraints or established social systems allows for the creation of entirely new structures from scratch, leading to rapid development.</p>
+<p>For those performing the task of reducing an uncertain world to a deterministic system in a rapidly changing environment, the three fears are not deviant emotions but normal warning signals.
+Fear of failure signals to avoid outages and losses, fear of uncertainty signals to check assumptions and boundary conditions, and fear of being left behind signals to consider sustainability for oneself and the organization amid technological change. In other words, fear can paralyze developers’ judgment, but it also serves as a survival mechanism for detecting and avoiding risks.</p>
+<p>Therefore, treating fear as something to be “eliminated” is unrealistic. Moreover, suppressing fear only causes it to manifest in other forms. Decision-making is delayed, only safe choices are repeated, over-design increases to avoid responsibility, and behaviors to secure personal safety through trendy technologies are reinforced. In other words, ignoring or moralizing fear only makes it distort technology selection more.</p>
+<p>However, just because fear is a rational signal does not mean it should be obeyed unconditionally. When fear becomes the center of decision-making, technology turns from a problem-solving tool into a defensive measure. “To avoid failure,” overly conservative choices are made; “in case of future problems,” unnecessary complexity is added; “to remain in the market,” technologies unrelated to the project are prioritized. At this point, fear does not reduce risk but accumulates costs and risks in the long term.</p>
+<p>Ultimately, what is needed is not the elimination of fear but balance. Fear should be recognized as a risk detection signal, but decision-making structures and processes must be designed so that it does not dominate technology selection. The cost of failure should be planned based on logical analysis and cost estimation, not personal intuition or preference. Fear should not be ignored, but neither should it be allowed to determine the organization’s technical direction. Only when this balance is achieved does technology selection avoid extremes.</p>
+<h2 id="balance">Balance<a class="headerlink" href="#balance" title="Permanent link">&para;</a></h2>
+<p>Ultimately, the solution is to consider where to place the balance point so that fear does not distort technology selection.</p>
+<p>A company fundamentally exists for profit. This does not mean business is superior to technology, but that profit is necessary for the company’s survival, and technology choices must ultimately be evaluated based on business performance and operational sustainability.
+Even the most sophisticated technical design will fail if operational costs are unsustainable, organizational capabilities are exceeded, or business domain changes cannot be accommodated. Conversely, even if a solution seems crude in the short term, if it is operable and risks are controlled, it can be a perfectly reasonable choice.</p>
+<p>At this point, the most important perspective in determining development direction naturally becomes business and operations. Architecture not only determines code-level advantages but also how costs are incurred and how risks propagate. Issues such as the scope affected by failures, the cost and time required for changes, and whether the system can be maintained when personnel are replaced are all operational matters directly linked to business sustainability.</p>
+<p>However, it is unrealistic to expect implementers to fully understand and judge all these perspectives. Controlling computer systems alone is difficult enough, and adding business strategy, operational cost structures, and organizational staffing makes it an excessive burden for most individuals.
+Nor is a committee of experts from each field always a solution. If judgment criteria differ and there is no common unit of calculation, discussions become exhausting before reaching conclusions. To make stable judgments, a role is needed to translate technology into business terms and vice versa, enabling comparison.
+Companies must recognize that it is difficult for individuals to possess both abilities at a high level, but that both are necessary. Even so, to prevent technology selection and architectural decisions from relying on personal fear or intuition, constraints and goals from business and operations must be explicitly presented, and technical options must be compared and reviewed within that framework.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>In summary, “why do problems keep recurring when implementers are responsible for technology selection?” cannot be explained by personal disposition or ability. Most organizations lack an architect role, and even if they want one, the market supply is insufficient. As a result, technology selection and architectural decisions are delegated by inertia to the lead developer, often without sufficient review of business and operational constraints and goals. In this structure, anyone is forced to rely on personal experience, preference, and immediate constraints.</p>
+<p>When the fears of failure, uncertainty, and being left behind are added, technology selection shifts from rational comparison for problem-solving to a personal survival strategy. This process is a natural and rational defensive response for individuals, but for organizations, it accumulates costs and risks. The same problems repeat in different forms, technical debt and operational burdens increase, change costs rise, and organizational sustainability weakens.</p>
+<p>Therefore, what is needed is not a “better lead developer,” but a role responsible for balancing decision-making so that it is not distorted by personal fear and intuition.
+Technology selection is not just a matter of code, but a decision involving service purpose, cost, risk, operational feasibility, staffing, and failure response, naturally combined with business and operational perspectives. To achieve this, an expert is needed who can align judgment criteria between technology and business/operations, compare costs and risks of options, and understand the context and causality of decisions.</p>
+<p>This expert is not just someone who “knows a particular technology well,” but someone who
+<strong>explores the best technology within the organization’s real constraints, aligning business goals and staffing with the vision of the service.</strong>
+It is difficult to cultivate someone with high-level understanding in both areas internally, and it takes at least ten years, so a fractional architect or external consultant is a realistic alternative.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/">Software Architecture Is Decision-Making, Not Imitation</a> – Discussion on the essence and responsibility of architectural decisions</li>
+<li><a href="../Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/">Software Architecture Is Determined by Invariants, Not Extensibility</a> – Emphasizing the importance of invariants in technology selection</li>
+<li><a href="../What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/">What Is a Technical Asset in the IT Field</a> – The organization’s priority is not technology but the business funnel</li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong>
+(js.seth.h@gmail.com)
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a></p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em>
+<em>M.S. in Computer Science Education, Korea University</em>
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

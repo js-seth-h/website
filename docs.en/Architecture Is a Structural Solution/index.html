@@ -1,0 +1,2341 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.en/Architecture%20Is%20a%20Structural%20Solution/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Architecture Is a Structural Solution - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6XBWXJW856"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6XBWXJW856",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6XBWXJW856",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-is-a-structural-solution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture Is a Structural Solution
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.kr/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.kr/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT 분야에서 기술 자산이란 무엇인가?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/Restful%20%EC%A2%80%20%EC%93%B0%EC%A7%80%20%EB%A7%88%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-essence-of-architecture-structural-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Essence of Architecture: Structural Solution
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-basic-structure-of-problem-solving-and-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Basic Structure of Problem-Solving and Architecture
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#how-architecture-differs-from-general-solution-derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Architecture Differs from General Solution Derivation
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#systematicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematicity
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#structurality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structurality
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-practical-effect-of-structural-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Practical Effect of Structural Solutions
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Don%27t%20Use%20Restful%20So%20Blindly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Don't Use Restful So Blindly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Please%2C%20Reduce%20catch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Happens%20When%20Implementers%20Are%20Responsible%20for%20Technology%20Selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Technical Asset in the IT Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-essence-of-architecture-structural-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Essence of Architecture: Structural Solution
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-basic-structure-of-problem-solving-and-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Basic Structure of Problem-Solving and Architecture
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#how-architecture-differs-from-general-solution-derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Architecture Differs from General Solution Derivation
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#systematicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematicity
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#structurality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structurality
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-practical-effect-of-structural-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Practical Effect of Structural Solutions
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition warning">
+<p class="admonition-title">AI Translated Document</p>
+<ul>
+<li>This document was translated using an AI translation tool.</li>
+<li>Due to the nature of AI translation, some sentences or terms may be interpreted differently from the original intent.</li>
+<li>There may be mistranslations or inaccuracies, so please refer to the original text or consider additional review if accuracy is critical.</li>
+<li>Your suggestion for a better translation would be highly appreciated.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Original Document in Korean</p>
+<p><a href="../../docs.kr/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/">View Original Document (Korean)</a></p>
+</div>
+<h1 id="architecture-is-a-structural-solution">Architecture Is a Structural Solution<a class="headerlink" href="#architecture-is-a-structural-solution" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com)
+Draft: June 2018 / Revised: December 2025
+</pre>
+
+<p><strong>[Author’s Intent]</strong> This article was written to highlight how failing to view problems structurally—before adding features or choosing technologies—can make complexity spiral out of control.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In software systems, architecture defines the structure of organized processing, even for applications or small modules.</li>
+<li>Architecture is not about scale.</li>
+<li>Architecture is not a reference point for imitation.</li>
+<li>Architecture is not just a diagram for explanation.</li>
+<li>Architecture presents a universal solution to common problems in applications/systems.</li>
+<li>This approach is different from achieving functional/performance goals at the code/feature level.</li>
+<li>The universal basic structure of problem-solving is: 'problem definition', 'root cause analysis', 'solution derivation', 'execution', and 'evaluation'.</li>
+<li>General tasks, such as feature implementation or writing manuals, have a single defined problem and goal.</li>
+<li>In software architecture, however, the goal is a universal solution to common problems in applications/systems—a collective property.<ul>
+<li>For example, an approach like "a solution with 80% universality for 70% of the application's problems."</li>
+<li>Therefore, software architecture must be able to handle situations outside the specification from the start (very different from building architecture).</li>
+</ul>
+</li>
+<li>Thus, solutions provided by software architecture are quite abstract, systematic, and structural.</li>
+<li>Abstraction: No specificity. Specifics are given in individual implementations, so architecture only discusses rough procedures.</li>
+<li>Systematicity: The result operates as a complete system, so a certain order flows within the architecture.</li>
+<li>Structurality: The relationships and dynamics among components in the solution are defined, influencing the overall order—a higher-level concept (like social structure).</li>
+<li>Of these, the structural aspect is the hardest.</li>
+<li>Architecture is highly summarized, inherently lacks specificity, and cannot lack systematicity due to its results.</li>
+<li>So abstraction and systematicity are naturally acquired.</li>
+<li>But structural solutions—solving common system problems in the infrastructure, not just implementing features—require deliberate effort.</li>
+<li>In well-chosen architectures, the Pareto principle (80/20 rule) is observed: 20% of the infrastructure handles 80% of the work.</li>
+<li>Compared to non-infrastructure situations, this means the work scale (labor hours) is reduced by a factor of several to more than ten.</li>
+<li>If you hate overtime, structural solutions are the answer.</li>
+</ul>
+<h2 id="the-essence-of-architecture-structural-solution">The Essence of Architecture: Structural Solution<a class="headerlink" href="#the-essence-of-architecture-structural-solution" title="Permanent link">&para;</a></h2>
+<p>Most developers see architecture as a huge structure to be chosen or imitated, thinking that copying a structure will solve many problems. But architecture itself has upper, middle, and lower levels, and even a DLL for a specific service can have its own architecture. This is like how laws are classified by hierarchy: constitution, law, decree, ordinance, rule, administrative rule. In other words, architecture is not determined by scale.</p>
+<p>Meanwhile, as names like MSA, Restful, and Flux become trendy, there is a tendency to imitate indiscriminately. But you cannot gain the advantages of an architecture by simple imitation, because architecture is an abstract answer to abstract problems and cannot solve concrete problems directly. If you choose an architecture that does not fit the specific information processing flow of your project, or do not meet external support requirements like organizational structure, architecture can even introduce new problems.</p>
+<p>Sometimes, people mistake the diagram for the architecture itself, but a diagram is just a way to convey the abstract order that is architecture. Understanding architecture as a diagram is like looking at the finger pointing at the moon, not the moon itself.</p>
+<p>The essence of architecture is not just listing components or choosing a tech stack. Architecture gathers the recurring, common problems a system faces and defines patterns and rules so those problems are handled consistently. Because of this, architecture tends to scale up, but there are also small-scale cases—highly irregular libraries, for example. While individual software using a library may handle only a few forms, the library itself often has a flexible architecture for generality.</p>
+<p>Regardless of scale, architecture is characterized by universalizing problems and providing universal answers.</p>
+<h2 id="the-basic-structure-of-problem-solving-and-architecture">The Basic Structure of Problem-Solving and Architecture<a class="headerlink" href="#the-basic-structure-of-problem-solving-and-architecture" title="Permanent link">&para;</a></h2>
+<p>General problem-solving has a common skeleton:</p>
+<ol>
+<li>Problem definition<br />
+    Clearly define what the problem is, its symptoms and scope. Set goals and success criteria.</li>
+<li>Root cause analysis<br />
+    Identify the fundamental cause, not just surface phenomena. Formulate hypotheses and test them with evidence.</li>
+<li>Solution derivation<br />
+    List possible alternatives, compare effects/costs/risks, and choose the optimal one.</li>
+<li>Execution<br />
+    Make a plan, allocate roles/schedule/resources, and execute.</li>
+<li>Evaluation<br />
+    Measure results to see if success criteria are met; supplement or retry as needed.</li>
+</ol>
+<p>The same basic structure applies from an architectural perspective, but the scope and viewpoint are expanded.</p>
+<p>Architecture deals not with individual problems, but with common, universalized problems, leading to expansion. Even the problem definition sets a certain proportion of common problems, not the whole system's problems. Since each solution cannot be optimal for all cases, about 70–80% universality is pursued. Thus, in architecture, you must include handling of out-of-spec cases within the solution. Execution also requires applying to all concrete problems, and evaluation must consider not only statistical results for the group but also how rare cases were handled and at what cost.</p>
+<h2 id="how-architecture-differs-from-general-solution-derivation">How Architecture Differs from General Solution Derivation<a class="headerlink" href="#how-architecture-differs-from-general-solution-derivation" title="Permanent link">&para;</a></h2>
+<p>General problem-solving is usually approached from a short-term, local perspective. Most problems, even outside development, are not macro in nature.<br />
+But architectural problem-solving is long-term and holistic. Decisions consider not just implementation, but future maintenance costs, team work patterns, and extensibility limits.</p>
+<p>One architectural approach is to introduce structural constraints to prevent future mistakes. For example, strict interface contracts may slow initial development but prevent meaningless losses from mistakes.<br />
+Another approach is to clarify abstraction layers and boundaries to control complexity—changing or redistributing the sources of complexity to reduce recurrence of problems. This helps software maintain predictable behavior as it grows.</p>
+<p>The key difference is that the focus of decision-making shifts from "components" to "relationships." Architecture is not about optimizing individual functions or classes, but about designing data flow, boundaries, and information flow between modules. Thus, the effect of the solution spreads system-wide, not just to a single element.</p>
+<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">&para;</a></h2>
+<p>Architecture is inherently abstract, because the initial problem definition is collective in nature.</p>
+<p>But whether the architectural choice was appropriate is determined in concrete matters. The components, dynamics, processing flow, and information flow in architecture are not concrete—they define the environment, not the specific actions. Yet environmental constraints are often more powerful than a few specific prohibitions.</p>
+<p>For example, consider the competition between democracy and communism. In computer science terms, it's like having a system with the "democracy" architecture and another with the "communism" architecture. The system's characteristics are not determined by the physical modules. Whatever the political system, you can't eliminate human desire, and services must ultimately implement their intended functions. But architecture acts as an environmental constraint. Whatever the configuration, you can adapt to implement your service, but the effort required is not the same.</p>
+<p>Architecture is not defined by listing every constraint or guideline for each case. It is defined at a macro level by components and relationships, roles, responsibilities, authority, processing, and information flow.<br />
+For collective problems, it provides answers for the members of the set.</p>
+<blockquote>
+<p>Abstraction comes from the nature of the problem.</p>
+</blockquote>
+<h2 id="systematicity">Systematicity<a class="headerlink" href="#systematicity" title="Permanent link">&para;</a></h2>
+<p>Architecture is inherently systematic. It is simply not economical to build software as a simple list of hardcoded features. Architecture aims for effective production and maintenance, so it directly builds systematicity.</p>
+<p>This systematicity is very different from a simple list. First, design decisions are integrated to avoid contradictions. Every decision simultaneously determines various inseparable aspects. For example, deciding to physically distribute web servers requires either a session-sharing mechanism or pure stateless development—these are inseparable conditions. A distributed web server that is neither stateless nor has session sharing cannot exist. One decision requires or constrains another.</p>
+<p>But it's not enough just to avoid contradictions. Every service has its own business purpose, and is designed and implemented to achieve it. Thus, architectural decisions are made with clear purpose. Integrated design decisions for a specific purpose make up the architecture. Each element is defined by what it provides for the purpose and roughly how it achieves it, so architecture, though omitting details, has sufficient systematicity.</p>
+<p>Thus, software architecture must maintain a stable dynamic relationship where all decisions require or support each other for the same purpose. If you implement concrete details according to an abstract, systematic blueprint, you naturally get systematic software. Conversely, to realize a systematic business, the architecture you prepare must be systematic.</p>
+<blockquote>
+<p>Systematicity comes from the nature of the result.</p>
+</blockquote>
+<h2 id="structurality">Structurality<a class="headerlink" href="#structurality" title="Permanent link">&para;</a></h2>
+<p>The architectural solution is neither a specific case nor a directive, nor is it just an abstract cloud. It exists between abstract problems and concrete implementations, serving as the bridge. A solution that is concrete enough yet abstract enough is a structural solution—defined by roles, responsibilities, authority, processing, and information flow, omitting the concrete.</p>
+<p>Even if you often hear about "structural solutions" in design and design patterns, many do not understand the meaning. This is likely due to confusion in terminology—developers often think of "structure" as data structures or the 'struct' keyword in C. But here, "structure" is closer to the social science concept, or to infrastructure at the national development level.</p>
+<div class="admonition note">
+<p class="admonition-title">Structure in social science</p>
+<blockquote>
+<p>Usage: power structure, labor structure, capital structure, logistics structure</p>
+</blockquote>
+<ol>
+<li>Basic definition<br />
+  Beyond individuals or single events, it means a stable network of relationships and institutional frameworks that make social phenomena repeat and reproduce. Institutions, norms, roles, power, and resource distribution are organized in patterns, and individual choices are constrained or incentivized by this structure.</li>
+<li>Key components  <ul>
+<li>Institution: Law, market, family, education, state, etc.—formal/informal rule systems</li>
+<li>Norm/Value: Social expectations of what is desirable</li>
+<li>Role: Expected behaviors by status</li>
+<li>Power/Resource: Who controls/distributes what</li>
+<li>Relations: Interactions among hierarchies, organizations, networks</li>
+</ul>
+</li>
+<li>Relationship between individual and structure  <ul>
+<li>Structural constraint: Limits the range of possible actions</li>
+<li>Structural opportunity: Makes certain actions advantageous</li>
+<li>Individual actions can reproduce or transform the structure</li>
+</ul>
+</li>
+</ol>
+</div>
+<p>Technically, design patterns are good samples for understanding how different structures are proposed for different situations.</p>
+<p>In design patterns, concrete implementation objects are not specified—they are called Concrete Classes. The actual instance at runtime is omitted, and the solution is presented as a model through roles, responsibilities, authority, processing, and information flow.</p>
+<blockquote>
+<p>Structurality comes from the method of deriving solutions.</p>
+</blockquote>
+<h2 id="the-practical-effect-of-structural-solutions">The Practical Effect of Structural Solutions<a class="headerlink" href="#the-practical-effect-of-structural-solutions" title="Permanent link">&para;</a></h2>
+<p>Borrowing from social science, individual modules and classes in architecture are constrained and incentivized. Implementation in direction A is harder, in direction B is easier, so implementations tend to cluster toward B. Thus, architecture gathers code quality, stability, maintenance cost, extensibility, etc., in the direction the architect wants.</p>
+<p>These incentives and constraints must be decided according to the business purpose, nature, cost structure, workforce structure, and other contexts. When the right architecture is applied—when you get enough structural benefits for the price of proper incentives and constraints—work efficiency rises and required effort drops.</p>
+<p>There are three intuitive states related to this. These states can be used to sense whether the architecture's incentives and the needs of individual implementations are in conflict or synergy:</p>
+<ul>
+<li>Worst: Simple features are cumbersome to implement, and hard features are very hard or impossible.</li>
+<li>Normal: Simple features are reasonable to implement, hard features are hard.</li>
+<li>Best: Simple features are simple, and hard features are relatively easy.</li>
+</ul>
+<p>Structural solutions aim to avoid the Worst, at least achieve Normal, and if possible, aim for Best. This is achieved by accurately identifying the common nature of problems, business goals, performance goals, etc., and deciding on appropriate role allocation and processing flow, so that as much as possible is handled in the common infrastructure in a normalized/standardized way. As the use of common functions increases, delegation in individual feature implementation increases. But this is not about increasing the amount of common module code or making common modules more complex. If there is too much code or branching, the risk just moves, and you cannot say you have achieved systematization based on normalization. In practice, only the location of errors changes.</p>
+<p>Strictly speaking, architecture is not a perfectly sealed container, so it is always possible to develop in ways that do not follow the architecture. In such cases, losses outweigh benefits. Therefore, <strong>architecture is not the architect's exclusive domain—every developer on the project must know it.</strong></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">If you hate overtime, structural solutions are the structural solution.</p>
+</div>
+<p>A structural solution is not simply about developing features or implementing services well. It is something that can be achieved even by spending long hours hardcoding.</p>
+<p>A structural solution is about thinking more, but achieving greater results with less effort. Systematically separating and formalizing recurring problems is certainly difficult. It’s not a matter of how much time it takes or whether you’re familiar with it; the intellectual difficulty itself arises from the complexity of the problem the service aims to solve.</p>
+<p>However, if you break it down and properly formalize—structure—it, the system’s flexibility increases dramatically. Developers often encounter cases where a combination of well-formalized minimal units flexibly solves larger problems. With just 95 reserved words defined in C++23, it’s not impossible to create the Internet. What about Minecraft or Roblox, where you can create games within games? This means much more than simply increasing the reuse rate of elements.</p>
+<p>For developers, the ultimate tangible effect of a structural solution is the realization of the Pareto principle.
+The fact that 20% of the code solves 80% of the work means much more than just reducing the amount of code written through reuse.
+If there is a lot of code and each element is different, readability drops, consistency is lost, and complexity increases, causing a multiplier effect that exponentially increases communication, debugging, and maintenance costs. But a structural solution that formalizes problems allows a small infrastructure to absorb recurring issues. At the same time, it ensures consistent rules are applied throughout the system. Instead of relying on memory to recall where things are, you can easily rediscover them through rules, even if you’ve completely forgotten. It also allows you to focus on the essential business logic.</p>
+<p>As a result, coding and testing time are reduced, but the overall quality and productivity of the system improve dramatically.
+In other words, you work with your mind, not just your fingers.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/">Software Architecture Is Decision-Making, Not Imitation</a> - The essence of architecture, the limits of imitation, and the importance of decision-making</li>
+<li><a href="../Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/">Software Architecture Is Determined by Invariants, Not Extensibility</a> - Emphasizing invariants and structural perspective in architecture</li>
+<li><a href="../Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/">Design Patterns Are Meant to Be Modified</a> - Practical application of structural solutions and patterns</li>
+<li><a href="../Distrustful%20Coding%20vs%20Trustful%20Coding/">Distrustful Coding vs Trustful Coding</a> - System structure, development culture, and the meaning of structural constraints</li>
+<li><a href="../Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/">Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches</a> - Type systems also lead to structural solutions.</li>
+<li><a href="Don't Use RESTful So Blindly.md">Don't Use RESTful So Blindly</a> - The RESTful architecture also has its own structural solution. If used inappropriately, it only leads to unnecessary hardship.</li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong><br />
+(js.seth.h@gmail.com)<br />
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a>  </p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

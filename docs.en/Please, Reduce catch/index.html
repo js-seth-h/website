@@ -1,0 +1,2380 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.en/Please%2C%20Reduce%20catch/">
+      
+      
+        <link rel="prev" href="../How%20to%20Become%20a%20Software%20Architect/">
+      
+      
+        <link rel="next" href="../Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Please, Reduce catch - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6XBWXJW856"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6XBWXJW856",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6XBWXJW856",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#please-reduce-catch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Please, Reduce catch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.kr/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../docs.kr/" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.kr/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT 분야에서 기술 자산이란 무엇인가?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/Restful%20%EC%A2%80%20%EC%93%B0%EC%A7%80%20%EB%A7%88%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.kr/%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture%20Is%20a%20Structural%20Solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Don%27t%20Use%20Restful%20So%20Blindly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Don't Use Restful So Blindly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#if-its-predictable-its-not-an-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If It's Predictable, It's Not an Exception
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-final-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Final Barrier
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#catch-all-or-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catch All or Nothing
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-throw-catch-mechanism-doesnt-consider-recoverability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The throw-catch Mechanism Doesn't Consider Recoverability
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#in-reality-recoverable-exceptions-dont-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Reality, Recoverable Exceptions Don't Exist
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#if-you-really-have-a-second-immediate-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If You Really Have a Second, Immediate Alternative...
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#never-die" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Die
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#how-to-reproduce-a-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Reproduce a Problem
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preserve-specificity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserve Specificity
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Happens%20When%20Implementers%20Are%20Responsible%20for%20Technology%20Selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Technical Asset in the IT Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#if-its-predictable-its-not-an-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If It's Predictable, It's Not an Exception
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-final-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Final Barrier
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#catch-all-or-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catch All or Nothing
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#the-throw-catch-mechanism-doesnt-consider-recoverability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The throw-catch Mechanism Doesn't Consider Recoverability
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#in-reality-recoverable-exceptions-dont-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Reality, Recoverable Exceptions Don't Exist
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#if-you-really-have-a-second-immediate-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If You Really Have a Second, Immediate Alternative...
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#never-die" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Die
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#how-to-reproduce-a-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Reproduce a Problem
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preserve-specificity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserve Specificity
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition warning">
+<p class="admonition-title">AI Translated Document</p>
+<ul>
+<li>This document was translated using an AI translation tool.</li>
+<li>Due to the nature of AI translation, some sentences or terms may be interpreted differently from the original intent.</li>
+<li>There may be mistranslations or inaccuracies, so please refer to the original text or consider additional review if accuracy is critical.</li>
+<li>Your suggestion for a better translation would be highly appreciated.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Original Document in Korean</p>
+<p><a href="../../docs.kr/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/">View Original Document (Korean)</a></p>
+</div>
+<h1 id="please-reduce-catch">Please, Reduce catch<a class="headerlink" href="#please-reduce-catch" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com)
+Draft: July 2021 / Revised: October 2025
+</pre>
+
+<p><strong>[Interpretive Note]</strong> This article was written to highlight that increasing exception handling can actually create a structure that hides the root cause of errors.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>There are too many misguided guidelines or recommendations for try-catch. Here are some examples:<ol>
+<li>Use try-catch only within a reasonable range where predictable exceptions may occur.</li>
+<li>Wrap the minimal code block with try-catch to clearly identify exception situations.</li>
+<li>Catch only specific exceptions.</li>
+<li>Distinguish between recoverable and unrecoverable exceptions.</li>
+<li>For recoverable exceptions, handle them so the program continues normally; for unrecoverable ones, log and terminate if necessary.</li>
+<li>Define exceptions (or return values) with clear and specific names.</li>
+<li>Convert to meaningful exceptions by layer and pass them to upper layers.</li>
+</ol>
+</li>
+<li>Reality is very different.<ol>
+<li>If it's perfectly predictable, it's not an exception.</li>
+<li>If you don't install a crash barrier at external service boundaries, the whole system is likely to stop. First, cover everything. Details come later.</li>
+<li>Catch all or catch nothing. Catching specific errors doesn't help much for overall robustness.</li>
+<li>If a program can recover as a feature, it's not an exception. If you understand throw-catch, recoverability is not the point.</li>
+<li>In reality, recoverable exceptions don't exist—especially when external systems (DB, Web API) are involved. And never, ever terminate.</li>
+<li>Even if local info is specific, you often can't reproduce the problem. You need all surrounding info. Don't waste energy on error messages.</li>
+<li>Passing up means becoming more abstract and losing specificity. Does this help with understanding or resolution?</li>
+</ol>
+</li>
+<li>First, understand how reckless throw really is.</li>
+<li>Focus on understanding the situation and responding appropriately, rather than trying to overcome exceptions.</li>
+</ul>
+<h2 id="if-its-predictable-its-not-an-exception">If It's Predictable, It's Not an Exception<a class="headerlink" href="#if-its-predictable-its-not-an-exception" title="Permanent link">&para;</a></h2>
+<p>Of course, some exceptions are predictable. <strong>But you can't predict all exceptions.</strong>
+Just this fact alone means you must write defensive strategies for the truly unpredictable—literal exceptions.</p>
+<p>There is no such thing as a "reasonable range" for exception handling—there is only the <strong>final barrier</strong>.
+Instead of worrying about reasonable use, focus first on global exception handlers and service boundaries.</p>
+<h2 id="the-final-barrier">The Final Barrier<a class="headerlink" href="#the-final-barrier" title="Permanent link">&para;</a></h2>
+<p>Where the system interfaces with the outside, especially for external input, you should use try-catch as broadly as possible.</p>
+<p>For example, for network receive, wrap everything after receive in try-catch, and discard everything until reconnection or resynchronization to keep the service alive.
+try-catch should be broad, not narrow; coverage is more important than detail.</p>
+<blockquote>
+<p>If France's Maginot Line had extended to Belgium, history might have changed.</p>
+</blockquote>
+<p>If you don't want to get called at 3 a.m., think about this seriously.</p>
+<h2 id="catch-all-or-nothing">Catch All or Nothing<a class="headerlink" href="#catch-all-or-nothing" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p><strong>"A chain is only as strong as its weakest link"</strong></p>
+<p>This is a proverb often mentioned in security.<br />
+In security, if a single path is breached, the whole is breached.<br />
+Likewise, for software, if a single path is left unhandled, you might get called at 3 a.m.</p>
+</div>
+<p><strong>At the final barrier, you must catch all exceptions.</strong></p>
+<p>What matters here is gracefully refusing service, not just doing something.<br />
+So the most important throw-catch—the final barrier—must always be catch-all.</p>
+<p>Catching specific errors is only possible when it doesn't really matter. Such cases do exist, but most features have clear reasons and purposes, so there is no substitute.
+So, most exceptions mean overall feature failure, and it's best to handle them at the final barrier.</p>
+<p>As a result, most routines have no reason to catch.</p>
+<div class="admonition tip">
+<p class="admonition-title">Graceful service refusal means: the service doesn't die, the user isn't frustrated, but ultimately the requested task isn't done.</p>
+</div>
+<h2 id="the-throw-catch-mechanism-doesnt-consider-recoverability">The throw-catch Mechanism Doesn't Consider Recoverability<a class="headerlink" href="#the-throw-catch-mechanism-doesnt-consider-recoverability" title="Permanent link">&para;</a></h2>
+<p>When an exception occurs, throw immediately stops the current function and unwinds the call stack until a catch block is found. All local state, variables, and context info in the stack are lost.</p>
+<p>So, from the point of exception to the catch, all functions in between are only partially executed, and you can't know what resources were open or what state things were in. You don't know what succeeded.
+Especially with external libraries or systems (DB, file, network), after throw, you can't know the state.
+In this structure, "recovery" is basically impossible. The context and data needed for recovery are gone.</p>
+<p>In the end, the <strong>only possible "recovery" after an exception is to recalculate the correct final result and overwrite everything inside and out.</strong> More deeply, you can't recover the computation itself, only reset the result data to a known point.
+If you understand the essence of throw-catch, you see that recoverability is not even a topic.</p>
+<div class="admonition info">
+<p class="admonition-title">For a program, throw-catch is...</p>
+<p>For a program, throw is like a "dungeon escape item." You give up everything and just save your life.<br />
+  And catch is the dungeon entrance. Multiple catches in the call stack are like nested dungeons.  </p>
+<p>If you use an escape item but end up in another dungeon, what's the point?<br />
+  So, please, use it sparingly.</p>
+</div>
+<h2 id="in-reality-recoverable-exceptions-dont-exist">In Reality, Recoverable Exceptions Don't Exist<a class="headerlink" href="#in-reality-recoverable-exceptions-dont-exist" title="Permanent link">&para;</a></h2>
+<p>Think about the external system almost every project uses: the database.</p>
+<p>Suppose you have an increment operation, <code>update tbl_X set a = a+1 where id = 99</code>, and some function calls it, sometimes through a branch. If an error occurs and the final barrier's throw-catch is triggered—</p>
+<p>Did the DB increment or not? What if AutoCommit is on?</p>
+<p>The error could have been a network disconnect, or maybe the DB committed and sent a reply to the OS, but the connection broke after. We often can't know what succeeded.</p>
+<p>But whether the operation failed isn't as important as you think. What matters is the final data.
+So, trying to recover immediately in code is less important than you think. The most important thing is that the final result is correct.</p>
+<p>First, correct the result as soon as possible (e.g., within 24 hours)—that's all the business wants.</p>
+<h2 id="if-you-really-have-a-second-immediate-alternative">If You Really Have a Second, Immediate Alternative...<a class="headerlink" href="#if-you-really-have-a-second-immediate-alternative" title="Permanent link">&para;</a></h2>
+<p>That means your development/operating costs are doubled.</p>
+<blockquote>
+<p>If your schedule or staff isn't doubled, it means 80-hour workweeks.</p>
+</blockquote>
+<h2 id="never-die">Never Die<a class="headerlink" href="#never-die" title="Permanent link">&para;</a></h2>
+<p>Never terminate. Never kill the process.</p>
+<blockquote>
+<p>Do you really want to go to work at 3 a.m.?</p>
+</blockquote>
+<h2 id="how-to-reproduce-a-problem">How to Reproduce a Problem<a class="headerlink" href="#how-to-reproduce-a-problem" title="Permanent link">&para;</a></h2>
+<p>To perfectly reproduce a problem, conceptually you need two things:</p>
+<ol>
+<li>The same environment—environment variables, DB info, memory traces, what other threads were doing, etc.</li>
+<li>The same input</li>
+</ol>
+<p>Of course, <strong>for most real problems, a similar environment and the same input is enough.</strong>
+But with just the exception text, you can't do much.</p>
+<p>Instead of spending time on detailed exception messages, what you need is a proper logging system.
+You don't need 5-minute DB snapshots and full input logs for 5–10 minute replay, but—</p>
+<p>If you can set up a similar environment and provide the same input, that's enough.</p>
+<h2 id="preserve-specificity">Preserve Specificity<a class="headerlink" href="#preserve-specificity" title="Permanent link">&para;</a></h2>
+<p>What can you do at the upper layer? At best, display "Order failed."</p>
+<p>In reality, you might get Divide By Zero from money calculations, or Out of Index from input errors or stock changes.
+But you don't have time to specify all these messages, and if you understand the situation that well, you should block it before it gets to the logic.</p>
+<p>To handle exceptions properly, developers need concrete info. But what can you do with just "Order failed"? What you really need is concrete info. It's best to have the full call stack, exact error time, and enough input to reproduce the error.</p>
+<p>You need to get this info somehow—it doesn't have to be in the exception message.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended method</p>
+<p>My favorite way is to save a serial number and all external input for every request at the final barrier,<br />
+  save the full call stack on exception,<br />
+  and show the user "Order failed. Error number 00000. Please contact the administrator."</p>
+</div>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>throw-catch is honestly a very reckless feature.
+Most modern languages descend from C/C++, but C got throw in 1989 (C++), and C still doesn't have it.</p>
+<p>You might think it's a natural language feature, but historically and practically, it's not.
+In programming language theory, throw-catch is no different from a dynamic goto (a goto whose target is decided at runtime).</p>
+<p>It's powerful, and when used properly, it's very beneficial, so you must understand its nature and use it strategically.</p>
+<ul>
+<li>Don't overuse exceptions; always set up a final barrier for the truly unpredictable.</li>
+<li>Don't try to solve problems with exceptions—use them as an emergency escape.</li>
+<li>Don't rely only on exceptions for understanding—prepare other means too.</li>
+<li>For business, put expected and recoverable cases in the normal routine, and use exceptions only for cases the business doesn't anticipate.</li>
+</ul>
+<p>Pretty exception messages, meticulous try-catch, and catching as many exceptions as possible are not the important parts.
+Those things are not more important than not getting called at 3 a.m. or not getting a claim with no clues.
+Check what really needs to be done, and focus on that.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/">Proof of the Possibility of a One Man Framework</a> - What is possible with solid exception handling</li>
+<li><a href="../Distrustful%20Coding%20vs%20Trustful%20Coding/">Distrustful Coding vs Trustful Coding</a> - Macro development strategies including exceptions</li>
+<li><a href="../Architecture%20Is%20a%20Structural%20Solution/">Architecture Is a Structural Solution</a> - This document introduces a structural solution for exceptions</li>
+<li><a href="../Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/">Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches</a> - How type systems affect throw-catch perspectives</li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong><br />
+(js.seth.h@gmail.com)<br />
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a>  </p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.kr/Restful%20%EC%A2%80%20%EC%93%B0%EC%A7%80%20%EB%A7%88%EB%9D%BC/">
+      
+      
+        <link rel="prev" href="../One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/">
+      
+      
+        <link rel="next" href="../TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>RESTful 좀 쓰지 마라 - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6XBWXJW856"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6XBWXJW856",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6XBWXJW856",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#restful" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RESTful 좀 쓰지 마라
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.en/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IT%20%EB%B6%84%EC%95%BC%EC%97%90%EC%84%9C%20%EA%B8%B0%EC%88%A0%20%EC%9E%90%EC%82%B0%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT 분야에서 기술 자산이란 무엇인가?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful 좀 쓰지 마라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST는 문서 배포를 위한 스타일이다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful은 트랜잭션(Transaction)을 수용하지 않는다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        대부분의 업무는 장부 기록이 아니다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful은 매우 평면적이다.
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        아키텍처로서 RESTful의 장단점과 청구서
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EA%B5%AC%ED%98%84%EC%9E%90%EC%97%90%EA%B2%8C%20%EA%B8%B0%EC%88%A0%20%EC%84%A0%EC%A0%95%EC%9D%84%20%EB%A7%A1%EA%B8%B0%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현자에게 기술 선정을 맡기면 생기는 일
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.en/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Architecture%20Is%20a%20Structural%20Solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Don%27t%20Use%20Restful%20So%20Blindly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Don't Use Restful So Blindly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Please%2C%20Reduce%20catch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/What%20Happens%20When%20Implementers%20Are%20Responsible%20for%20Technology%20Selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Happens When Implementers Are Responsible for Technology Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/What%20Is%20a%20Technical%20Asset%20in%20the%20IT%20Field/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Technical Asset in the IT Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST는 문서 배포를 위한 스타일이다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful은 트랜잭션(Transaction)을 수용하지 않는다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        대부분의 업무는 장부 기록이 아니다
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful은 매우 평면적이다.
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#restful_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        아키텍처로서 RESTful의 장단점과 청구서
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="restful">RESTful 좀 쓰지 마라<a class="headerlink" href="#restful" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com) 
+초안: 2024년 12월 / 개정: 2026년 01월
+</pre>
+
+<p><strong>[Author’s Intent]</strong> 이 글은 RESTful 아키텍처가 모든 비즈니스 시스템에 만능 해법이 아님을 논리적으로 증거하고, 각 시스템의 본질과 요구에 따라 아키텍처를 신중하게 선택해야 함을 경고하고자 합니다.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>현재 RESTful API는 국내 웹 개발에서 사실상의 표준(de facto standard)로 여겨진다. </li>
+<li>사실상의 표준이 되면서, RESTful API는 그 한계점과 비용에 대한 고민이 없이 무분별하게 사용되고 있다.</li>
+<li>RESTful은 웹의 확장성과 상호운용성을 극대화하기 위해 제안된 것으로, 자원(=Data)을 주로 정적으로 배포하기 위한 아키텍처 스타일이다. </li>
+<li>인터페이스 일관성(Uniform Interface), 상태 비저장성(Stateless), 캐시 가능성(Cacheability)에 대한 요구가 그러한 목적을 암시한다.</li>
+<li>동작을 GET/POST/PUT/PATCH로만 제공하겠다는 것은 모든 자원의 취급을 동등 개념(사실상 JSON 문서)으로 간주하겠다는 것이다.</li>
+<li>웹에서 JSON 문서에 RESTful의 원칙인 상태 비저장성(Stateless), 캐시 가능성(Cacheability)을 강제하면, 사실상 정적(영속/준영속) 문서 공유로 수렴된다.</li>
+<li>때문에 다중 리소스에 대한 동시 편집 - 즉, 트랜잭션이 중심이 되는 업무 시스템에 사용하기에 부적절하다.</li>
+<li>CRUD 자원에 URI를 하나씩 대응시키는 설계는 복잡한 시나리오를 수십 개의 HTTP 호출로 잘게 쪼개진다. </li>
+<li>그러나 라운드 트립의 폭증은 사소한 문제로 더 큰 문제는 트랜잭션에 대한 원자성 보장을 클라이언트가 떠맡게 된다는 점이다. </li>
+<li>이는 소프트웨어 기능의 신뢰성 측면, 그리고 보안상 아주 심각한 취약점이다.</li>
+<li>그리고 대부분의 비즈니스는 상태 비저장성(Stateless)과 호환성이 없다. </li>
+<li>웹의 근원적 출발은 연구소(CERN = 유럽 입자 물리 연구소) 내부의 문서 공유 - 즉 무료 개념이나, 비즈니스는 상태·규칙·트랜잭션이 핵심이기 때문이다.</li>
+<li>판매자, 구매자, 상품, 가격의 존재는 '상태 (State)'의 존재를 필수로 만든다. </li>
+<li>아키텍처적 이점/비용 구조 분석의 결과는 RESTful은 위키, 커뮤니티, 회계 장부와 같은 평면적 정보구조에 대한 수정이 매우 드문 시스템을 상정한 구조적 해결책이다. </li>
+<li>이를 상태가 연속적으로 변하는 전자상거래, 물류, 교육/학습관리, 기계, 영업, 고객관리 등의 분야에 적용하는 것은 비용 폭증만 가져온다. </li>
+</ul>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>현재 대한민국 웹 개발 생태계에서 RESTful API는 선택의 영역을 넘어선, 일종의 '기본값(Default)'이자 '사실상의 표준(de facto standard)'으로 확고히 자리 잡았다. 신규 프로젝트의 아키텍처 회의에서 통신 방식을 논의할 때, REST 이외의 대안은 진지하게 고려조차 되지 않는 경우가 허다하다. 마치 웹 개발을 한다면 당연히 RESTful하게, JSON을 주고받는 HTTP API를 설계해야 한다는 것이 불문율처럼 여겨지고 있다.</p>
+<p>과거 엔터프라이즈 시장을 지배했던 SOAP과 XML의 과도한 복잡성에 지친 개발자들에게, REST의 직관성과 단순함은 분명 매력적인 대안이었다. 그러나 시간이 흐르며 이 '단순함'은 도리어 아키텍처적 사고를 가로막는 장벽이 되었다. 수많은 개발팀이 로이 필딩(Roy Fielding)이 제안한 REST의 본질적인 제약 조건—상태 비저장성(Stateless), 캐시 가능성(Cacheability), HATEOAS 등—이 왜 필요한지, 그리고 그것이 어떤 비용을 수반하는지에 대한 깊은 고민 없이, 그저 URL에 자원(Resource)을 명시하고 HTTP 메서드로 CRUD를 매핑하는 행위를 'RESTful'이라 부르며 기계적으로 답습하고 있다.</p>
+<p>문제는 이러한 관습적 선택이 우리가 해결해야 할 비즈니스의 본질과 충돌할 때 발생한다. REST는 태생적으로 웹이라는 거대한 분산 하이퍼미디어 시스템, 즉 정적인 문서나 자원의 상태를 전달하고 공유하는 데 최적화된 아키텍처 스타일이다. 그러나 현대의 많은 비즈니스 애플리케이션은 단순한 정보의 나열과 조회를 넘어, 복잡한 트랜잭션 제어, 상태(State)의 전이, 그리고 순차적이고 원자적인 비즈니스 로직 처리를 핵심으로 한다.</p>
+<p>이러한 동적인 비즈니스 요구사항을 정적인 자원 중심의 REST 아키텍처에 억지로 끼워 맞추려다 보니, 시스템은 필연적으로 비효율을 낳게 된다. 하나의 논리적 작업을 처리하기 위해 수십 번의 네트워크 왕복(Round Trip)이 발생하고, 서버가 져야 할 트랜잭션의 책임을 클라이언트가 떠안게 되며, 데이터의 일관성을 보장하기 위해 불필요한 복잡성이 코드 곳곳에 스며든다. 그럼에도 불구하고 "왜 이 프로젝트에 REST를 사용하는가?"라는 질문에 대해, 기술적 근거 대신 "업계 표준이니까", "라이브러리가 많으니까"라는 안일한 답변만이 돌아오는 것이 작금의 현실이다.</p>
+<p>이 글은 RESTful API가 무가치하다거나 무조건 배격해야 한다는 주장을 하려는 것이 아니다. 다만, 아무 생각 없이, 모든 문제에 REST를 사용하는 현재의 풍조와, 도구의 특성 및 비용 구조를 고려하지 않은 무분별한 채택이 가져오는 구조적 리스크를 지적하고자 한다. 우리가 만드는 시스템이 단순한 블로그나 위키가 아니라면, REST는 최선의 답이 아닐 수 있다. 이제는 관성적인 선택에서 벗어나, 우리가 마주한 문제의 복잡성을 가장 효과적으로 제어할 수 있는 아키텍처가 무엇인지, 그 비용과 효용을 냉정하게 따져보아야 할 시점이다.</p>
+<h2 id="rest">REST는 문서 배포를 위한 스타일이다<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
+<p>REST는 2000년, 로이 필딩(Roy Fielding)의 박사 논문에서 처음으로 제안되었다.
+REST는 분산 시스템 설계를 위해 다음과 같은 6가지 제약 조건을 기반으로 한다. 이 제약 조건들은 REST 아키텍처 스타일을 정의하며, 이를 준수해야 진정한 RESTful 시스템이라 할 수 있다.</p>
+<ul>
+<li><strong>클라이언트-서버 구조</strong>: 클라이언트와 서버를 명확히 분리하여 각자의 역할에 집중할 수 있도록 한다.</li>
+<li><strong>상태 비저장성 (Stateless)</strong>: 서버는 클라이언트의 상태 정보를 저장하지 않는다. 각 요청은 독립적으로 처리되어야 하며, 필요한 모든 정보는 요청에 포함되어야 한다.</li>
+<li><strong>캐시 가능성 (Cacheability)</strong>: 서버 응답이 캐시될 수 있어야 하며, 클라이언트는 이를 활용하여 네트워크 트래픽과 서버 부하를 줄일 수 있다.</li>
+<li><strong>계층화 시스템 (Layered System)</strong>: 클라이언트와 서버 간에 여러 계층을 둘 수 있으며, 각 계층은 독립적으로 동작한다.</li>
+<li><strong>인터페이스 일관성 (Uniform Interface)</strong>: REST 시스템은 일관된 인터페이스를 제공해야 하며, 이를 통해 리소스와 상호작용할 수 있어야 한다.</li>
+<li><strong>주문형 코드 (Code on Demand)</strong>: 필요에 따라 서버가 클라이언트에 코드를 전송하여 실행할 수 있다. 예: JavaScript, 플러그인 등.</li>
+</ul>
+<p>REST의 제약 조건들, 특히 인터페이스 일관성(Uniform Interface), 상태 비저장성(Stateless), 캐시 가능성(Cacheability)을 깊이 들여다보면, 이 아키텍처가 지향하는 바가 명확해진다. 그것은 바로 <strong>'정보의 효율적인 배포와 공유'</strong>이다.</p>
+<p>우선, <strong>인터페이스 일관성</strong>을 보자. REST는 리소스에 대한 조작을 HTTP Method(GET, POST, PUT, DELETE 등)라는 극히 제한된 동사로 한정한다. 이는 시스템이 다루는 모든 대상을 '문서'나 '자원'이라는 동등한 개념으로 추상화하겠다는 선언과 같다. 복잡한 비즈니스 행위(예: '주문 승인', '재고 예약', '배송 시작')를 고유한 메서드로 정의하는 대신, 단순히 문서를 생성(Create)하거나 수정(Update)하는 행위로 환원시킨다. 이는 마치 리눅스 시스템의 설계가 근본적으로 모든 것을 파일 입출력으로 환원하려는 것과 유사하며, 일반적으로 데이터가 JSON 형식을 띤다 해도 본질적으로는 정적인 문서 관리의 메타포를 따르고 있음을 의미한다.</p>
+<p>다음으로 <strong>상태 비저장성</strong>과 <strong>캐시 가능성</strong>은 이 아키텍처가 '변하지 않는' 혹은 '드물게 변하는' 정보에 최적화되어 있음을 강력하게 시사한다. 서버가 클라이언트의 이전 상태를 기억하지 않아도 된다는 것은, 각 요청이 독립적인 문서 조회와 같다는 뜻이다. 또한 응답을 캐시할 수 있다는 것은, 데이터가 시간에 따라 급격하게 변하지 않으며, 여러 사용자가 동일한 시점에 동일한 데이터를 보아도 무방하다는 전제를 깔고 있다.</p>
+<p>웹(Web)이라는 거대한 시스템이 바로 이러한 특성을 가진다. 뉴스 기사, 블로그 포스트, 위키 백과 항목 등은 한 번 작성되면 잘 변하지 않고, 수많은 사람이 동시에 읽어도 문제가 없다. REST는 이러한 웹의 확장성과 상호운용성을 극대화하기 위해 고안된 아키텍처다.</p>
+<p>그러나 우리가 개발하는 현대의 비즈니스 애플리케이션은 어떤가? 재고는 실시간으로 변하고, 주문 상태는 복잡한 규칙에 따라 전이되며, 사용자의 행동 문맥(Context)에 따라 서버의 응답이 달라져야 한다. 이런 동적인 환경에서 JSON 데이터에 REST의 원칙을 강제하는 것은, 살아 움직이는 비즈니스 프로세스를 박제된 정적 문서처럼 취급하려는 것과 다름없다.</p>
+<p>결과적으로, RESTful은 자원(Resource)이라는 이름의 데이터를 정적으로 배포하고 공유하기 위한 아키텍처 스타일이다. 이를 복잡한 트랜잭션과 상태 관리가 필수적인 업무 시스템에 무비판적으로 적용하는 것은, 마치 엑셀로 복잡한 ERP를 구축하려는 시도처럼 도구의 본질적 목적을 오해한 것이다.</p>
+<h2 id="restful-transaction">RESTful은 트랜잭션(Transaction)을 수용하지 않는다<a class="headerlink" href="#restful-transaction" title="Permanent link">&para;</a></h2>
+<p>RESTful은 다중 리소스에 대한 동시 편집, 즉 트랜잭션이 중심이 되는 업무 시스템에 사용하기에 부적절하다. 정확히 말하면 RESTful Architecture의 중심에 트랜잭션(Transaction)을 위한 자리가 없어서 수용되지 않는다. 결과적으로 아키텍처 밖에서 이를 처리해야 하고, 그 책임이 신뢰성이 높은 서버가 아니라 클라이언트로 넘어간다.</p>
+<p>REST가 전제하는 것은 "리소스 단위의 독립적 조작"이다. 주문이라는 사건이 발생하면 실제로는 결제 승인, 재고 차감, 포인트 적립, 쿠폰 소진, 배송지 확정 등이 묶여 하나의 원자적 상태 전이를 이룬다. 하지만 REST 방식으로 설계하면 각각을 다른 리소스의 생성/수정으로 분해하게 되고, 각 단계는 다른 엔드포인트로 흩어진다. 이때 원자성은 HTTP 호출의 집합으로 해체된다. 한 번의 비즈니스 명령이 수십 개의 요청으로 쪼개지고, 실패 조합은 기하급수적으로 증가한다. "어디까지 성공했는지"를 판단하고 되돌리는 로직은 결국 클라이언트나 오케스트레이터가 짊어진다. 그러나 대부분 오케스트레이터 또는 트랜잭션 매니저는 만들지 않는다.</p>
+<p>자원에 대한 CRUD를 URI를 하나씩 대응시키는 설계는 사용 시나리오 친화적이지 않다. 데이터 관리에 방점이 찍힌 설계이다. 결과적으로 단일 기능은 수십 개의 HTTP 호출로 잘게 쪼개진다. 그러나 라운드 트립의 폭증은 사소한 문제로, 더 큰 문제는 트랜잭션에 대한 원자성 보장을 신뢰성이 떨어지는 외부(ex&gt; 웹브라우저)가 떠맡게 된다는 점이다. 예를 들어 결제 승인 후 재고 차감이 실패하면 결제 취소를 호출해야 하고, 그 취소마저 실패하면 "보상 트랜잭션의 보상"을 만들어야 한다. 이 구조는 서버를 신뢰 가능한 시스템이 아니라, 단순 엔터티 저장소로 전락시킨다. 결국 비즈니스 로직의 핵심은 클라이언트에 전가된다.</p>
+<p>이 문제는 단순한 복잡성의 문제가 아니라, 신뢰성과 보안의 문제다. 트랜잭션의 핵심은 "중간 상태가 외부에 노출되지 않는다"는 보장인데, REST 방식으로 쪼개면 중간 상태가 API 호출 사이에서 노출된다. 그 순간 동시성 충돌이 발생하고, 사용자에게는 "결제는 됐는데 주문은 안 됐다" 같은 실패 경험이 남는다. 더 치명적인 것은 공격 표면이다. 호출 순서를 바꾸거나 일부 단계만 재실행하면, 할인 중복 적용, 재고 우회, 포인트 중복 적립 같은 허점이 생긴다. 보안은 결국 API 호출의 순서와 횟수를 검증하는 규칙을 또 만들어야 한다는 뜻이고, 이는 REST의 단순함을 무너뜨린다.</p>
+<p>현실적으로 많은 팀이 "사가 패턴"이나 "보상 트랜잭션"으로 이를 우회한다. 그러나 이는 트랜잭션을 없애는 것이 아니라, 훨씬 복잡한 형태로 재구현하는 것이다. 분산 락, 메시지 큐, 상태 저장소, 재시도 전략이 추가되고, 운영자는 실패 조합을 모니터링해야 한다. 결국 아키텍처는 더 비싸지고, 장애 대응은 더 어려워진다. 요약하면 RESTful은 트랜잭션을 없애지 못한다. 단지 트랜잭션을 "어디서 처리할 것인가"를 서버에서 클라이언트와 운영으로 밀어낼 뿐이다. 이 점이 복잡한 업무 시스템에서 REST가 비효율적으로 느껴지는 가장 큰 이유다.</p>
+<h2 id="_1">대부분의 업무는 장부 기록이 아니다<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>대부분의 비즈니스 시스템은 RESTful이 전제하는 상태 비저장성(Stateless)과 본질적으로 호환되지 않는다. 웹의 근원적 출발은 연구소(CERN) 내부의 문서 공유, 즉 무료로 정보를 배포하고 열람하는 환경이었다. 이때의 웹은 정적 문서의 배포와 공유가 목적이었고, 각 문서는 독립적으로 존재하며, 사용자의 행위가 시스템의 상태를 변화시키지 않았다. 그러나 비즈니스 시스템은 이와 정반대의 특성을 가진다. 판매자, 구매자, 상품, 가격 등은 단순한 정보가 아니라, 서로 얽혀 있는 상태(State)와 규칙(Rule), 그리고 트랜잭션(Transaction)의 집합이다.</p>
+<p>예를 들어, 전자상거래 시스템을 생각해보자. 사용자가 상품을 장바구니에 담고, 결제 과정을 거쳐 주문을 확정하는 일련의 과정은 단순한 CRUD의 조합이 아니다. 각 단계마다 재고의 변동, 결제 승인, 배송지 검증, 할인 정책 적용 등 복잡한 비즈니스 로직이 개입된다. 이 과정에서 발생하는 모든 데이터는 서로 긴밀하게 연결되어 있으며, 하나의 작업이 실패하면 전체를 되돌려야 하는 원자성(Atomicity)이 요구된다. 즉, 거래란 단순히 문서를 저장하고 조회하는 행위가 아니라, 여러 상태가 유기적으로 변화하고, 그 변화가 일관되게 유지되어야 하는 복합적인 흐름이다.</p>
+<p>RESTful의 상태 비저장성은 각 요청이 독립적으로 처리되어야 한다는 제약을 강제한다. 서버는 클라이언트의 이전 상태를 기억하지 않으며, 모든 정보는 요청에 포함되어야 한다. 이로 인해, 실제 비즈니스에서는 상태를 클라이언트 토큰, 임시 저장소, 분산 캐시 등 다양한 방식으로 우회 저장하게 된다. 예를 들어, 장바구니 ID, 결제 세션, 인증 토큰 등 모든 상태 정보를 매 요청마다 전달해야 하며, 이 과정에서 보안 검증, 유효성 검사, 동시성 제어 등 추가적인 복잡성이 발생한다. 결국, 상태를 없애는 것이 아니라, 더 많은 레이어에 복제하고, 관리 포인트를 늘리는 셈이다.</p>
+<p>더 나아가, 거래의 본질은 트랜잭션의 신뢰성과 일관성에 있다. 은행 송금, 재고 관리, 주문 처리 등은 모두 "한 번의 명령에 여러 규칙을 평가하고, 실패 시 전체를 되돌리는" 흐름을 필요로 한다. 그러나 RESTful을 교과서적으로 적용하면, '주문 생성 → 결제 정보 등록 → 재고 차감 → 배송지 확정'처럼 비즈니스의 한 단계를 여러 개의 HTTP 호출로 쪼개게 된다. 각 호출이 독립적으로 성공했는지 확인하고, 실패하면 되돌릴 API를 또 만들어 호출해야 한다. 결국 API는 상태 머신이 아니라 엔터티 저장소에 불과해지고, 실제 흐름은 클라이언트 코드에 흩어진다. 원자성 보장을 클라이언트가 떠맡게 되면서, 실패 조합과 복구 시나리오가 급격히 늘어난다. 클라이언트가 많아질수록 제어 불가능한 조합이 생기고, 서버는 트랜잭션을 보장하지 못한다.</p>
+<p>이러한 구조적 한계는 보안과 신뢰성에도 직접적인 영향을 미친다. 예를 들어, 결제 시스템에서 트랜잭션의 원자성이 깨지면, 중복 결제, 재고 오류, 데이터 불일치 등 치명적인 문제가 발생할 수 있다. RESTful의 상태 비저장성은 이러한 문제를 예방하기 위한 서버 측 제어를 어렵게 만들고, 클라이언트에 과도한 책임을 떠넘긴다. 또한, 네트워크 장애나 지연이 발생할 경우, 여러 요청 중 일부만 성공하거나 실패하는 상황이 빈번하게 발생하며, 이를 복구하기 위한 로직이 클라이언트와 서버 모두에 중복 구현된다.</p>
+<p>결국, 거래란 단순한 문서 관리가 아니다. 비즈니스의 본질은 상태의 변화와 그 변화의 일관성, 그리고 트랜잭션의 신뢰성에 있다. RESTful의 제약을 무비판적으로 적용하는 것은, 복잡한 업무를 단순 장부 기록으로 오해하는 것과 같다. 우리는 시스템의 목적과 요구사항을 먼저 파악하고, 그에 맞는 아키텍처를 선택해야 한다. </p>
+<h2 id="restful_1">RESTful은 매우 평면적이다.<a class="headerlink" href="#restful_1" title="Permanent link">&para;</a></h2>
+<p>RESTful 아키텍처의 또 다른 본질적 한계 중 하나는 '평면성(flatness)'에 있다. RESTful은 위키, 커뮤니티, 회계 장부처럼 엔터티 간의 종속성이 적고, 각 리소스가 독립적으로 존재하는 환경에서 가장 큰 효과를 발휘한다. 이러한 시스템에서는 각 리소스가 단일 URI로 명확히 식별되고, CRUD 작업이 단순하게 매핑된다. 하지만 현실의 비즈니스 도메인은 대개 복잡한 엔터티 관계와 계층적 구조, 그리고 다양한 의존성을 내포한다.</p>
+<p>이를 설명하기에 차용하기 좋은 개념이 Fan-in과 Fan-out이다. 본래 Fan-in과 Fan-out은 모듈의 의존성에 대해 사용되는 개념이다. 그러나 데이터나 정보 또한 상호간에 연관성, 참조, 의존성, 확장성 등 다양한 이유로 연결된다.</p>
+<p>RESTful에서는 각 리소스를 독립적으로 다루기 때문에, Fan-in/out이 커질수록 단일 자원이 어디까지의 데이터를 반환해야 하는지 결정하는 문제가 연쇄적으로 발생한다. 예를 들어, 고객 정보를 조회할 때 단순히 고객의 Id만 반환하면, 이후 주문, 결제, 배송 등 하위 리소스에 대해 1+N+M+L... 형태의 추가 호출이 필요해진다. 반대로, 한 번에 모든 하위 리소스까지 반환하면 불필요한 트래픽이 발생하고, 리소스의 정체성(즉, 무엇이 핵심 데이터인가)이 모호해진다.</p>
+<p>이러한 평면성의 한계는 실제 시스템에서 다양한 문제로 이어진다. 첫째, 데이터가 복잡하게 얽혀 있는 도메인에서는 RESTful의 단순한 리소스-URI 매핑이 오히려 비효율을 초래한다. 예를 들어, 전자상거래 시스템에서 주문 내역을 조회할 때, 주문 자체뿐 아니라 상품, 결제, 배송, 할인, 쿠폰 등 수많은 연관 엔터티가 함께 필요하다. 이때 각 엔터티를 별도의 URI로 분리하면, 클라이언트는 수십 번의 네트워크 호출을 반복해야 하며, 이는 성능 저하와 동기화 문제, 장애 포인트 증가로 이어진다. 둘째, 하위 리소스를 한 번에 모두 반환하는 방식은 데이터 과다 전송, 불필요한 정보 노출, API의 일관성 저하 등 또 다른 문제를 낳는다. 실제로는 클라이언트마다 필요한 데이터의 범위가 다르기 때문에, 일률적으로 모든 정보를 반환하는 것은 RESTful의 단순함을 해치는 결과가 된다.</p>
+<p>또한, Fan-in/out이 큰 자료구조를 가진 도메인에서는 API 설계의 난이도가 급격히 높아진다. 어떤 URI에서 어디까지의 연관 데이터를 포함할지, 중첩 깊이와 반환 정책을 어떻게 정할지, 부분 갱신이나 부분 조회를 어떻게 지원할지 등 수많은 설계적 고민이 필요하다.</p>
+<p>결국, RESTful이 진정한 가치를 발휘하는 곳은 데이터 구조가 단순하고, 엔터티 간의 종속성이 약하며, 각 리소스가 독립적으로 관리될 수 있는 환경이다. 반대로, 복잡한 비즈니스 로직과 계층적 데이터, 다양한 관계와 의존성이 얽힌 시스템에서는 RESTful의 평면성이 한계로 작용한다.</p>
+<h2 id="restful_2">아키텍처로서 RESTful의 장단점과 청구서<a class="headerlink" href="#restful_2" title="Permanent link">&para;</a></h2>
+<p>아키텍처로서 RESTful은 데이터의 변경 빈도가 낮고, 트랜잭션이나 복잡한 상태 전이가 거의 없는 시스템을 염두에 두고 설계된 구조적 해결책이다. 이러한 환경에서는 RESTful의 단순함과 일관성, 그리고 확장성이라는 장점이 극대화된다. 예를 들어, 위키 문서나 게시판 글, 회계 장부의 기록처럼 대부분의 작업이 조회와 단순한 추가/수정에 그치고, 여러 사용자가 동시에 복잡한 상태 변화를 일으키지 않는 경우에는 RESTful이 제공하는 표준화된 인터페이스와 캐시 전략이 큰 효과를 발휘한다. 또한, 문서 기반의 시스템에서는 각 리소스가 독립적으로 존재하므로, 상태 비저장성의 제약이 오히려 시스템의 단순화와 확장에 기여할 수 있다.</p>
+<p>그러나 현실의 비즈니스 시스템, 특히 전자상거래, 물류, 교육/학습관리, 기계 제어, 영업, 고객관리 등과 같이 상태가 연속적으로 변하고, 복잡한 트랜잭션과 규칙, 동시성 제어가 필수적인 분야에 RESTful을 그대로 적용하는 것은 심각한 비효율과 비용 증가로 이어진다. 이러한 시스템에서는 한 번의 비즈니스 명령이 여러 상태를 동시에 변화시키고, 실패 시 전체를 되돌려야 하는 원자성(Atomicity)과 일관성(Consistency)이 요구된다. 하지만 RESTful은 각 요청이 독립적으로 처리되어야 한다는 제약 때문에, 복잡한 업무 플로우를 여러 개의 HTTP 호출로 쪼개게 만들고, 그 결과 트랜잭션의 책임이 신뢰성이 낮은 클라이언트로 전가된다. 이 과정에서 발생하는 네트워크 비용, 상태 동기화 문제, 보상 트랜잭션의 복잡성, 데이터 불일치와 보안 취약점 등은 시스템 전체의 신뢰성과 유지보수성을 심각하게 저해한다.</p>
+<p>특히, RESTful의 가장 큰 한계는 "변화가 드문 정보 구조"에 최적화되어 있다는 점이다. 달리 말하면, 시계열에 따라 변화가 발생하는 기능을 제공하지 않거나, 매우 드물게 제공한다는 것이다. 즉, 능동적인 동작(Action)이 거의 없는 매우 수동적 시스템에 최적화되어 있다는 의미이다.</p>
+<h2 id="_2">결론<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>RESTful은 단순 정보 배포와 조회, 변경이 드문 평면적 데이터 구조에는 여전히 강력한 도구이지만, 상태와 트랜잭션, 복잡한 비즈니스 로직이 핵심인 시스템에는 적합하지 않다. </p>
+<p>모든 아키텍처는 그 선택에 수반되는 이점과 비용을 검토한 뒤, 지금 이 문제에 최적인 것을 선택해야 한다. 그렇지 않을 경우 리스크를 개발 과정에서 야근과 인건비 증가, 운영 시 시스템의 불안정성이라는 청구서로 부담하게 된다.  때문에 웹 개발 생태계에서 RESTful API는 '사실상의 표준(de facto standard)'으로 인식되는 현상태는 거의 대부분의 개발자와 회사가 영문도 모른 채 불필요한 세금을 내는 상태와 같다.</p>
+<p>아키텍처의 선택은 우선 그 아키텍처의 뛰어난 점과 취약한 점, 그리고 그것을 위해 기꺼이 지불하는 비용을 인식하는 것에서 출발해야 한다. 그 뒤, 우리의 문제의 본질과 요구사항에 명확히 따라 적절한 선택을 해야 한다. 같은 맥락에서 RESTful은 만능 해법이 아니라 특정 문제에 최적화된 도구임을 인식하고, 가능하면 '기본값(Default)'으로 인식하지 말기 바란다.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/">디자인 패턴은 본래 고쳐 쓰는 것이다</a> - 패턴의 맹목적 적용이 아닌, 맥락에 맞는 구조적 사고의 중요성</li>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/">소프트웨어 아키텍처는 의사결정이지, 모방이 아니다</a> - 아키텍처 선택의 본질과 합리적 의사결정의 필요성</li>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/">소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다</a> - 시스템 구조의 불변성과 아키텍처적 판단의 관계</li>
+<li><a href="../One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/">One Man Framework 가능성의 증명</a> - 부적절한 RESTful API를 배제한 긍정적 결과</li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong><br />
+(js.seth.h@gmail.com)<br />
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a>  </p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

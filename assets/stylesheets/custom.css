@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+/* H2 이하 제목에 넘버링을 추가합니다 */
+
+body {
+  font-family: 'Roboto', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Pretendard',  var(--md-text-font-family) ;
+}
+
+article {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Pretendard', var(--md-text-font-family);
+}
+article.md-content__inner h1 {
+  color: black;
+  font-weight: bold; 
+}
+article.md-content__inner h2 {
+  counter-increment: h2counter;
+}
+article.md-content__inner h2::before {
+  content: counter(h2counter) ". ";
+  counter-reset: h3counter;
+}
+
+article.md-content__inner h3 {
+  counter-increment: h3counter;
+}
+article.md-content__inner h3::before {
+  content: counter(h2counter) "." counter(h3counter) " ";
+}
+article.md-content__inner h2, article.md-content__inner h3 {
+  display: block;
+}
+
+article.md-content__inner h2[id^="tag:"] {
+  counter-reset: none !important; /* 넘버링 제거 예시 */
+  list-style: none !important;
+  /* 필요하다면 번호 관련 스타일 초기화 */
+}
+article.md-content__inner h2[id^="tag:"]::before {
+  content: none !important;
+}
+
+/* 
+.md-typeset {
+  counter-reset: h2counter;
+} */
+
+/* 목차(TOC) 자동 넘버링 */
+.md-nav__list[data-md-component="toc"] {
+  counter-reset: tocitem;
+}
+.md-nav__list[data-md-component="toc"] > .md-nav__item {
+  counter-increment: tocitem;
+}
+.md-nav__list[data-md-component="toc"] > .md-nav__item > .md-nav__link > .md-ellipsis::before {
+  content: counter(tocitem) ". ";
+  color: #888;
+  margin-right: 0.2em;
+}
+
+
+.giscus {
+  width: calc(100% - 3rem);
+  margin: auto;
+}
+
+
+.footer-cc-box {
+/* .footer-hr { */
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
+  display: flow-root;
+  margin: 2em 0;
+}
+.footer-cc {
+  text-align:center; color:#444; 
+  font-size: 1.5em; 
+  /* margin: 1em 0; */
+  padding: 0.3em 0;
+  line-height: 1.8em;
+  /* border-top: .05rem solid var(--md-default-fg-color--lightest); */
+  border-bottom: .05rem solid var(--md-default-fg-color--lightest);
+}
+
+/* 포스트 */
+article.md-post h2 {
+  /* color: black; */
+  font-weight: bold; 
+}
+article.md-post .md-post__action {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 2em 0; */
+}
+
+article.md-post .md-post__action a,
+article.md-post .md-post__action button {
+  display: inline-block;
+  background: #7c3aed;
+  color: #f3f4f6;
+  border: none;
+  /* border-radius: 8px; */
+  clip-path: polygon(
+    10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%
+  );
+  padding: 0.2em 3em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+article.md-post .md-post__action a:hover,
+article.md-post .md-post__action button:hover {
+  background: #444;
+}
+
+
+/* 해더 조정 */
+
+nav.md-tabs .md-tabs__item{
+  background-color:rgba(0,0,0, 0.28);
+  /* 기본적으로 라운드 없음 */
+  border-radius: 0;
+  margin-bottom: 8px;
+  /* padding: 8px; */
+  font-weight: bold;
+}
+/* 첫 번째 탭 아이템: 왼쪽만 라운드 */
+nav.md-tabs .md-tabs__item:first-child {
+  border-radius: 24px 0 0 24px;
+  padding-left: 36px;
+}
+/* 마지막 탭 아이템: 오른쪽만 라운드 */
+nav.md-tabs .md-tabs__item:last-child {
+  border-radius: 0 24px 24px 0;
+  padding-right: 36px;
+}
+/* nav.md-tabs .md-tabs__item a{
+  color: black;
+  font-weight: bold;
+  margin: 0 0px;
+} */
+
+
+
+/* 추가 admonition */ 
+
+
+
+/* 커스텀 */
+.md-main__inner {
+  max-width: 1600px;
+  margin: 0 auto;   /* 가운데 정렬 */
+}
+.md-main .md-sidebar.md-sidebar--primary,
+.md-main .md-sidebar.md-sidebar--primary .md-sidebar__inner {
+  /* width: 300px; */
+  /* padding-right: 1em; */
+}
+
+pre {
+  font-family: monospace;
+}
+
+.doc-tag-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  color: #888;
+  font-size: 0.95em;
+}
+
+/* 컨테이너마다 카운터 초기화 및 폰트 크기 조정 */
+.preview-box {
+  margin: 3em 2em; /* 각 컨테이너 사이에 공간 추가 */
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08), 0 4px 8px 0 rgba(0,0,0,0.04);
+  /* border-radius: 12px; */
+  background: #fff;
+  padding: 2em 2em;
+
+  border: 1px solid lightgray;
+  border-right: 1.2em solid #199999;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+}
+
+/* 컨테이너마다 카운터 초기화 및 폰트 크기 조정 */
+.preview-content {
+  /* counter-reset: section; */
+  font-size: 0.8em; /* 폰트 크기 줄임, 필요시 더 조정 가능 */
+}
+
+.preview-box h1::before,
+.preview-box h2::before,
+.preview-box h3::before,
+.preview-box h4::before,
+.preview-box h5::before {
+  content: none !important;
+}
+
+
+.preview-content a{
+  pointer-events: none;
+  cursor: default;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+  transition: none;
+}
+ 
+.preview-link a {
+  display: flex;
+  justify-self: end;
+  font-size: 1.2em;
+  font-weight: bold;
+  /* padding-left: 2em; */
+  /* padding-bottom: 2em; */
+}
+
+
+.md-main__inner.md-grid > div:first-of-type li.md-nav__item {
+  /* margin: 0.5em 0; */
+  /* 원하는 스타일 작성 */
+  /* 예시: */
+  /* border-left: 3px solid #007acc;
+  background: #f8f8fa; */
+   /* list-style-image: url("../../media/examples/rocket.svg"); */
+}
+/* .md-main__inner.md-grid > div:first-of-type .md-nav__list li.md-nav__item > a::before {
+  display: inline-block;
+  content: "🚀 ";
+  font-size: 0.8em;
+  padding-top: 0.2em;
+  /* margin-right: 0em; */ 

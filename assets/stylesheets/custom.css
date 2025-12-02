@@ -1,0 +1,69 @@
+/* H2 이하 제목에 넘버링을 추가합니다 */
+
+article.md-content__inner h1 {
+  color: black;
+  font-weight: bold; 
+}
+article.md-content__inner h2 {
+  counter-increment: h2counter;
+}
+article.md-content__inner h2::before {
+  content: counter(h2counter) ". ";
+  counter-reset: h3counter;
+}
+
+article.md-content__inner h3 {
+  counter-increment: h3counter;
+}
+article.md-content__inner h3::before {
+  content: counter(h2counter) "." counter(h3counter) " ";
+}
+article.md-content__inner h2, article.md-content__inner h3 {
+  display: block;
+}
+
+article.md-content__inner h2[id^="tag:"] {
+  counter-reset: none !important; /* 넘버링 제거 예시 */
+  list-style: none !important;
+  /* 필요하다면 번호 관련 스타일 초기화 */
+}
+article.md-content__inner h2[id^="tag:"]::before {
+  content: none !important;
+}
+
+/* 
+.md-typeset {
+  counter-reset: h2counter;
+} */
+
+/* 목차(TOC) 자동 넘버링 */
+.md-nav__list[data-md-component="toc"] {
+  counter-reset: tocitem;
+}
+.md-nav__list[data-md-component="toc"] > .md-nav__item {
+  counter-increment: tocitem;
+}
+.md-nav__list[data-md-component="toc"] > .md-nav__item > .md-nav__link > .md-ellipsis::before {
+  content: counter(tocitem) ". ";
+  color: #888;
+  margin-right: 0.2em;
+}
+
+
+.giscus {
+  width: calc(100% - 3rem);
+  margin: auto;
+}
+
+
+.footer-hr {
+  border-bottom: .05rem solid var(--md-default-fg-color--lightest);
+  display: flow-root;
+  margin: 1.5em 0;
+}
+.footer-cc {
+  text-align:center; color:#444; 
+  font-size: 1.5em; 
+  margin:2em;
+  line-height: 1.8em;
+}

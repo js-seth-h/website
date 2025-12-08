@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../posts/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/">
+      
+      
+        <link rel="next" href="../introduction/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>Tags - Archive of Architect HJ</title>
+        <title>⏰ Recently - Archive of Architect HJ</title>
       
     
     
@@ -62,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tags" class="md-skip">
+        <a href="#recently-document" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tags
+              ⏰  Recently
             
           </span>
         </div>
@@ -195,9 +199,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../Recently-Preview/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -243,7 +249,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -492,10 +500,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Recently-Preview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -511,6 +528,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -674,7 +692,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <!--
@@ -746,6 +766,8 @@
               
                 
 
+  
+
 
 
 
@@ -753,21 +775,190 @@
               <article class="md-content__inner md-typeset">
                 
                   
-
-
-
-<h1 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h1>
-<p>Following is a list of relevant tags:</p>
+  
 
 
 
 
+<h1 id="recently-document">Recently Document<a class="headerlink" href="#recently-document" title="Permanent link">&para;</a></h1>
+<div class="preview-box">
+<!-- ## [불신의 코딩 vs 신뢰의 코딩](./posts/불신의 코딩 vs 신뢰의 코딩.md) -->
+<div class="preview-content">
+<h1 id="vs">불신의 코딩 vs 신뢰의 코딩<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h1>
+<!-- preview-start -->
+<div class="doc-tag-right">
+ 2024년 12월 | HJ(Software Architect)
+</div>
+<p>함수, 모듈, 시스템 등 각 소프트웨어의 구성 요소는 모두 예정된 동작을 하며, 이를 위한 규약을 가지고 있다.
+이러한 규약은 함수 시그니처등을 통해 기술적으로 명세되기도 하며, 논리적인 제약 범위를 가지고도 한다. 
+문법적 오류와 논리적 오류 구분은 이러한 규약과 연관된 오류의 구분이다.</p>
+<p>그리고 이러한 규약을 상호간에 지킬것을 전제로 하느가? 
+또는 지켜지지 않을 것으로 전제로 하는가에 따라, 거시적인 면에서 많은 차이가 발생한다.</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<ul>
+<li>불신 기반 문화<ul>
+<li>득히 자바, 생태계를 구성 여러 모듈도 불신 기반이다.</li>
+<li>코드가 외부 입력, 동료 개발자, 라이브러리 사용자, 시스템 환경 등을 신뢰하지 않음.</li>
+<li>형식 검증, 입력 검증, 잠재적 포맷 컨버팅 등을 단계마다 수행</li>
+</ul>
+</li>
+<li>신뢰 기반 문화<ul>
+<li>특히 Python, Javascript등, 빠른 개발에 초점을 둔 언어</li>
+<li>코드가 외부 입력, 동료 개발자, 라이브러리 사용자, 시스템 환경 등을 신뢰.</li>
+<li>형식 검증, 입력 검증, 잠재적 포맷 컨버팅 등을 최대한 생략</li>
+</ul>
+</li>
+<li>일반적으로 불신 기반은 안정성을 확보하고, 신뢰기반은 잠재적 버그와 예외에 취약할 것으로 평가된다.</li>
+<li>하지만 과연 그럴까? 언어적 특성에 기인하지 않는 성과는 언어를 정한다고 보장되지 않는다. 반면, 분명히 언어적 특성으로 인해 좌우되는 결과도 있다.</li>
+<li>현대 컴퓨터는 결정론적 시스템이며, 맥락, 입력, 코드에 따라 항상 같은 결과를 보장된다. </li>
+<li>버그는 근본적으로 코드의 품질 문제이다.</li>
+<li>예외는 본질적으로 예측할수 없고, 여러 검증이 코드의 품질과 관게없이 동작을 완벽히 보장할 수 없다.</li>
+<li>상호 불신 상황에서는 코드의 복잡도 증가, 개발 속도 저하, 가독성의 하락 등이 발생한다. </li>
+<li>신뢰를 전제로 할 경우, 생산성 향상, 코드 가독성 향상, 빈번한 소통, 협력의 경량화 등 발생한다.</li>
+<li>언어/문화적 특성은 개발자의 개인적 능력을 활용하는 측면에서 유불리로 작용한다.</li>
+<li>때문에, 개발 전략과 인적 구성과 별도로 생각하기 어렵다.</li>
+<li>소수 정예일수록 신뢰 기반을 선호하며, 부서간 긴밀한 소통이 어렵고 협력이 무거울수록 불신 기반을 선호하게 된다. </li>
+</ul>
+</div>
+<div class="preview-link">
+<p><a href="../posts/%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/">&gt;&gt; Read More &gt;&gt;</a></p>
+</div>
+</div>
+<div class="preview-box">
+<!-- ## [제발 catch 좀 줄여라](./posts/제발 catch 좀 줄여라.md) -->
+<div class="preview-content">
+<h1 id="catch">제발 catch 좀 줄여라<a class="headerlink" href="#catch" title="Permanent link">&para;</a></h1>
+<!-- preview-start -->
+<div class="doc-tag-right">
+ 2024년 11월 | HJ(Software Architect)
+</div>
+<h2 id="abstract_1">Abstract<a class="headerlink" href="#abstract_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>try-catch에 대한 잘못된 사용 지침이나 권장이 너무 많다. 그 예시다.<ol>
+<li>try-catch는 예상 가능한 예외가 발생할 수 있는 합리적 범위에 한정해서 사용한다.</li>
+<li>최소한의 코드 블록을 try-catch로 감싸서 예외 상황을 명확히 파악할 수 있게 한다.</li>
+<li>특정 예외만 Catch하라</li>
+<li>복구 가능한 예외와 불가능한 예외 구분하라</li>
+<li>복구 가능한 예외는 적절히 처리해 프로그램이 정상 동작하도록 하며, 복구 불가능한 예외는 로그를 남기고 필요시 프로그램을 종료한다</li>
+<li>예외(또는 반환값)는 명확하고 구체적인 이름으로 정의한다</li>
+<li>레이어에 따라 의미 있는 예외로 변환하여 상위 계층에 전달한다 </li>
+</ol>
+</li>
+<li>현실을 전혀 다르다.<ol>
+<li>완벽히 예상 가능하면 예외가 아니다.</li>
+<li>외부 서비스 경계등에 방어벽(Crash Barrier) 설치하지 않으면 전체가 멈추기 딱 좋다. 우선은 풀 커버를 해야한다. 디테일은 그 다음.</li>
+<li>모두 잡거나 아예 잡지 마라. 특정 오류를 잡아봐야 전체적인 견고성(Robustness) 관점에서 별 도움 안된다.</li>
+<li>프로그램 기능으로 복구 가능하면 예외가 아니다. throw-catch의 메커니즘을 제대로 알면, 복구가능성은 논의의 대상이 안된다.</li>
+<li>복구 가능한 예외는 현실적으로 없다. 특히 외부시스템(ex&gt; 디비, Web API)가 연결되면 항상 그렇다. 그리고 종료는 절대 절대 안된다. </li>
+<li>지엽적 정보가 구체적이어도 많은 경우 문제 재현은 안된다. 재현을 하려면 주변 정보까지 전부 필요하다. 그러니 오류 메시지에 에너지 낭비마라.</li>
+<li>상위로 향한다는 것은 더 추상적이 되고, 점점 구체성을 상실한다는 의미이다. 이게 상황파악이나 해결에 도움이 되는가? </li>
+</ol>
+</li>
+<li>우선 throw가 얼마나 막무가내인 매커니즘인지 제대로 이해해라.</li>
+<li>예외를 극복하려고 하기보다, 상황을 파악하는데 주력하고, 적절히 대응해라.</li>
+</ul>
+<!-- more -->
+</div>
+<div class="preview-link">
+<p><a href="../posts/%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/">&gt;&gt; Read More &gt;&gt;</a></p>
+</div>
+</div>
+<div class="preview-box">
+<!-- ## [One Man Framework 가능성의 증명](./posts/One Man Framework 가능성의 증명.md) -->
+<div class="preview-content">
+<h1 id="one-man-framework">One Man Framework 가능성의 증명<a class="headerlink" href="#one-man-framework" title="Permanent link">&para;</a></h1>
+<!-- preview-start -->
+<div class="doc-tag-right">
+ 2024년 11월 | HJ(Software Architect)
+</div>
+<p>2025년 12월 현재, 이미 1년 이상 운영중이다. 증명 끝!</p>
+<p>논리학적으로 가능성의 증명은 실제 사례 1건만 찾으면 된다. 그런고로 증명은 아주 간단하다. 
+그러나 이 글을 읽는 사람들이 정말 궁금해 할것은 <strong>어떤 조건에서 어느 규모를 운영 할 수 있는가?</strong> 일 것이다.</p>
+<div class="admonition question">
+<p class="admonition-title">우선 어느 규모인가?</p>
+<p>사전에 분명히 알려둘 것은 이것은 1인 개발자가 어느 정도 규모의 IT 시스템을 라이브 운영할 수 있는가에 대한 내용이지, 
+절대로 사업을 성장시키는 것에 대한 이야기는 아니다. 시스템은 이미 오랜기간 운영 중이었으며, 많은 고객을 갖추고 있었다.</p>
+<p>나는 3년 전부터 개입하여 거의 실패한 차세대 시스템의 재구축, 완성, AWS로의 이전, 운영을 해결하였을 뿐이다. 고객 유치는 개발자의 업무가 아니다.</p>
+<p>현재 이 시스템은 2024년 11월부터 2025년 11월까지 <strong>12개월간 합계 거래량 44만 건, 금액 53억 원</strong>을 처리했다.</p>
+</div>
+<!-- more -->
+</div>
+<div class="preview-link">
+<p><a href="../posts/One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/">&gt;&gt; Read More &gt;&gt;</a></p>
+</div>
+</div>
+<div class="preview-box">
+<!-- ## [소프트웨어 아키텍처는 의사결정이지, 모방이 아니다](./posts/소프트웨어 아키텍처는 의사결정이지, 모방이 아니다.md) -->
+<div class="preview-content">
+<h1 id="_1">소프트웨어 아키텍처는 의사결정이지, 모방이 아니다<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="doc-tag-right">
+ 2024년 11월 | HJ(Software Architect)
+</div>
+<!-- preview-start -->
+<div class="admonition quote">
+<p class="admonition-title">Software architecture is decision-making, not mimicry.</p>
+</div>
+<h2 id="abstract_2">Abstract<a class="headerlink" href="#abstract_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>소프트웨어 아키텍처는 종종 '의사결정'이라고 말하지만, 대부분은 그냥 무언가를 따라할 뿐이다.</li>
+<li>이러한 '흉내내기'는 조직의 맥락, 팀의 역량, 비즈니스 목표를 무시한 채, 성공 사례의 표면만 좇다가 비용이란 대가를 치른다.</li>
+<li>모든 비즈니스는 고유 흐름이 있고, 그 흐름에 걸맞는 구조가 있다. 따라서, '문제에 대한 이해'와 '달성해야 할 목표'에 대한 성찰이 반드시 필요하다.</li>
+<li>적절한 결론을 얻기 위해서는 정확한 문제 인식 위에 충분한 배경지식, 다양한 모범 사례(Best Practice)와 그 변형을 알아야 한다.</li>
+<li>트레이드오프(Trade-off)를 이해하고 이익을 추구해라.</li>
+<li>선택함에 있어, 기꺼이 치를 수 있는 대가만 수용해라. </li>
+<li>때론 손해 보더라도 조화를 이루어, 병립 가능하게 해라.</li>
+</ul>
+</div>
+<div class="preview-link">
+<p><a href="../posts/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/">&gt;&gt; Read More &gt;&gt;</a></p>
+</div>
+</div>
+<div class="preview-box">
+<!-- ## [소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다](./posts/소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다.md) -->
+<div class="preview-content">
+<h1 id="_2">소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<!-- preview-start -->
+<div class="doc-tag-right">
+ 2024년 11월 | HJ(Software Architect)
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Architecture is decided more by its invariants than by its extensibility.</p>
+</div>
+<h2 id="abstract_3">Abstract<a class="headerlink" href="#abstract_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>많은 사람들이 어떤 아키텍처를 소개할 때, 확장성에 대해서 강조한다.</li>
+<li>하지만 실제로 아키텍처의 생명주기, 즉 '아키텍처 사망'을 결정짓는 것은, 무엇을 쉽게 바꿀 수 없는지(불변 요소, invariants)다.</li>
+<li>예를 들어, MSA(Microservices Architecture)는 서비스 단위로 시스템을 쪼개어 필요에 따라 독립적으로 확장할 수 있다는 점이 주로 부각된다.</li>
+<li>MSA는 서비스 간 호출에 네트워크 처리가 필수적으로 발생한다.</li>
+<li>또한 서비스는 각자의 데이터를 독점해야 한다는 원칙이 존재한다.</li>
+<li>이를 지키지 않으면, 비용은 치르나 이점은 얻을 수 없다.</li>
+<li>때문에 아키텍처의 선택은 어떤 확장성을 가질 것인가가 아니라, 어떤 비용을 기꺼이 치를 것인가를 핵심으로 해야 한다.</li>
+<li>절대로 치를 수 없는 비용을 대가로 해서는 안 된다.</li>
+<li>MSA는 특성상, 동일한 컴퓨팅에 대해, 더 높은 네트워크 사용률, 더 높은 CPU 사용률을 가질 수밖에 없다.</li>
+<li>배치가 유연한 만큼 코딩에 제약사항이 있는 등 이미 비용을 치르고 시작한다.</li>
+<li>동적 배치를 관리할 관리 인력이 필연적으로 있어야 이익을 회수할 수 있다.</li>
+<li>이는 MSA가 소규모 서비스, 가령 AWS EC2 기준 8vCPU / 32GiB 머신 5대 이하 + 로드밸런서의 규모에서는 MSA가 투자 대비 효용(ROI)을 가지기 어렵다는 것을 의미한다.</li>
+<li>넷플릭스는 처음부터 MSA로 개발하지 않았다. 기존 자신들의 구조가 한계에 가까워졌을 때, MSA로 전환하였다.</li>
+</ul>
+</div>
+<div class="preview-link">
+<p><a href="../posts/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/">&gt;&gt; Read More &gt;&gt;</a></p>
+</div>
+</div>
 
 
 
 
 
 
+
+  
+  
+
+
+
+
+  
 
 
 

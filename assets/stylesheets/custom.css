@@ -138,3 +138,72 @@ nav.md-tabs .md-tabs__item:last-child {
   font-weight: bold;
   margin: 0 0px;
 } */
+
+
+
+/* 추가 admonition */ 
+
+
+
+/* 커스텀 */
+.md-main__inner {
+  max-width: 1600px;
+  margin: 0 auto;   /* 가운데 정렬 */
+}
+
+.doc-tag-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  color: #888;
+  font-size: 0.95em;
+}
+
+/* 컨테이너마다 카운터 초기화 및 폰트 크기 조정 */
+.preview-box {
+  margin: 3em 2em; /* 각 컨테이너 사이에 공간 추가 */
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08), 0 4px 8px 0 rgba(0,0,0,0.04);
+  /* border-radius: 12px; */
+  background: #fff;
+  padding: 2em 2em;
+
+  border: 1px solid lightgray;
+  border-right: 1.2em solid #199999;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+}
+
+/* 컨테이너마다 카운터 초기화 및 폰트 크기 조정 */
+.preview-content {
+  /* counter-reset: section; */
+  font-size: 0.8em; /* 폰트 크기 줄임, 필요시 더 조정 가능 */
+}
+
+.preview-box h1::before,
+.preview-box h2::before,
+.preview-box h3::before,
+.preview-box h4::before,
+.preview-box h5::before {
+  content: none !important;
+}
+
+
+.preview-content a{
+  pointer-events: none;
+  cursor: default;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+  transition: none;
+}
+ 
+.preview-link a {
+  display: flex;
+  justify-self: end;
+  font-size: 1.2em;
+  font-weight: bold;
+  /* padding-left: 2em; */
+  /* padding-bottom: 2em; */
+}

@@ -1,0 +1,2340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://js-seth-h.github.io/website/docs.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%20%EB%90%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/">
+      
+      
+        <link rel="prev" href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/">
+      
+      
+        <link rel="next" href="../%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/2875963">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>소프트웨어 아키텍트 되는 방법 - Archive of Architect HJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="Archive of Architect HJ" class="md-header__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Archive of Architect HJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              소프트웨어 아키텍트 되는 방법
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (KR)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs.en/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏛 Documents (EN)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ❔ About
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="Archive of Architect HJ" class="md-nav__button md-logo" aria-label="Archive of Architect HJ" data-md-component="logo">
+      
+  <img src="https://avatars.githubusercontent.com/u/2875963" alt="logo">
+
+    </a>
+    Archive of Architect HJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (KR)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (KR)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../One%20Man%20Framework%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98%20%EC%A6%9D%EB%AA%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One Man Framework 가능성의 증명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TDD%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8A%94%20%EA%B0%80%EC%B9%98%EB%A5%BC%20%EC%A3%BC%EC%A7%80%20%EB%AA%BB%ED%96%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD - 단위 테스트는 가치를 주지 못했다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    디자인 패턴은 본래 고쳐 쓰는 것이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불신의 코딩 vs 신뢰의 코딩
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 의사결정이지, 모방이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소프트웨어 아키텍트 되는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        일반론: 아키텍트가 되려면
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        일반론 비판
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개인적 경험
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        지식
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        지혜
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        체득
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="체득">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-world-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of World Crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-inseparable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Inseparable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-ontological-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Ontological Insight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-reproducible-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Reproducible Decision Making
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        아키텍트로서 자기 확신
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아키텍처는 구조적 해결책이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A0%9C%EB%B0%9C%20catch%20%EC%A2%80%20%EC%A4%84%EC%97%AC%EB%9D%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제발 catch 좀 줄여라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A7%81%EA%B4%80%EC%9D%84%20%EB%94%B0%EB%9D%BC%EC%95%BC%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EA%B3%A0%2C%20%EC%9D%BD%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%95%BC%20%EA%B3%A0%EC%B9%98%EA%B8%B0%20%EC%A2%8B%EB%8B%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    직관을 따라야 읽기 좋고, 읽기 좋아야 고치기 좋다.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../docs.en/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛 Documents (EN)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛 Documents (EN)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Architecture%20Is%20a%20Structural%20Solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Is a Structural Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Design%20Patterns%20Are%20Meant%20to%20Be%20Modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns Are Meant to Be Modified
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Distrustful%20Coding%20vs%20Trustful%20Coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distrustful Coding vs Trustful Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/How%20to%20Become%20a%20Software%20Architect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Become a Software Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Please%2C%20Reduce%20catch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Please, Reduce catch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Proof%20of%20the%20Possibility%20of%20a%20One%20Man%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of the Possibility of a One Man Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Decision-Making%2C%20Not%20Imitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Decision Making, Not Imitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Software%20Architecture%20Is%20Determined%20by%20Invariants%2C%20Not%20Extensibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Is Determined by Invariants, Not Extensibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/Static%20Typed%20Languages%20%28TS%29%20vs%20Dynamic%20Typed%20Languages%20%28JS%29%3A%20Different%20Approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Typed Languages (TS) vs Dynamic Typed Languages (JS): Different Approaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/TDD%20-%20Unit%20Tests%20Did%20Not%20Provide%20Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD   Unit Tests Did Not Provide Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.en/You%20Must%20Follow%20Intuition%20to%20Make%20Code%20Readable%2C%20and%20Readable%20Code%20Is%20Easier%20to%20Modify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Must Follow Intuition to Make Code Readable, and Readable Code Is Easier to Modify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❔ About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❔ About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Korean (Domestic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Korean (Domestic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (KR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (KR, Domestic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English (Global)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English (Global)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Introduc Here (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Biography.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔖 Biography (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact.en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ How to Contact (EN,Global)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  <div style="margin-bottom: 1.5em; border-bottom:1px solid #ddd; border-top:1px solid #ddd; padding: 0.5em ;">
+    <div style="display: flex; align-items: start; gap: 8px; ">
+      <img src="https://avatars.githubusercontent.com/u/2875963" alt="아바타" style="border-radius: 50%; width: 48px; height: 48px;" />
+      <div style="line-height:1.4em; display: flex; flex-direction: column; gap: 2px;">
+        <strong style="font-size:1.4em;">HJ,</strong>
+        <div style="font-size:0.85em;">Software Architect</div>
+        <div style="font-size:0.85em;">Ph.D. in Software Engineering</div>
+        <!-- <div style="font-size: 1em;  color:#666;">Software Architect & </div>
+        <div style="font-size: 1em;  color:#666;">Ph.D. in Software</div>         --> 
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(KR)</a>
+        <a href="/website/contact" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(KR, Domestic)</a>
+        <hr style="border: none; border-top: 1px dashed #e0e0e0; margin: 0.1em 0;">
+        <a href="/website/Biography.en/" style="color:rgb(64, 81, 181); font-size:0.97em;">👤 Biography(EN)</a>
+        <a href="/website/contact.en" style="color:rgb(64, 81, 181); font-size:0.97em;">✉️ Contact information<br/>(EN, Global)</a>
+        <!-- <a href="mailto:js.seth.h@gmail.com" style="color:rgb(64, 81, 181); font-size:0.97em;">js.seth.h@gmail.com</a> -->
+      </div>
+    </div>
+  </div>
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+  
+  
+
+  <!-- Table of contents title and list -->
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        일반론: 아키텍트가 되려면
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        일반론 비판
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개인적 경험
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        지식
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        지혜
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        체득
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="체득">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-world-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of World Crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-inseparable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Inseparable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-ontological-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Ontological Insight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastery-of-reproducible-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastery of Reproducible Decision Making
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        아키텍트로서 자기 확신
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결론
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+    
+  </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../#tag:perspective" class="md-tag">Perspective</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="_1">소프트웨어 아키텍트 되는 방법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<pre style="text-align: right;">
+HJ, Ph.D. / Software Architect
+(js.seth.h@gmail.com)
+초안: 2025년 01월 / 개정: 2026년 01월
+</pre>
+
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<ul>
+<li>소프트웨어 아키텍트가 되는 방법은 매우 두루뭉술하게 설명된다. 주로, 많은 개발 경험, 아카텍처 패턴이나 원칙 학습, 과거 아키텍처의 이해, 문서화, 커뮤니케이션, 리더십, 의사결정 경험 등등...</li>
+<li>그런데, 설명의 절반은 되는 방법이 아니라, 해야하는 일 아닌가?</li>
+<li>그리고, 의사, 변호사, 검사, 회계사, 세무사, 교사에 대해서 이처럼 애매한 설명을 하는가?</li>
+<li>엄격히 말해, 소프트웨어 아키텍트가 되는 방법은 제도화 되어 있지 않으며, 제도화 이전에 어떤 자격요건이 있는지 조차 정의되지 않았다.</li>
+<li>그런고로, 소프트웨어 아키텍트는 확신을 가진 자기 선언적 도달로 볼 수 있다. 적어도 개인의 경험과 관찰은 그러하다.</li>
+<li>때문에, 객관적인 설명은 해줄 수 없다. 하지만 주관적 관점은 설명 가능하다.</li>
+<li>소프트웨어 개발/설계는 이해관계의 충돌, 기술적 제약 등 여러 모순된 상황을 직면한다.</li>
+<li>소프트웨어 아키텍트는 모순에 대해서도 스스로의 기준을 갖고 일관되게 대응할 수 있다는 자기 확신이 필요하며, 그 확신 위에 선언된다. </li>
+<li>개인의 경험상, 확신의 필요 충분 조건이 나열 해볼 수 있다. </li>
+<li>지식: 전산학 지식을 광범위하게 쌓을 것.</li>
+<li>지식: 프로젝트, 인력 운영 등에 대한 지식을 쌓을 것.</li>
+<li>지식: 교육, 리더십에 대한 지식을 쌓을 것</li>
+<li>지혜: 지식을 의심할 것. 교과서적 표현은 압축적인 전달이라 생략이 많다.</li>
+<li>지혜: 지식을 의심할 것. 지식은 보통 학습자의 수준에 맞춘 내용일 뿐이다.</li>
+<li>지혜: 지식 암기에 그치지 않고, 감각적 이해, 직관적 적응까지 반복 할 것 - 아마도 체득의 준비 과정</li>
+<li>지혜: 지식 암기에 그치지 않고, 인과/선후/연관 관계에 따라 유연하게 연결해서 활용 가능할 것  - 아마도 체득의 준비 과정</li>
+<li>체득: 스스로 형성한 기술,조직,인력 등 세계관이 새로운 세계관과 충돌하더라도 해석 수용이 가능한 정도로 해석학적 지평(horizon of understanding - 한스 게오르크 가다머(H.-G. Gadamer))을 넓힐 것.</li>
+<li>체득: 사고(Thinking), 구조화(Architecturing), 구현(Implementing) 내재적 삼중성의 통합</li>
+<li>체득: 의사 결정의 불가분성을 이해하고, 조정하는 능력 </li>
+<li>체득: 소프트웨어 구성 요소에 대한 존재론적 판단</li>
+<li>체득: 의사 결정의 재현성(Decision Making Reproducibility)이 필요함. 아키텍처를 감으로 선택하는 게 아니라, 명확한 판단 기준, 근거, 논리가 있어야 모순적 상황에서도 '재현성'이 성립함</li>
+<li>결과적으로...<ul>
+<li>직관 (Intuition) - 의사결정 자연스럽게 유도됨 -&gt; 경험 누적을 통해 발생</li>
+<li>응용 (Transferability) - 새로운 문제에 기존 의사 결정을 재구성해 적용 가능 -&gt; 기계적 반복이 아닌, 해체-재조합 기반의 구조 유연성</li>
+<li>해설 (Explicability) - 의사결정, 판단 이유를 타인에게 설명 가능 -&gt; 언어화할 수 있어야 함</li>
+<li>일관 (Consistency) - 다른 맥락에서도 동일 기준이 작동하는가? -&gt; 판단의 재현성</li>
+</ul>
+</li>
+<li>아키텍트는 제도적 라이선스(License)를 갖지는 않는다.</li>
+<li>그러나, 현실과 디지털의 개체, 관계, 흐름, 주도권, 데이터, 정보 등을 이해하고 일관되게 조정 할 수 있게되면, 아키텍처를 베끼는 것이 아니라, 스스로 만들고 있음을 깨닫는다.</li>
+</ul>
+<h2 id="_2">일반론: 아키텍트가 되려면<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>흔히, 소프트웨어 아키텍트는 소프트웨어 시스템의 구조를 정의하고, 기술적인 의사 결정을 내리며, 다양한 개발 팀이 시스템 아키텍처를 올바르게 구현할 수 있도록 가이드하는 사람으로 정의되며, 다음을 역활을 한다고 소개된다.
+* 시스템의 핵심 아키텍처 설계 담당
+* 기술 스택 선택 및 기술적 방향 설정
+* 품질 속성(성능, 확장성, 보안성 등)의 우선순위를 정하고 이에 최적화된 솔루션 설계
+* 이해관계자 및 개발자 사이의 다리 역할 수행</p>
+<p>그러면서, 소프트웨어 아키텍트가 되려면 다음과 같은 조건을 갖추어야 한다고 말한다.</p>
+<ol>
+<li>다양한 개발 경험을 쌓아야 한다. 여러 프로젝트에서 다양한 역할을 수행하며 기술적 폭과 깊이를 넓혀야 한다.</li>
+<li>소프트웨어 설계 원칙과 아키텍처 패턴을 학습해야 한다. SOLID, 디자인 패턴, 마이크로서비스, 클린 아키텍처 등 주요 개념을 이해해야 한다.</li>
+<li>시스템의 구조와 동작 원리를 깊이 있게 이해해야 한다. 데이터베이스, 네트워크, 보안, 인프라 등 시스템 전반에 대한 지식이 필요하다.</li>
+<li>문서화와 커뮤니케이션 능력을 갖추어야 한다. 설계 의도를 명확히 전달하고, 다양한 이해관계자와 효과적으로 소통할 수 있어야 한다.</li>
+<li>리더십과 의사결정 경험이 필요하다. 기술적 판단을 내리고, 팀을 이끌며, 책임을 질 수 있어야 한다.</li>
+<li>최신 기술 동향을 꾸준히 학습해야 한다. 클라우드, DevOps, 컨테이너 등 새로운 기술을 적극적으로 받아들여야 한다.</li>
+</ol>
+<h2 id="_3">일반론 비판<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>그런데, 일반적으로 소개되는 소프트웨어 아키텍트가 되는 방법은 실제로 '되는 과정'보다는 '해야 하는 일'에 초점이 맞춰져 있다. 이는 아키텍트의 역할과 책임을 나열하는 데 그치며, 실질적으로 어떻게 그 위치에 도달하는지에 대한 안내는 없다. </p>
+<p>현실적으로 소프트웨어 아키텍트가 되는 것에 대하여 제도화된 기준은 존재하지 않는다. 더군다나, 전통적으로 소프트웨어 아키텍트는 재능이나 천재의 영역으로 여겨져 온 것도 사실이다. 때문에 그 과정을 명확히 할 이유가 부족했기도 하다. 그래서 대부분의 설명은 경험, 역량, 리더십, 커뮤니케이션 등 추상적이고 포괄적인 조건을 나열하는 데 그친다.</p>
+<p>의사, 변호사, 검사, 회계사, 세무사, 교사 등은 명확한 자격 요건과 제도적 절차가 마련되어 있지만, 소프트웨어 아키텍트는 그러한 기준이 없다. 결국, 소프트웨어 아키텍트가 되는 길은 제도적·객관적 기준이 아닌, 개인의 경험과 자기 확신, 그리고 스스로의 선언적 도달에 의존한다. 이는 각자의 성장 과정과 내면적 성찰에 따라 달라질 수밖에 없으며, 누구에게나 동일하게 적용되는 공식적인 방법론이 없다는 점에서 본질적으로 모호하다.</p>
+<p>그럼에도 집단이 동의 가능한 기준선은 존재하기 마련이다. 최소한 개인의 경험과 관찰은 그러하다.<br />
+때문에, 성장의 경로가 한가지만 있는 것은 아니겠으나, 개인 회고를 통해 최대한 많은 필요 조건은 명문화 하는 것이 누군가에겐 목표를, 누군가에겐 영감을, 누군가에겐 돌파구를 주는 것도 가능하라리 기대한다.</p>
+<h2 id="_4">개인적 경험<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>스스로 아키텍트로 명확히 정체성을 확신하기까지, 꽤 많은 시간과 경험이 필요했다.<br />
+짧게 말해, 대학 입학부터 박사 학위까지의 제도권 교육의 시간이 18년, 회사의 프로젝트 경험이 또 16년은 필요했다.</p>
+<p>솔직히 말해, 학부생때도 개발 능력면에서는 두드러졌다. 재능의 덕이라고 해야할지, 시작부터 다소 높은 출발점에서 시작했다고 본다. 디자인 패턴은 대학 3년쯤 접했으며, 이미 암기하고 사용하는데 문제가 없었다. 솔직히 적절하게 따라만해도 잘 굴러가는게 사실이다. 
+학부 졸업 시점에는 깊은 이해는 부족할지 몰라도, 교과서적 내용은 대부분 알고 후배에게 설명 가능했다. 그훟 대학원에서는 학부에서 다루지 않는 - 즉 보편적이지 않은 분야도 폭 넓게 배웠다.  </p>
+<p>동시에 회사일을 하면서, 이론과 현실의 괴리와 접목을 함께 경험하기도 했다. 이떄쯤, 개인적으로 전산학 지식은 어려움을 느끼지 못했으나, 프로젝트나 인력 운영은 별개의 문제였다. </p>
+<p>석사 졸업 쯤에 갈때는 이미 기존 시스템을 이용하는 아키텍처 생성에 능숙하여, 아주 적은 양의 코드로도 목적을 달성 할 수 있었다. 일례로 SCIE논문으로 작성한 LIDAB: a user-friendly display system for linked multimedia data and its application in education (2015)에서 시맨틱 웹브라우저로 소개된 LIDAB은 시멘틱 데이터 URI와 시각화 정의 URI(일종의 프론트엔드) - 2개의 URI을 넣어야 동작하는 웹브라우저인데, 기술실증을 위한 예시 HTML,CSS, 서버 등등 모든 요소를 합쳐 8524 라인,약 100KB로 구현되었다. 이는 대부분의 작업을 각종 라이브러리와 데이터베이스 등에 적절히 위임하여 만들어진 결과이다. </p>
+<p>하지만, 효율적으로 만드는 것과 내가 아키텍처를 완전히 통제하는 것은 좀 다른 문제였다. 장단점의 충돌로 인한 트래이드-오프(Trade-Off)나 모순적 상황에서 결정은 누구나 할 수 있다. 그러나 그러한 결정이 이후에 개발이 진행되면서 드러나는 사실로 인해 흔들리지 않고 유지 될 수 있는지는 별개의 문제이다. 확신이 없는 결정 - 그래서 통제가 불충분하다면, 진행되면서 발견되는 사실로 인해서 과거의 결정을 번복하고 싶은 유혹에 쉽게 빠진다. 이키텍처의 수정 비용은 꽤 광범위 하기 때문에 이런 부분은 자기 확신에 전혀 긍정적이지 않다. 이때까지만해도, 나는 의사결정의 재현성(Decision Making Reproducibility)에 도달하지 못했기 때문이다. 당시에는 나도 보통의 개발자처럼 아키텍처의 확장성을 먼저 보고 있었기 때문이다. </p>
+<p>이후에 소프트웨어가 결정론적 시스템으로써 근본적으로 가지고 있는 고정성을 직시하게 되었다. 그 후 스스로의 아키텍처 디자인 과정에 대한 검증을 마치고나서야, 오랜 숙제였던 의사결정의 재현성의 성립을 확인했다. 그 뒤, 스스로 아키텍트라 자신있게 말할 수 있게 되었다.</p>
+<div class="admonition success">
+<p class="admonition-title">의사결정의 재현성 - Decision Making Reproducibility</p>
+<p>다시 같은 상황에 처해도 나는 동일한 결정을 할 것이다.<br />
+즉, 최선의 결정임을 확신할 수 있고, 이유없이 후회하지 않는다.</p>
+<blockquote>
+<p>개발을 하다 보면 누구나, 작업이 생각보다 걸리적거려서 이유를 댈 수 없는 후회를 한 적이 있을 것이다.</p>
+</blockquote>
+</div>
+<h2 id="_5">지식<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>전산학 지식의 폭넓은 습득  </li>
+</ul>
+<p>소프트웨어 아키텍트로 성장하기 위해서는 전산학의 핵심 이론과 원리를 폭넓게 학습하는 것이 필수적이다. 자료구조, 알고리즘, 운영체제, 네트워크, 데이터베이스, 소프트웨어 공학 등 기초적인 분야부터, 분산 시스템, 보안, 인공지능, 클라우드 등 최신 트렌드까지 두루 익혀야 한다. 이러한 지식은 단순히 암기하는 수준을 넘어, 실제 문제 해결에 적용할 수 있을 만큼 깊이 있게 이해되어야 한다.</p>
+<p>이론적 지식은 실무에서 마주치는 복잡한 문제를 구조적으로 분석하고, 최적의 해결책을 설계하는 데 기반이 된다. 또한, 새로운 기술이나 패러다임이 등장할 때 빠르게 적응할 수 있는 힘을 길러준다. 아키텍트는 기술적 의사결정의 근거를 명확히 제시해야 하므로, 전산학적 지식의 폭과 깊이는 곧 신뢰의 원천이 된다.</p>
+<ul>
+<li>프로젝트 및 인력 운영에 대한 실질적 경험치  </li>
+</ul>
+<p>아키텍트는 단순히 기술만 다루는 역할이 아니다. 다양한 프로젝트를 경험하며, 요구사항 분석, 일정 관리, 위험 관리, 품질 보증 등 소프트웨어 개발의 전 과정을 이해해야 한다. 실제로 여러 프로젝트에서 다양한 역할을 수행해보면, 기술적 문제뿐 아니라 조직 내 커뮤니케이션, 갈등 조정, 자원 배분 등 인력 운영의 중요성을 체감하게 된다.</p>
+<p>프로젝트 경험은 이론과 현실의 차이를 인식하게 해주며, 예기치 못한 문제에 유연하게 대응하는 능력을 키워준다. 또한, 팀원들의 역량을 파악하고 적재적소에 배치하는 리더십, 협업을 이끌어내는 소통 능력 등도 함께 성장한다. 아키텍트는 기술과 사람, 조직을 모두 아우르는 시야를 갖추고 이를 조절해야하므로, 실질적인 프로젝트에서의 개발과정, 난이도와 인력 배정, 비전문가(=비 개발자 집단)과의 소통 등 다양한 측면에서 직접 경험을 쌓을 필요성이 있다.</p>
+<blockquote>
+<p>교육, 리더십은 당신이 알던 그 개념이 아니다. </p>
+</blockquote>
+<ul>
+<li>교육, 리더십에 대한 지식  </li>
+</ul>
+<p>소프트웨어 아키텍트는 자신의 지식과 경험을 팀원들에게 효과적으로 전달하고, 조직 전체의 역량을 끌어올리는 역할도 맡는다. 이때 가장 중요한 점은 구성원이 무엇을 해야하고 무엇을 하지 말아야하는지 정확히 파악하도록 전달하는 것이다. 아키텍트에게 가장 중요한 것은 개발 조직 구성원이 현재 프로젝트의 아키텍처에 순응하여 인프라의 이점을 취할 수 있도록 이끄는 것이다. 운영의 효율성이 2순위, 서비스의 확장성이 3순위, 조직원 개인의 장기적 성장은 4순위쯤 된다.</p>
+<p>때문에, 흔한 교육학적 개념의 인적 자원의 성장과는 상당히 다른 이야기이다. 즉 교육학의 교과서적인 교수-학습 이론을 적용하라는 의미도 아니고, 전산학 전공서를 읽어 주라는 의미도 아니다. 사람의 성장 과정은 그렇게 간단하지도 않고, 단기간에 이루어지지도 않는다. 하루에 수용 가능한 지식의 한계도 있으며, 맥락에 의한 앵커링 효과의 차이도 크다.(ex&gt; JIT Learning) 개인별 탐색 능력이 발휘되는 분야의 차이도 크고, 배경지식의 차이도 매우 큰 변수이다. 때론 지식 암기보다 습관의 개선이 더 큰 차이를 끌어내기도 한다. 또한 회사는 이윤을 추구하는 조직이지, 학생을 가르치는 조직이 아니다. 때문에 순수 교육적 목적으로 운영하는 것은 불가능하다. </p>
+<p>결과적으로 일이 진행되게끔 인력을 배치하면서 아키텍처의 이점을 얻기 위한 방향을 지도하는, 업무 생산성에 초점을 둔 교육/리더십이 가장 먼저 필요하다. 잘 수행하기 위해서는 몇 가지 조건이 있는데, 우선 현 아키텍처의 제약과 장점을 정확히 이해해야 한다. 둘째, 상대가 가진 맥락(배경지식과 경험)에서 이해 가능하게끔 눈높이를 조정하여 전달해야 한다. 이를 통해, 상대의 개발 방향을 조정하여, 아키텍처가 의도한 방향으로 진행되도록 해야 한다. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>참고로 소프트웨어 개발 맥락에선 흔한 리더십 교육의 내용은 거의 쓸모가 없다.<br />
+개발 조직은 다른 인력 조직과 매우 다른 특이성이 있다. 그건 개발자 한 명 한 명이 생산을 직접한다는 것이다. 제조업은 설비의 영향을 더 크게 받고, 서비스업은 팀워크에 좌우되거나 개인의 역량 차이가 크게 두드러지지 않는다. 하지만 개발자 조직은 전혀 다르다. 개인의 지적 능력이 산출물에 거의 그대로 대입되며, 개인의 생산 - 즉 자기 효용성이 아예 체감되지 않는 상황에서는 어떤 수단도 거의 효용이 없다. </p>
+</div>
+<h2 id="_6">지혜<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>교수님은 절대로 아는 모든 것을 <strong>학부생</strong>에게 설명하지 않는다. 어차피 이해 못할 것을 안다.</p>
+</blockquote>
+<p>지혜란 단순히 지식을 많이 아는 것에서 그치지 않는다. 지식은 외부로부터 주어진 정보이지만, 지혜는 그 지식을 의심하고, 재해석하며, 자신의 맥락에 맞게 적용하는 능력에서 비롯된다. 소프트웨어 아키텍트에게 지혜란 다음과 같은 의미를 가진다.</p>
+<ul>
+<li>지식의 한계를 인식하고, 교과서적 정의나 권위에 맹목적으로 의존하지 않는다. 모든 지식은 맥락과 생략이 있음을 이해한다.</li>
+<li>파인만의 인터뷰(https://www.youtube.com/watch?v=3smc7jbUPiE)에서 보이듯, 지식은 전달자의 수준과 목적에 따라 단순화되거나 왜곡될 수 있음을 항상 경계한다.</li>
+<li>지식의 암기에 머무르지 않고, 실제 문제에 적용해보며 감각적으로 이해하고, 직관적으로 적응하는 과정을 반복한다. 이 과정에서 시행착오와 실패를 두려워하지 않는다.</li>
+<li>인과관계, 선후관계, 연관관계를 유연하게 연결하여, 상황에 따라 지식을 재구성하고 새로운 해석을 도출할 수 있어야 한다.</li>
+<li>기존의 지식이나 경험이 새로운 문제에 항상 맞지 않을 수 있음을 인정하고, 필요하다면 과감히 버리거나 수정할 수 있는 용기를 가진다.</li>
+<li>타인의 조언이나 업계의 트렌드도 맹신하지 않고, 자신의 경험과 논리로 검증하는 태도를 유지한다.</li>
+<li>궁극적으로, 지혜는 "왜?"라는 질문을 멈추지 않는 태도에서 비롯된다. 모든 결정과 선택의 근거를 스스로 점검하고, 더 나은 방향을 모색하는 자세가 중요하다.</li>
+</ul>
+<p>여기까지가 지혜의 1단계다. </p>
+<div class="admonition note">
+<p class="admonition-title">Definition of Wisdom</p>
+<p><strong>지혜</strong>(wisdom)란, 상황에 맞는 적절한 판단을 내리기 위한 <strong>통합</strong>된 인식·경험·가치의 <strong>체계</strong>를 의미한다.
+이는 단순한 지식이 아니라, “무엇을 언제, 왜, 어떻게 적용할 것인가”를 아는 능력이다.</p>
+</div>
+<p>다음 단계의 지혜를 애기하려면 어쩔 수 없이 철학을 조금 애기해야한다.<br />
+철학 ‘Philosophy’는 고대 그리스어 <em>philos</em> (사랑) + <em>sophia</em> (지혜)에서 유래해 '<em>지혜를 사랑함</em>'을 뜻한다. 그 뜻만큼이나, '왜?'라는 분야를 탐구해온 분야이며, 특히 물질 세계와 관련이 없을 경우 더욱 그렇다. 그리고 현대 전산학은 추상적 논리 모델을 다루는 분야이며, 대부분의 응용 소프트웨어는 사회 구조를 다소 투영하기 때문에 사회과학의 근간이라 볼 수 있는 철학과는 멀고도 가까운 관계가 된다.</p>
+<p>사실 철학은 '문제 던지기의 역사'이다.<br />
+철학은 완전한 체계의 구조물이 절대 아니다. 통합되어 있지도 않다. 하지만 문제, 즉 "왜?"는 끊임없이 던졌다. </p>
+<p>아키텍처 디자인은 수많은 선택과 판단으로 이루어져 있고, 여기에는 물론 물리적 제약에 의한 것도 있으나, 현대에는 논리적 제약이 더 크다. 예시 하나를 들자면 디자인 패턴의 추상 팩토리를 사용해야 할 물리적 이유는 존재하지 않는다. ‘왜 이 선택이 옳은가?’라는 질문은 자연스럽게 형이상학적·인식론적·가치론적·존재론적·구성적·실존적·실용적 영역으로 사고가 확장된다. 아키텍처가 순수 기술적 영역에서 결정이 될거라 생각한다면, 그건 너무 순진한 생각이다. </p>
+<blockquote>
+<p>철학 용어를 너무 쓰면 개발자가 못 알아 듣는다.<br />
+아는데.... 개념 차용이 필요한 경우 어쩔 수 없긴하다.</p>
+</blockquote>
+<p>아키텍트가 철학 용어를 전면적으로 사용할 필요는 없다. 하지만, 내적 사고가 철학의 단계에 도달하지 않을 것이라 볼 수는 없다. 지혜의 1단계가 서로 상이한 지식과 경험을 다양한 측면에서 결합하고 유연하게 적용하는 것 - 즉 통합이 핵심이라면, 
+지혜의 2단계는 체계 - 즉 질서가 핵심이 된다. 목적이 없어서 중구난방인 순수 철학과 달리, 소프트웨어 개발과 아키텍처는 서비스의 실현이라는 분명한 목적이 있다. 때문에 통합된 지식과 경험이 하나의 체계로 정리되는 것이 가능하다. 로봇 3원칙처럼 절대적 명제 위에 다른 이론을 올릴 수 있기 때문이다. 이렇게 체계가 형성, 안정화되면 의사 결정의 재현성(Decision Making Reproducibility)도 도달이 가능하다.</p>
+<h2 id="_7">체득<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>체득은 단순한 지식의 습득이나 경험의 축적을 넘어, 내면화된 통합적 역량을 의미한다.
+다음은 개인적으로 주효하다고 보는 다섯 가지 체득(Mastery)이다.</p>
+<h3 id="mastery-of-world-crash">Mastery of World Crash<a class="headerlink" href="#mastery-of-world-crash" title="Permanent link">&para;</a></h3>
+<p>가방끈이 길든, 경험이 많든, 그런 경우엔 자신만의 기술적·조직적·인적 세계관을 갖게 마련이다.
+소프트웨어 아키텍트도 마찬가지지만, 아키텍트는 단순히 어떤 분야의 전문가가 아니다. 소프트웨어 개발 분야는 매번 다른 서비스를 만든다. 때문에 항상 세계관이 같을 수가 없다. 아마도 그 어떤 분야의 전문가보다 더 많은 세계관의 충돌을 겪을 것이다. 그래서 자신이 익숙하게 쌓아온 세계관이 전혀 다른 관점이나 새로운 환경과 충돌할 때, 이를 배척하지 않고 유연하게 해석하고 수용할 수 있는 능력이 필요하다.</p>
+<p>실제로, 새로운 프로젝트나 조직에 투입될 때 기존의 성공 경험이 오히려 장애물이 되는 경우가 많다. 이때 필요한 것은, 자신이 옳다고 믿는 방식만을 고집하지 않고, 새로운 상황의 맥락과 배경을 이해하려는 태도다. 예를 들어, 대기업에서 통했던 아키텍처 원칙이 스타트업 환경에서는 전혀 맞지 않을 수 있다. 이럴 때 자신의 기준을 일방적으로 적용하기보다는, 현장의 요구와 제약을 열린 마음으로 받아들이고, 그 안에서 최적의 해석을 도출해야 한다.</p>
+<p>한스 게오르크 가다머가 말한 '해석학적 지평(horizon of understanding)의 확장'은 한 세계관이 다른 세계관을 만나 시야가 넓어지는 과정에 대한 철학적·이론적 설명이다.
+아키텍트는 매번 다른 구조를 분석/학습하고, 각기 다른 목적의 비즈니스를 접함으로써, 이와 같은 세계관의 확장에 열린 자세를 갖는 것을 넘어, 효과적으로 다른 세계관을 흡수할 수 있도록 세계관의 확장 과정을 체득할 필요성이 있다.</p>
+<blockquote>
+<p>상식은 단지 너의 생각이다. 모든 상식은 분야마다 다른 것이 현실이다.</p>
+</blockquote>
+<h3 id="mastery-of-development">Mastery of Development<a class="headerlink" href="#mastery-of-development" title="Permanent link">&para;</a></h3>
+<p>아키텍처의 탐색은 사고(Thinking), 구조화(Architecturing), 구현(Implementing)이라는 세 가지 내재적 삼중성의 통합 위에 성립한다. 사고는 서비스 요구사항의 본질과 변동성을 파악하고, 구조화는 이를 논리적·기술적으로 설계하며, 실현은 실제 코드와 시스템으로 구현하는 과정이다. 아키텍처의 탐색에서 이 세 단계는 분리된 것이 아니라, 서로 동일한 것에 대한 다른 관점/밀도의 서술이기 때문에 사실상 완벽하게 같은 것이다.</p>
+<p>쉽게 말하자면, 아키텍트의 주요 업무 중 하나는 아키텍처를 결정하여 프로젝트 안에서 개별 모듈과 클래스에 제약과 유인을 가하고, 개발자가 그에 따르도록 하는 것이다. 즉 A 방향의 구현은 더 어렵고, B 방향의 구현은 더 쉽도록 아키텍처를 설정하면, 개별 구현은 전반적으로 B에 편향된다. 이는 구조화를 결정하는 순간 이미 구현 단계에서 어떤 힘을 받는지 감각할 수 있어야 가능한 작업이다.</p>
+<p>한편, 서비스의 요구사항 나열은 대체로 두루뭉술하고 얼렁뚱땅하다. 요구사항의 나열은 절대로 그 자체에서 시스템 통합성을 갖추지 않는다. 시장의 필요나 경쟁사와의 비교에서 생성된 필요의 나열이기 때문이다. 또한 확장성이 암시되거나 쉽게 예상 가능한 경우도 많다. 이러한 점을 종합적으로 생각하여 논리적 완결성이 있는 구조적 해법, 즉 아키텍처를 결정해야 한다.</p>
+<p>그리고, 두 과정은 별개로 생각할 수 있는 것이 아니다. 아키텍처를 탐색할 때는 현재의 도식이 비즈니스 요구를 수용할 수 있는지, 예상 확장이 가능한지, 그리고 정말 구현할 수 있는지가 한 번에 검토되어야 한다. 하루 동안 도식을 그린 뒤, 다음 하루 동안 구현 가능한지를 따지는 것은 상식적인 일처리가 아니다. 요구사항을 보면서 머릿속에서 즉시 도식이 그려져야 하고, 그려지는 순간 구현이 가능한지 불가능한지 식별할 수 있어야 한다.</p>
+<p>결과적으로 사고(Thinking), 구조화(Architecturing), 구현(Implementing)이라는 단계는 아키텍트의 머릿속에서는 거의 동시에 그리고 연속적으로 일어나야 한다.
+그래서 아키텍트에게는 코딩(Implement)은 시작하지 않았으나, 개발(Development)은 끝내는 능력이 필요하다.</p>
+<blockquote>
+<p>Vēnī. Vīdī. Vīcī.      — Julius Caesar, BC 47<br />
+왔노라, 보았노라, 이겼노라.  — 율리우스 카이사르, 기원전 47</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Research vs. Development vs. Implement</p>
+<p>연구(Research) - 새로운 지식, 원리, 기술을 발견하기 위한 체계적 탐구 활동<br />
+개발(Development) - 연구를 바탕으로 실질적인 제품, 서비스, 기술로 만들어내는 과정<br />
+구현(Implement) - 실질적인 시스템이나 제품으로 동작하게 만드는 구체적인 실행 </p>
+</div>
+<h3 id="mastery-of-inseparable">Mastery of Inseparable<a class="headerlink" href="#mastery-of-inseparable" title="Permanent link">&para;</a></h3>
+<p>세상의 모든 선택은 대체로 독립적이지 않다.</p>
+<blockquote>
+<p>바늘 가는데 실 간다.</p>
+</blockquote>
+<ul>
+<li>웹 서버를 물리적으로 분산하면, 서버 간에 세션 상태를 공유하는 메커니즘을 구성하거나, 순수한 무상태(Stateless)로 개발해야 한다.</li>
+<li>비동기 메시징(큐, 이벤트 기반) 구조를 도입하면, 메시지 중복 처리, 순서 보장, 장애 복구 로직이 필요하다.</li>
+<li>캐시 시스템(예: Redis, Memcached) 도입 시, 캐시 무효화 정책과 데이터 동기화, 일관성 문제를 반드시 고려해야 한다.</li>
+<li>데이터베이스 샤딩을 도입하면, 트랜잭션 일관성 보장을 위해 분산 트랜잭션 관리나 eventual consistency 전략이 필요하다.</li>
+<li>서버리스 아키텍처를 도입하면, 함수 실행 시간 제한, cold start 문제, 상태 저장 방식(Stateless/Stateful) 설계가 필수적이다.</li>
+<li>다국어/다문화 지원을 위해 i18n을 도입하면, 리소스 파일 관리, 런타임 언어 전환, 날짜/숫자/통화 포맷 처리까지 설계해야 한다.</li>
+</ul>
+<p>이 문제는 개발에 한정된 문제가 아니다. 그러나 다른 분야를 제쳐두고, 꽤 많은 개발자들이 잘 감각하지 못하는 것으로 보인다. 상호 간에 묶여 있는 속성을 함께 선택하는 것이라는 점을 알고 모르고는 서비스/시스템을 안정화시키는 게 큰 영향을 준다. 개발자들에게 농담인지 현실인지 헷갈리는 '버그 하나 잡으면 다른 버그가 생기는 상황'은 분명 다른 맥락의 이야기겠지만, 위 예시와 같이 근본적인 구조적 특성에 기인한 불가분의 요소를 제대로 다루지 못하면 시스템은 영원히 안정화시킬 수 없다.</p>
+<p>당연히 이러한 작동 원리상의 의존성을 포함한 불가분적 요소는 사고(Thinking), 구조화(Architecturing), 구현(Implementing)에서 함께 검토되어야 한다. 이러한 불가분의 선택지는 때로는 조직 구성, 비즈니스 목적에서도 발생 가능하다. 개발 과정의 비효율이나 서비스에서 모순을 일으킴으로 단순히 기술적 요소만 검토해서는 안 된다.</p>
+<p>아키텍트는 서비스 및 구현에 대하여, 실현 가능한지를 검토하는 제1차 관문이라 할 수 있다. 그러니, 불가분의 요소에 대한 직관적 감지 능력을 갖출 필요성이 있다.</p>
+<h3 id="mastery-of-ontological-insight">Mastery of Ontological Insight<a class="headerlink" href="#mastery-of-ontological-insight" title="Permanent link">&para;</a></h3>
+<p>존재론적 판단은 소프트웨어 구성 요소 각각의 존재 이유와 본질적 역할에 대해 깊이 있게 성찰하는 능력이다. 단순히 기능적 요구를 충족하는 것을 넘어, 각 요소가 시스템 전체에서 어떤 의미와 가치를 가지는지 고민해야 한다.</p>
+<p>예를 들어, 특정 모듈이나 서비스가 왜 필요한지, 그것이 시스템의 본질적 목적에 어떻게 기여하는지에 대한 근본적 질문을 던지는 것이다. 아키텍트는 각 구성 요소의 존재 이유를 명확히 하고, 불필요한 복잡성을 줄이며, 본질에 집중하는 설계를 지향해야 한다.</p>
+<p>이러한 존재론적 판단이 중요한 이유는 거의 유일하게 <strong>'모듈의 삭제 근거'</strong>이기 때문이다. 인식론적·가치론적·구성적·실존적·실용적 접근들은 대부분 존재해야 하는 이유를 찾는다. 그러나 존재론의 대표적 의문인 '이게 왜 있어야 하나?'가 보여주듯이 삭제를 탐색한다. 모듈의 수가 많을수록 시스템이 복잡한 것은 설명이 필요하지 않을 것이다. 때문에 본질을 묻고, 불필요한 요소를 과감히 제거하며, 핵심에 집중하도록 해주는 통찰력은 다른 무엇으로 대체하기 어렵다.</p>
+<blockquote>
+<p>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. — Antoine de Saint-Exupéry, Wind, Sand and Stars (1939)<br />
+완벽함이란 더 이상 '뺄 것'이 없을 때 완성된다 - 앙투안 드 생텍쥐페리, 『인간의 대지』(1939)  </p>
+</blockquote>
+<h3 id="mastery-of-reproducible-decision-making">Mastery of Reproducible Decision Making<a class="headerlink" href="#mastery-of-reproducible-decision-making" title="Permanent link">&para;</a></h3>
+<p>결정이 올바르다고 직감하는 것과 그 인과 관계를 정확히 파악하여 유불리를 수용하는 것은 큰 차이가 있다.<br />
+특히 모순적인 의견/장단점/특징을 융합할 때, 모든 것의 장점만 취하는 것은 불가능하다. 필연적으로 단점이 발생하게 되는데, 최종 융합물의 단점을 직시하는 것은 올바름에 대한 직감과 전혀 다르다. 대부분, 직감적 올바름은 장점에 편향되기 때문이다. 때문에 모순적 상황에서도 본질을 파악함은 물론 일관된 기준에 따라서 비용계산까지 마쳐야 의사결정에는 재현성이 생긴다. </p>
+<blockquote>
+<p>비용계산을 안한 경우, 구현의 단계에서 폭풍같은 후회를 맞이하게 될 것이다. </p>
+</blockquote>
+<p>나의 경험으로는 직감에 기반한 경우, 이후 개발이 진행되면서 예상과 조금 달라질 경우 자신의 직감에 대하여 의심을 하게 된다. 가능했던 다른 대안을 선택하는 게 낫지 않을까 하는 생각이 들며, 지금이라도 바꿔야 하는가를 고민하게 되기 때문이다. 이런 경우 아키텍처를 끝까지 유지하기 어렵고, 유지하더라도 많은 정신적 에너지가 소모된다. 그렇다고 해서 다른 선택지로 바꾸는 것이 확실히 더 낫다고 볼 수 없다. 아키텍처가 방향을 트는 것은 구현에 큰 영향을 줄 수 있기 때문에 바람직하지 않다. 사실 대부분의 아키텍처는 그 나름의 장점과 함께, 그 구조를 유지하기 위한 비용이 수반된다. 대부분 예상보다 불편하다고 느끼는 지점은 이런 비용이다. 그러나 구조를 바꾸면 대안 구조도 나름의 비용을 요구하기 때문에, 비용까지 포함된 이성적 의사결정이 없다면 다람쥐 쳇바퀴 돌 듯 순환하게 되는 상황이 오기 쉽다.  </p>
+<p>이러한 경험 때문에 과거 나는 내가 아키텍처를 작성했으나, 완전히 통제하지는 못한다고 느꼈다. 결정의 갈림길에서 어떤 확정된 사실에 기반한 결정을 내리지 못했기 때문에 스스로의 결정에 의심하며, 동일한 맥락에서 과거의 경험, 특히 최근의 경험의 영향을 받아 동일한 결정을 내리지 않는 경우가 있었다. 아키텍처를 결정하고 사용하는 것에 대해서 타당성과 이점을 전달해야 하는 입장에서 이런 상황은 기술에 대한 통제력의 부족으로 이어진다. </p>
+<p>때문에 직감이 아니라, 사실과 근거 기반으로 아키텍처 결정을 재생산할 수 있다는 점은 내게는 아주 큰 변곡점이었다. 단순히 직감에서 벗어나는 것일 뿐만 아니라, 이 지점에서 아키텍처의 비용을 직시하게 되어 일정한 코드를 단순히 불편하다고 치부하는 것이 아니라, 인프라의 근간을 지탱하는 필수 비용으로 보게 되었기 때문이다. 예를 들자면, 많은 사람들이 Redux나 RTK의 많은 코드를 보일러플레이트라며 매우 불편해하는 경향이 있다. 그러나 그 코드를 하나씩 보게 되면, 자동화된 기능을 실현하기 위한 셋팅 정보로서, 엄밀히 말해 보일러플레이트에 해당되지 않는다. 이익에 필요한 비용을 간과해서는 확신 있는 의사 결정을 내릴 수 없으며, 그 결정을 의심하게 될 뿐이다. 때문에 의사결정의 재현성은 까다로운 전제 조건이 이루어지면서 나온 결과이며, 때문에 많은 것을 암시한다.</p>
+<h2 id="_8">아키텍트로서 자기 확신<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>아키텍트로서의 자기 확신은 켜켜이 쌓여 있는 경험과 지식을 토대로, 자기 자신의 설계 원리가 명확하여 의사 결정이 재현 가능할 때 형성된다. 제도적 자격증이나 외부의 공식적인 인증이 없는 이 직군에서, 자기 확신은 곧 스스로의 자격을 증명할 수 있다는 확신이 가장 중요한 요소이다.</p>
+<p>이러한 자기 확신은 단순한 자만심이나 독선이 아니라, 수많은 실패와 시행착오, 그리고 그 과정에서 얻은 교훈을 바탕으로 한 내적 안정감이다. 아키텍트는 제도적 라이선스(License)를 갖지는 않지만, 현실과 디지털의 개체, 관계, 흐름, 주도권, 데이터, 정보 등을 깊이 이해하고, 이를 자신이 가진 명확한 설계 원리로 일관되게 모순된 상황도 조정할 수 있을 때 진정한 자격을 갖춘다. 이 순간부터 아키텍트는 모순적 상황도 확신으로 다룰 수 있으며, 외부의 평가나 기준에 흔들리지 않고, 스스로의 원칙에 따라 시스템을 설계하고 이끌 수 있게 된다.</p>
+<h2 id="_9">결론<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>소프트웨어 아키텍트가 되는 길은 공식화된 자격이나 정해진 루트가 없는, 본질적으로 자기 성찰과 경험의 누적에 기반한 여정이다. 하지만 아키텍트는 단순히 기술적 지식이나 실무 경험만으로 완성되지 않는다. 지식, 지혜, 체득이 필요하다. 나의 경우는 개인의 습득 순서상의 이유일지 몰라도, 그 무엇보다도 모순적 상황에서도 재현 가능한 의사결정이 가장 큰 난관으로 느껴진다. </p>
+<p>아키텍트의 핵심 역량이 단순히 기존의 아키텍처를 파악하고 잘 따라하는 것을 넘어서, 각 프로젝트가 겪는 고유의 문제에 대한 최적의 구조적 해법을 개발 이전에 탐색해내는 것이라고 정의한다면, 아키텍트는 다양한 모순적 상황에서 일관된 기준과 논리로 의사결정을 내릴 수 있어야 마땅하며, 단점이 드러남에 따라 그 결정이 흔들려서는 안된다. 이것이 개인의 선호가 반영된 높은 기준일 수도 있겠으나, 그렇기에 충분한 자기 확신의 근거이기도 하다.</p>
+<p>개인마다 성장의 경로는 제각각 다를 수 있다. 그러나 아키텍트에게 요구되는 역할은 어느 정도 일정하다. 때문에 요구되는 능력도 일정하고, 그걸 수행하기 위한 능력적 기반도 비슷할 것이다. 그렇기에 지극히 개인적 경험이지만 이 글이 아키텍트의 길을 걷고자 하는 이들에게 작은 이정표가 되길 바란다.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%ED%95%B4%EA%B2%B0%EC%B1%85%EC%9D%B4%EB%8B%A4/">아키텍처는 구조적 해결책이다</a> - 아키텍처의 본질과 구조적 접근의 중요성</li>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EC%9D%B4%EC%A7%80%2C%20%EB%AA%A8%EB%B0%A9%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4/">소프트웨어 아키텍처는 의사결정이지, 모방이 아니다</a> - 아키텍처의 본질과 모방의 한계, 의사결정의 중요성</li>
+<li><a href="../%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EB%8A%94%20%ED%99%95%EC%9E%A5%EB%B3%B4%EB%8B%A4%20%EB%B6%88%EB%B3%80%EC%97%90%20%EC%9D%98%ED%95%B4%20%EA%B2%B0%EC%A0%95%EB%90%9C%EB%8B%A4/">소프트웨어 아키텍처는 확장보다 불변에 의해 결정된다</a> - 아키텍처의 불변성과 구조적 관점 강조</li>
+<li><a href="../%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4%EC%9D%80%20%EB%B3%B8%EB%9E%98%20%EA%B3%A0%EC%B3%90%20%EC%93%B0%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4/">디자인 패턴은 본래 고쳐 쓰는 것이다</a> - 구조적 해결책과 패턴의 실용적 적용 대해</li>
+<li><a href="../%EB%B6%88%EC%8B%A0%EC%9D%98%20%EC%BD%94%EB%94%A9%20vs%20%EC%8B%A0%EB%A2%B0%EC%9D%98%20%EC%BD%94%EB%94%A9/">불신의 코딩 vs 신뢰의 코딩</a> - 아키텍트가 의식해야할 시스템 구조와 개발 문화, 구조적 제약의 의미</li>
+<li><a href="../%EC%A0%95%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28TS%29%EC%99%80%20%EB%8F%99%EC%A0%81%20%ED%83%80%EC%9E%85%20%EC%96%B8%EC%96%B4%28JS%29%EB%8A%94%20%ED%99%9C%EC%9A%A9%EB%B2%95%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4/">정적 타입 언어(TS)와 동적 타입 언어(JS)는 활용법이 다르다</a> - 아키텍트가 의식해야할 프로그래밍 언어의 타입 시스템이 가진 함의</li>
+</ul>
+<h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><strong>HJ, Ph.D. / Software Architect</strong><br />
+(js.seth.h@gmail.com)<br />
+<a href="https://js-seth-h.github.io/website/Biography/">https://js-seth-h.github.io/website/Biography/</a>  </p>
+<p>Over 20 years in software development, focusing on design reasoning and system structure - as foundations for long-term productivity and structural clarity.</p>
+<p>Researched semantic web and meta-browser architecture in graduate studies,<br />
+with an emphasis on structural separation between data and presentation.</p>
+<p><em>Ph.D. in Software, Korea University</em><br />
+<em>M.S. in Computer Science Education, Korea University</em><br />
+<em>B.S. in Computer Science Education, Korea University</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <div class="footer-cc-box">
+  <div class="footer-cc">
+    &copy; 2025. Architect HJ(js.seth.h@gmail.com) All rights reserved.<br>
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+    <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+    저작자표시-비영리-변경금지 (CC BY-NC-ND 4.0) / Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0)
+  </a> -->
+  </div>
+  <div class="footer-cc">
+    본 사이트의 모든 콘텐츠는 저작권법 및 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      크리에이티브 커먼즈 라이선스 (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      )
+    </a> 의 보호를 받으며,<br> Architect HJ(js.seth.h@gmail.com)의 명시적 동의 없이 전제, 복제, 배포, 2차적 저작물 작성 등을 금지합니다.
+  </div>
+  <div class="footer-cc">
+    All content on this site is protected by copyright law and <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" rel="license noopener" style="color:inherit;text-decoration:none;">
+      the Creative Commons License (CC BY-NC-ND 4.0
+      <img alt="크리에이티브 커먼즈 라이선스" style="vertical-align:middle; height:22px; margin-right:4px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+      ).
+    </a><br> Reproduction, distribution, or creation of derivative works without the explicit consent of Architect HJ (js.seth.h@gmail.com) is
+    prohibited.
+  </div>
+  <!-- <hr class="footer-hr" /> -->
+
+</div>
+<script src="https://giscus.app/client.js" data-repo="js-seth-h/website" data-repo-id="R_kgDOQgEUnQ" data-category="General" data-category-id="DIC_kwDOQgEUnc4CzO-0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1"
+  data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="ko" crossorigin="anonymous" async>
+</script>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

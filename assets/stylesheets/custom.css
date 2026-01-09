@@ -64,16 +64,20 @@ article.md-content__inner h2[id^="tag:"]::before {
 }
 
 
-.footer-hr {
-  border-bottom: .05rem solid var(--md-default-fg-color--lightest);
+.footer-cc-box {
+/* .footer-hr { */
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
   display: flow-root;
-  margin: 1.5em 0;
+  margin: 2em 0;
 }
 .footer-cc {
   text-align:center; color:#444; 
   font-size: 1.5em; 
-  margin:2em;
+  /* margin: 1em 0; */
+  padding: 0.3em 0;
   line-height: 1.8em;
+  /* border-top: .05rem solid var(--md-default-fg-color--lightest); */
+  border-bottom: .05rem solid var(--md-default-fg-color--lightest);
 }
 
 /* 포스트 */
@@ -150,6 +154,11 @@ nav.md-tabs .md-tabs__item:last-child {
   max-width: 1600px;
   margin: 0 auto;   /* 가운데 정렬 */
 }
+.md-main .md-sidebar.md-sidebar--primary,
+.md-main .md-sidebar.md-sidebar--primary .md-sidebar__inner {
+  /* width: 300px; */
+  /* padding-right: 1em; */
+}
 
 pre {
   font-family: monospace;
@@ -211,3 +220,19 @@ pre {
   /* padding-left: 2em; */
   /* padding-bottom: 2em; */
 }
+
+
+.md-main__inner.md-grid > div:first-of-type li.md-nav__item {
+  /* margin: 0.5em 0; */
+  /* 원하는 스타일 작성 */
+  /* 예시: */
+  /* border-left: 3px solid #007acc;
+  background: #f8f8fa; */
+   /* list-style-image: url("../../media/examples/rocket.svg"); */
+}
+/* .md-main__inner.md-grid > div:first-of-type .md-nav__list li.md-nav__item > a::before {
+  display: inline-block;
+  content: "🚀 ";
+  font-size: 0.8em;
+  padding-top: 0.2em;
+  /* margin-right: 0em; */ 

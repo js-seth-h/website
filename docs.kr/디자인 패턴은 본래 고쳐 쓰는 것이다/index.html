@@ -579,7 +579,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        정답인가?
+        도입
       
     </span>
   </a>
@@ -590,7 +590,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        패턴의 본질은?
+        정답인가?
       
     </span>
   </a>
@@ -601,7 +601,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.
+        패턴의 본질은?
       
     </span>
   </a>
@@ -612,7 +612,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        고정이 발휘하는 강제력
+        사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.
       
     </span>
   </a>
@@ -621,6 +621,17 @@
     
     <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고정이 발휘하는 강제력
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         결론
@@ -1759,7 +1770,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        정답인가?
+        도입
       
     </span>
   </a>
@@ -1770,7 +1781,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        패턴의 본질은?
+        정답인가?
       
     </span>
   </a>
@@ -1781,7 +1792,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.
+        패턴의 본질은?
       
     </span>
   </a>
@@ -1792,7 +1803,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        고정이 발휘하는 강제력
+        사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.
       
     </span>
   </a>
@@ -1801,6 +1812,17 @@
     
     <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고정이 발휘하는 강제력
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         결론
@@ -1866,20 +1888,7 @@ HJ, Ph.D. / Software Architect
 (js.seth.h@gmail.com)
 초안: 2022년 04월 / 개정: 2025년 12월
 </pre>
-
-<div class="admonition quote">
-<p class="admonition-title">Design Patterns: Elements of Reusable Object Oriented Software의 서문에서...</p>
-<p>One thing expert designers know not to do is to solve every problem from first principles.
-  Rather, they reuse solutions that have worked for them in the past.
-  When they find a good solution, they use it again and again.
-  Such experience is part of what makes them experts.
-  Consequently, you'll find recurring patterns of classes and communicating objects in many object-oriented systems.
-  These patterns solve specific design problems and make object-oriented designs more flexible, elegant, and ultimately reusable.
-  They help designers reuse successful designs by basing new designs on prior experience.
-  A designer who is familiar with such patterns can apply them immediately to design problems without having to rediscover them.</p>
-</div>
-<p>GoF는 디자인 패턴을 ‘발명’한 것이 아니라, 실제 성공 사례들에서 반복적으로 드러난 구조적 해결책을 발견하여 정리한 것이다. 다시 말해 패턴은 처음부터 ‘정답’으로 고정된 것이 아니라, 언제나 상황에 맞게 변형될 것을 전제로 한다.</p>
-<p><strong>즉, 디자인 패턴은 처음부터 외워서 그대로 사용하는 게 아니라, 기초로 삼아 고쳐 쓰기 위한 것이다.</strong></p>
+<p><strong>[Author’s Intent]</strong> 이 글은 디자인 패턴을 정답처럼 적용하는 결정이 왜 문제의 맥락을 제거하는 위험한 선택이 되는지를 불편하게 만들기 위해 작성되었습니다.</p>
 <h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
 <ul>
 <li>디자인 패턴은 정답이 아니며, 그대로 적용되는 답안이 아니다.</li>
@@ -1897,8 +1906,21 @@ HJ, Ph.D. / Software Architect
 <!-- - 디자인 패턴을 잘 사용하려면, 변형 가능한 부분보다 변형할 수 없는 부분을 먼저 파악해야 한다.
 - 동시에 골격은 고정된 부분으로써, 강제력을 갖게되고 안정성과 확장성의 균형점을 형성한다.
 - 각 프로젝트는 서로 다른 균형점을 갖기 때문에, 디자인 패턴도 ‘그대로’가 아닌 ‘고쳐 쓸’ 줄 아는 능력이 필수이다. -->
-
-<h2 id="_2">정답인가?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">도입<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Design Patterns: Elements of Reusable Object Oriented Software의 서문에서...</p>
+<p>One thing expert designers know not to do is to solve every problem from first principles.
+  Rather, they reuse solutions that have worked for them in the past.
+  When they find a good solution, they use it again and again.
+  Such experience is part of what makes them experts.
+  Consequently, you'll find recurring patterns of classes and communicating objects in many object-oriented systems.
+  These patterns solve specific design problems and make object-oriented designs more flexible, elegant, and ultimately reusable.
+  They help designers reuse successful designs by basing new designs on prior experience.
+  A designer who is familiar with such patterns can apply them immediately to design problems without having to rediscover them.</p>
+</div>
+<p>GoF는 디자인 패턴을 ‘발명’한 것이 아니라, 실제 성공 사례들에서 반복적으로 드러난 구조적 해결책을 발견하여 정리한 것이다. 다시 말해 패턴은 처음부터 ‘정답’으로 고정된 것이 아니라, 언제나 상황에 맞게 변형될 것을 전제로 한다.</p>
+<p><strong>즉, 디자인 패턴은 처음부터 외워서 그대로 사용하는 게 아니라, 기초로 삼아 고쳐 쓰기 위한 것이다.</strong></p>
+<h2 id="_3">정답인가?<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>소프트웨어 개발에서 디자인 패턴은 오랜 시간 동안 축적된 경험과 지혜의 산물로 여겨진다. 많은 개발자들이 패턴을 배우고, 프로젝트에 적용하며, 이를 통해 더 나은 구조와 유지보수성을 얻고자 한다. 하지만 패턴을 처음 접하는 이들은 종종 패턴을 ‘정답’으로 오해한다. 마치 교과서에 나온 예시를 그대로 따라야만 올바른 설계가 되는 것처럼 느끼기도 한다.</p>
 <blockquote>
 <p>하지만 패턴은 과거의 경험으로부터 공통점을 발견한 것이다.</p>
@@ -1908,7 +1930,7 @@ HJ, Ph.D. / Software Architect
 <blockquote>
 <p>물론 외우긴 해야지...</p>
 </blockquote>
-<h2 id="_3">패턴의 본질은?<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">패턴의 본질은?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>패턴의 본질을 논하기 전에 한 가지, 소프트웨어가 무엇인지를 짚고 넘어가야 한다.</p>
 <p>소프트웨어는 튜링 머신 이래 ‘연산 흐름’을 본질로 갖는다. 이후 어셈블리, 명령형 언어, 객체지향 등 많은 개념적 발전을 이루었으나, 여전히 연산 절차를 코딩하고 있다는 점은 같다. 디자인 패턴은 많은 프로젝트에서 반복되는 처리 흐름에서 반복되는 문제에 대한 구조적 해결책을 간단한 모형으로 정리한 것이며, GOF의 분류 기준이 보여주듯이 그 대부분의 문제는 소프트웨어를 변화하는 요소에 적응시키려는 요구에 기인한다.</p>
 <div class="admonition note">
@@ -1927,7 +1949,7 @@ HJ, Ph.D. / Software Architect
 
 패턴을 고쳐 쓴다는 것은 단순히 코드를 수정하는 것이 아니다. 패턴이 제공하는 구조적 이점을 최대한 살리면서도, 내가 현재 직면한 문제를 해결하는 것이다. 때로는 패턴의 일부만을 취하거나, 여러 패턴을 조합해 새로운 구조를 만들어내기도 해야한다. -->
 
-<h2 id="_4">사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">사실, 대부분의 개발자들은 각 패턴의 본질을 이해하지 못했다.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>예를 하나 들어보자.</p>
 <p>우선, 행위패턴에 속하는 전략(Strategy) 패턴을 생각해보자. 전략 패턴의 주요 설명은 '동작을 캡슐화하여, 런타임에 교체할 수 있도록 한다'는 점이다. 구체적인 전략(알고리즘)은 얼마든지 바뀔 수 있지만, 컨텍스트(Context)와 전략(Strategy) 인터페이스 간의 협력 구조 - 파라미터와 리턴 타입은 변하지 않는다. 이 약속의 구조가 바로 처리의 골격이다. 개발자가 이 골격만 유지한다면, 단순한 값을 넘기는 것이 아니라, 데이터베이스 접속과 같은 외부 시스템 접점을 넘기거나, 리턴은 성공/실패 여부만 처리하고, 스트래티지 패턴 내에서 넘겨받은 참조 객체를 통해 필요한 모든 결과를 세팅해 넣는 것도 가능하다. (일종의 Strategy-Builder 결합)</p>
 <p>한편, 템플릿 메서드(Template Method) 패턴도 행위패턴에 속한다. 템플릿 메서드 패턴의 요점은 상위 클래스에서 로직의 전체 흐름을 템플릿이라는 이름으로 정의하고, 세부 기능은 하위 클래스에서 구현하도록 하는 것이다. 로직의 흐름은 변하지 않는다. 이때 이 흐름의 구체성이 매우 중요하게 작용하는데, 템플릿 메서드는 사실상 절차 1 ~ 절차 N 사이의 데이터의 형식(Type)과 전달 체계(절차 1의 결과가 절차 2의 입력 등)를 미리 정한다.
@@ -1939,13 +1961,13 @@ HJ, Ph.D. / Software Architect
 <p>1994년 GoF의 Designe Patterns 이후, 많은 책이 나왔다. 그러나 템플릿 메소드가 실제로 Context를 요구한다는 점을 지적한 책을 아직 보지 못했다.</p>
 </blockquote>
 <p>이 두 패턴의 고정요소와 변동요소를 정확히 파악하면, 생각보다 많은 점이 유사하면서, 차이점이 큰 것을 알 수 있다. 이는 고정된 부분에서 사소해 보이는 차이로 인해, 그 결정에 녹아든 강제력이 서로 다르게 작용하기 때문이다. 두 패턴은 서로 일정한 호환성이 있으면서도, 확연히 다른 강제력과 확장성을 보여준다. </p>
-<h2 id="_5">고정이 발휘하는 강제력<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">고정이 발휘하는 강제력<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>프로그램의 원초적 형태는 결국 하드코딩된 계산이다. 일련의 고정된 명령의 절차적 집합이 그 본질이나 우리는 동일한 계산을 다른 자료에 적용하기 위해서 파라미터를 추가했다. 마찬가지로 다양한 변형과 분기를 구조적 해법을 적용해 자유를 부여해왔다. 숙련된 아키텍트가 비용과 타협하지 않아도 된다면, 원하는 만큼의 자유를 부여할 방법은 찾을 수 있다. 하지만 현실적 조율을 통해 자유가 없어도 되는 부분은 고정된 채, 자유로운 확장의 바탕을 이루게 된다.
 즉 고정된 바탕에서 기인하는 강제력은 예측 가능성, 안정성, 신뢰성을 담보하는 구성품이 된다.</p>
 <p>현실에서 개발하는 서비스는 확정되지 않은 미래 전략도 있으며, 향후의 플랜을 위해서 미리 변경의 여지를 준비해 두기도 한다. 이러한 미지수가 시스템 내에 수용 가능하도록 하기 위해서, 일정한 규칙을 정해두어야 한다. <strong>즉, 확장성은 상호운용성을 위한 규칙 위에 성립하는 것이다.</strong> 즉 규칙 - 역할과 역할간 통신이라는 타협점을 필수적으로 설정해야 하며, 강제력은 수용 가능한 확장을 결정짓는다.</p>
 <p>강제성이 많을수록 예측하기 쉽고, 버그가 적을 확률이 높으며, 빨리 개발할 확률이 높아진다. 구현의 안정성만 생각하면 최대한 단순한 하드 코딩이 가장 유리하겠으나, 그것이 시장 적응력이나 고객 만족을 달성할 수 있다고 볼 수는 없다. 따라서 항상 소프트웨어는 강제성과 변동성 사이에서 균형을 잡기 위한 타협이 필요하며, 모든 프로젝트는 저마다의 색깔이 있으므로 저마다 고유한 타협점을 정해야 한다. </p>
 <p>디자인 패턴이든, 아키텍처든, API든, 어떤 요소를 결정할 때, 그로 인해 생기게 되는 강제력을 염두에 두어야 한다. 이러한 관점으로 대상을 볼 수 있다면, 각 디자인 패턴이 어떤 강제력을 가지는지 파악하고 응용할 수 있다.</p>
-<h2 id="_6">결론<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">결론<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>디자인 패턴은 흔히 발견되는 정보처리 흐름에서 어느 부분까지 고정하고, 그 경계에 어떤 약속을 집어 넣어, 어떤 강제력을 발휘하게 할 수 있는지에 대한 모범 사례를 보여준다. 
 다만, 각 패턴은 정말 사소한 차이에도 상당히 다른 강제력을 보여준다. 때문에 특정 패턴을 도입함에 있어, 자신이 무엇을 고정요소로 정하고 있으며, 어떤 약속이 생겼는지 정확히 이해할 필요가 있다. 그 이해를 바탕으로 패턴을 선택해야 소프트웨어의 안정성과 확장성을 동시에 확보하기 유리하다. </p>
 <p>한편 각 프로젝트는 서로 다른 방향을 추구함으로 단순화된 모범사례인 디자인 패턴이 그대로 들어맞지 않을 수 있다. 또한 디자인 패턴은 모형을 제시하는 것으로 객체의 책임에 따라서는 하나의 클래스가 2~3가지 패턴이 동시에 적용된 상태가 적절할 수도 있다. 따라서 각 디자인 패턴을 정확히 이해하여 핵심 골격을 유지하면서도 객체 책임에 따라서 변형된 강제력을 행사하도록 개발하는 것이 훨씬 유리하다.</p>

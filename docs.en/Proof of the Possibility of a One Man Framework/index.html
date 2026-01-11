@@ -1064,6 +1064,17 @@
 </li>
     
     <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proof
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
   <a href="#the-key-is-not-scale-but-management-overhead" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1778,6 +1789,17 @@
 </li>
     
     <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proof
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
   <a href="#the-key-is-not-scale-but-management-overhead" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1924,6 +1946,20 @@ HJ, Ph.D. / Software Architect
 Draft: November 2025 / Revised: December 2025
 </pre>
 
+<p><strong>[Interpretive Note]</strong> This article is not simply to show that “one-person development &amp; operating is possible,” but to illustrate what results from making structural decisions that reduce the effort required to manage and operate a system.</p>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>This document presents the actual results of a system that structurally minimizes the effort required for one-person development, operation, and management.</li>
+<li>It is based on a real case where a commercial system handling 440,000 transactions and 5.3 billion KRW over 12 months was stably operated by a single person.</li>
+<li>The operational limit is determined not by scale, but by the number and complexity of management points.</li>
+<li>Repetitive tasks should be automated and authority delegated, so the developer only handles exceptional cases.</li>
+<li>More important than responding to failures is designing so that failures do not occur.</li>
+<li>Optimization is not just about reducing costs, but about structural simplification to minimize the impact of changes.</li>
+<li>Tool selection should be based on business context and actual operating conditions, not trends.</li>
+<li>The conditions for possibility are clear: fewer than 30 developer intervention errors per year, and total management overhead under 24 days.</li>
+<li>This is the cumulative result of architectural decisions that prioritize robustness above all.</li>
+</ul>
+<h2 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">&para;</a></h2>
 <p>As of December 2025, it has already been in operation for over a year. Proof complete!</p>
 <p>Logically, to prove the possibility, you only need one real-world case. So the proof is very simple. 
 But what readers will really wonder is <strong>under what conditions and at what scale can it be operated?</strong></p>
@@ -1934,30 +1970,21 @@ it is absolutely not about growing a business. The system was already in operati
 <p>I got involved three years ago, rebuilt a nearly failed next-gen system, completed it, migrated to AWS, and took over operations. Attracting customers is not a developer's job.</p>
 <p>This system processed <strong>440,000 transactions and 5.3 billion KRW</strong> in total from November 2024 to November 2025.</p>
 </div>
-<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Scale: 440,000 transactions and 5.3 billion KRW in 12 months</li>
-<li>500GB annual log data</li>
-<li>AWS infrastructure</li>
-<li>Single DB using AWS Aurora</li>
-<li>Standard structure: load balancer + web server + DB</li>
-<li>Vue 2.x, Java 17 SpringBoot 3.0 JPA, Node.js for some high-performance tasks</li>
-<li>Fewer than 30 errors per year requiring developer intervention</li>
-<li>Correction tools for exceptional business cases</li>
-<li>Passed ISMS audit two years in a row</li>
-<li>Very simple security model</li>
-<li>Load balancer and redundant server setup</li>
-<li>Robustness design</li>
-<li>Optimized design/development downsized web server spec (16GB → 4GB)</li>
-<li>Optimized design/development downsized DB data (80GB → 15GB)</li>
-<li>Comprehensive computation optimization</li>
-<li>Java max CPU usage under 30% at burst</li>
-<li>Java max RAM usage under 75% at burst</li>
-<li>Automatic error detection</li>
-<li>Alarm settings</li>
-<li>Simple self-made CLI tools for automating repetitive tasks</li>
-<li>Automated CLI deployment tool</li>
-</ul>
+<p>The following is a summary of the operating environment; details are described below.
+- Scale: 440,000 transactions and 5.3 billion KRW in 12 months
+- 500GB annual log data
+- AWS infrastructure
+- Single DB using AWS Aurora
+- Standard structure: load balancer + redundant web server + DB 
+- Vue 2.x, Java 17 SpringBoot 3.0 JPA, Node.js for some high-performance tasks
+- Fewer than 30 errors per year requiring developer intervention
+- Passed ISMS (Korean government-mandated information security certification) audit two years in a row
+- Very simple security model
+- Optimized design/development downsized web server spec (16GB → 4GB)
+- Optimized design/development downsized DB data (80GB → 15GB)
+- Java max CPU usage under 30% at burst
+- Java max RAM usage under 75% at burst
+- Simple self-made CLI tools for automating repetitive tasks </p>
 <h2 id="the-key-is-not-scale-but-management-overhead">The Key Is Not Scale, but Management Overhead<a class="headerlink" href="#the-key-is-not-scale-but-management-overhead" title="Permanent link">&para;</a></h2>
 <p>What matters more than system size is minimizing the time and effort required for management. If there are few management points even at scale, solo operation is entirely possible. Develop robustly and reliably, automate and tool repetitive tasks as much as possible, delegate authority appropriately, and operate so the developer only needs to care about exceptional cases.</p>
 <h2 id="make-tools-and-delegate-authority">Make Tools and Delegate Authority<a class="headerlink" href="#make-tools-and-delegate-authority" title="Permanent link">&para;</a></h2>

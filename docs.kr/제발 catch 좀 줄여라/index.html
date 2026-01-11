@@ -1977,6 +1977,7 @@ HJ, Ph.D. / Software Architect
 초안: 2021년 07월 / 개정: 2025년 10월
 </pre>
 
+<p><strong>[Interpretive Note]</strong> 이 글은 예외 처리를 늘리는 선택이 실제로는 오류의 원인을 가리는 구조가 될 수 있음을 인식시키기 위해 작성되었습니다.</p>
 <h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
 <ul>
 <li>try-catch에 대한 잘못된 사용 지침이나 권장이 너무 많다. 그 예시다.<ol>
@@ -2002,9 +2003,6 @@ HJ, Ph.D. / Software Architect
 <li>우선 throw가 얼마나 막무가내인 매커니즘인지 제대로 이해해라.</li>
 <li>예외를 극복하려고 하기보다, 상황을 파악하는데 주력하고, 적절히 대응해라.</li>
 </ul>
-<!-- more -->
-<!-- more -->
-
 <h2 id="_1">예상이 가능하면 예외가 아니다.<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>물론 어떤 예외는 예상할수 있다. <strong>그러나, 모든 예외는 예상할 수 없다.</strong> 
 단지, 이 사실 하나만으로도 우리는 예상하지 못하는 - 말 그대로 예외를 염두에 두고 방어 전략을 작성해야한다.</p>

@@ -980,6 +980,17 @@
 </li>
     
     <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
   <a href="#general-theory" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1822,6 +1833,17 @@
 </li>
     
     <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preface
+      
+    </span>
+  </a>
+  
+</li>
+    
+    <li class="md-nav__item">
   <a href="#general-theory" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2012,10 +2034,11 @@ HJ, Ph.D. / Software Architect
 Draft: October 2024 / Revised: December 2025
 </pre>
 
-<p>Each software component—functions, modules, systems—operates according to predetermined behaviors and has its own conventions. These conventions may be technically specified through function signatures, or may have logical constraints. The distinction between syntactic and logical errors is related to errors associated with these conventions.</p>
-<p>And do we assume these conventions will be kept by all parties? Or do we assume they will not be kept? This makes a big difference at a macro level.</p>
+<p><strong>[Author’s Intent]</strong> This article challenges the belief that defensive validation guarantees stability. It’s not a matter of right or wrong, but of appropriateness—so the reasons why the results of each choice may differ from common assumptions are analyzed from the perspectives of determinism, quality, exceptions, and organizational cost.</p>
 <h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Each software component—such as functions, modules, and systems—has explicit or implicit contracts between the caller and the callee.</li>
+<li>Depending on what expectations you have about whether these contracts will be upheld, they can be divided into two categories.</li>
 <li>Distrust-based culture<ul>
 <li>Especially Java, and many modules in its ecosystem, are distrust-based.</li>
 <li>Code does not trust external input, fellow developers, library users, or the system environment.</li>
@@ -2039,7 +2062,17 @@ Draft: October 2024 / Revised: December 2025
 <li>Therefore, it is hard to separate this from development strategy and team composition.</li>
 <li>The more elite and smaller the team, the more trust-based approaches are preferred; the more difficult and heavy the collaboration, the more distrust-based approaches are preferred.</li>
 </ul>
-<!-- more -->
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>Each component of software—such as functions, modules, and systems—operates according to predefined behaviors and possesses contracts for those behaviors.
+These contracts may be technically specified through function signatures, or may take the form of logical constraints.</p>
+<p>To give a concrete example, functions or class methods have explicit or implicit contracts between the caller and the callee.
+This contract means that if the caller provides certain input values and context to the callee, the callee promises to perform the corresponding operation and guarantee the output. Explicit contracts are revealed through function signatures and types, while implicit contracts are expressed through documentation, conventions, or internal rules, such as the range of acceptable input values. The distinction between syntactic errors and logical errors is also closely related to which contract (explicit or implicit) has been violated.</p>
+<p>Should we design on the premise that these contracts will be mutually upheld?
+Or should we design on the premise that they will not be upheld?
+Depending on this premise, the macro-level outcome changes significantly.</p>
+<!-- Each software component—functions, modules, systems—operates according to predetermined behaviors and has its own conventions. These conventions may be technically specified through function signatures, or may have logical constraints. The distinction between syntactic and logical errors is related to errors associated with these conventions.
+
+And do we assume these conventions will be kept by all parties? Or do we assume they will not be kept? This makes a big difference at a macro level. -->
 
 <h2 id="general-theory">General Theory<a class="headerlink" href="#general-theory" title="Permanent link">&para;</a></h2>
 <p>Let's first summarize the well-known general theory.</p>
